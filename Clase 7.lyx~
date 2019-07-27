@@ -1,0 +1,1160 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package babel
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Clase 7: Más Wilcoxon
+\end_layout
+
+\begin_layout Section
+Distribución del Estadístico 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+ ante 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora perdemos también la independencia.
+\end_layout
+
+\begin_layout Definition
+probabilidades útiles
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $p_{1}=P\left(X_{1}>0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $p_{2}=P\left(X_{1}+X_{2}>0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $p_{3}=P\left(X_{1}+X_{2}>0;X_{1}>0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $p_{4}=P\left(X_{1}+X_{2}>0;X_{1}+X_{3}>0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ se puede probar que 
+\begin_inset Formula $p_{1}=p_{2}=\frac{1}{2}$
+\end_inset
+
+.
+ Bajo 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $p_{1};p_{2}>\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+En general vale 
+\begin_inset Formula $p_{3}=\frac{p_{1}+p_{2}^{2}}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $p_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{3}=P\left(X_{1}+X_{2}>0;X_{1}>0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por probabilidad total
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+no nos hacemos cargo del 0 porque acá es continua
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{3}=P\left(X_{1}+X_{2}>0;X_{1}>0;X_{2}>0\right)+P\left(X_{1}+X_{2}>0;X_{1}>0;X_{2}<0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{1}>0;X_{2}>0\Rightarrow X_{1}+X_{2}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{1}+X_{2}>0;X_{1}>0;X_{2}<0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{1}+X_{2}>0;X_{2}<0\Rightarrow X_{1}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{3}=P\left(X_{1}>0;X_{2}>0\right)+P\left(X_{1}+X_{2}>0;X_{2}<0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ma iid
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{3}=P\left(X_{1}>0\right)P\left(X_{2}>0\right)+P\left(X_{1}+X_{2}>0\right)-P\left(X_{1}+X_{2}>0;X_{2}>0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{3}=p_{1}^{2}+p_{2}-p_{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{3}=\frac{p_{1}^{2}+p_{2}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $p_{1}=p_{2}=\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{1}=P\left(X_{1}>0\right)=1-F\left(0-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{1}=1-F\left(-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Bajo 
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+, 
+\begin_inset Formula $p_{1}=\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $-\theta<0$
+\end_inset
+
+, 
+\begin_inset Formula $F\left(-\theta\right)<F\left(0\right)=\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{1}\ge\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Para 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{2}=P\left(X_{1}+X_{2}>0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Consideramos el semiplano 
+\begin_inset Formula $X_{1}>-X_{2}$
+\end_inset
+
+, bajo la recta ortogonal a la identidad.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $X_{1}\in\left(-X_{2};\infty\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{2}=P\left(X_{1}+X_{2}>0\right)=\int_{-\infty}^{+\infty}\int_{-x_{2}}^{+\infty}h\left(x_{1}\right)h\left(x_{2}\right)dx_{1}dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{2}=\int_{-\infty}^{+\infty}h\left(x_{2}\right)\int_{-x_{2}}^{+\infty}h\left(x_{1}\right)dx_{1}dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{2}=\int_{-\infty}^{+\infty}h\left(x_{2}\right)\left[H\left(x_{1}\right)\right]_{-x_{2}}^{+\infty}dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{2}=\int_{-\infty}^{+\infty}h\left(x_{2}\right)\left[1-H\left(-x_{2}\right)\right]dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+p_{2}=\int_{-\infty}^{+\infty}h\left(x_{2}\right)\left[1-H\left(-x_{2}\right)\right]dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Como corresponde a la suma de dos VA, llegamosa una convolución.
+\end_layout
+
+\begin_layout Subsubsection*
+Cálculo Auxiliar
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H\left(x\right)+H\left(-x\right)=F\left(x-\theta\right)+F\left(-x-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ser distribución, 
+\begin_inset Formula $F\left(x-\theta\right)\leq F\left(x+\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por ser simétrica 
+\begin_inset Formula $F\left(-x-\theta\right)=1-F\left(x+\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x-\theta\right)+F\left(-x-\theta\right)=F\left(x-\theta\right)+1-F\left(x+\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F\left(x-\theta\right)+F\left(-x-\theta\right)\leq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H\left(x\right)+H\left(-x\right)\leq1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es estocásticamente positiva, 
+\begin_inset Formula $H\left(x\right)\leq1-H\left(-x\right)$
+\end_inset
+
+.
+ La cola derecha es mayor o igual que la izquierda.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{2}=\int_{-\infty}^{+\infty}h\left(x_{2}\right)\left[\underbrace{1-H\left(-x_{2}\right)}_{\ge H\left(x_{2}\right)}\right]dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{2}\geq\int_{-\infty}^{+\infty}h\left(x_{2}\right)H\left(x_{2}\right)dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{2}\geq\left[\frac{H^{2}\left(x_{2}\right)}{2}\right]_{-\infty}^{+\infty}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{2}\geq\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ tenemos igualdad 
+\begin_inset Formula $H\left(x\right)+H\left(-x\right)=F\left(x\right)+F\left(-x\right)=1$
+\end_inset
+
+,y al sustituir observamos que 
+\begin_inset Formula $p_{2}=\frac{1}{2}$
+\end_inset
+
+ precisamente.
+\end_layout
+
+\begin_layout Itemize
+Bajo 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H\left(x\right)+H\left(-x\right)\leq1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H\left(x\right)=F\left(x-\theta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H\left(0\right)+H\left(-0\right)=2H\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H\left(0\right)+H\left(-0\right)=2\underbrace{F\left(-\theta\right)}_{\leq\frac{1}{2}}<1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $H$
+\end_inset
+
+ es continua, existe un entorno de 0 que cumple la propiedad deseada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{2}>\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usando que 
+\begin_inset Formula $H\left(x\right)+H\left(-x\right)<1$
+\end_inset
+
+ en algún intervalo.
+\end_layout
+
+\begin_layout Theorem
+La esperanza y la varianza de 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+ tienen las siguientes expresiones en todo caso.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\mathbb{E}\left(T^{+}\right)=np_{1}+\frac{n\left(n-1\right)}{2}p_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $V\left(T^{+}\right)=np_{1}\left(1-p_{1}\right)+\frac{n\left(n-1\right)}{2}p_{2}+2n\left(n-1\right)\left(p_{3}-p_{1}p_{2}\right)+n\left(n-1\right)\left(n-2\right)\left(p_{4}-p_{2}^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observar que bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ se llega a las formas conocidas previamente.
+\end_layout
+
+\begin_layout Proof
+Definimos 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+T_{ij}=\begin{cases}
+1 & \frac{X_{i}+X_{j}}{2}>0\\
+0 & \frac{X_{i}+X_{j}}{2}\leq0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+T^{+}=\sum\sum_{i\leq j}T_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left(T_{ij}\right)=\sum\sum_{i\leq j}\mathbb{E}\left(T_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left(T_{ij}\right)=\sum_{i=j}\mathbb{E}\left(T_{ii}\right)+\sum\sum_{1\leq i\leq j\leq m}\mathbb{E}\left(T_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Sumamos los 
+\begin_inset Formula $n-1$
+\end_inset
+
+ elementos menores que 
+\begin_inset Formula $i=n$
+\end_inset
+
+, los 
+\begin_inset Formula $n-2$
+\end_inset
+
+ elementos menores que 
+\begin_inset Formula $i=n-1$
+\end_inset
+
+, etc.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left(T_{ij}\right)=n\mathbb{E}\left(T_{11}\right)+\frac{n\left(n-1\right)}{2}\mathbb{E}\left(T_{12}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\mathbb{E}\left(T_{11}\right)=P\left(\frac{X_{1}+X_{1}}{2}>0\right)=P\left(X_{1}>0\right)=p_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\mathbb{E}\left(T_{12}\right)=P\left(\frac{X_{1}+X_{2}}{2}>0\right)=p_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left(T_{ij}\right)=np_{1}+\frac{n\left(n-1\right)}{2}p_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Fórmula de la varianza.
+ El mal.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\text{V}\left(T^{+}\right)=\text{V}\left(\sum_{i=1}^{n}T_{ii}+\sum_{1\leq i\leq j\leq n}T_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\text{V}\left(X+Y\right)=\text{V}\left(X\right)+\text{V}\left(Y\right)+2\text{Cov}\left(X+Y\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\text{V}\left(T^{+}\right)=\text{V}\left(\sum_{i=1}^{n}T_{ii}+\sum_{1\leq i\leq j\leq n}T_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Como los 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ son inddependientes, los 
+\begin_inset Formula $T_{ii}$
+\end_inset
+
+ lo son.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{align*}
+\text{V}\left(T^{+}\right) & =\text{V}\left(\sum_{i=1}^{n}T_{ii}\right)+\text{V}\left(\sum_{1\leq i\leq j\leq n}T_{ij}\right)+\underbrace{2\sum_{k<l}\text{Cov}\left(T_{kk};T_{ll}\right)}_{0,\text{indep}}\\
+ & +\underbrace{\sum_{i<j}\sum_{k<l}\text{Cov}\left(T_{ij};T_{kl}\right)}_{A}+2\underset{\left(i;j\right)\neq\left(k;l\right)}{\sum_{i<j}\sum_{k<l}}\text{Cov}\left(T_{ij};T_{kk}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Analizamos 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Las covarianzas son todas iguales por cómo agrupado.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i<j}\sum_{k<l}\text{Cov}\left(T_{ij};T_{kl}\right)=2\sum_{k=1}^{n}\sum_{i<j}\text{Cov}\left(T_{kk};T_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Si 
+\begin_inset Formula $k\neq0,$
+\end_inset
+
+
+\begin_inset Formula $k\neq j$
+\end_inset
+
+, 
+\begin_inset Formula $\text{Cov}\left(T_{kk};T_{ij}\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Es decir, sólo tienen covarianza los que comparten sumandos 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Como elegimos 
+\begin_inset Formula $i=k$
+\end_inset
+
+ estamos tomando los casos donde 
+\begin_inset Formula $k$
+\end_inset
+
+ es el primer elemento de 
+\begin_inset Formula $T_{ij}.$
+\end_inset
+
+ Duplicamos para considerar los casos análogos que hubieran sido 
+\begin_inset Formula $j=k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i<j}\sum_{k<l}\text{Cov}\left(T_{ij};T_{kl}\right)=0+2\left[2\sum_{k=1}^{n}\sum_{k<j}\text{Cov}\left(T_{kk};T_{kj}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i<j}\sum_{k<l}\text{Cov}\left(T_{ij};T_{kl}\right)=0+4\cdot\frac{n\left(n-1\right)}{2}\text{Cov}\left(T_{11};T_{12}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\text{Cov}\left(T_{11};T_{12}\right)=\underbrace{\mathbb{E}\left(T_{11}\cdot T_{12}\right)}_{p_{3}}-\underbrace{\mathbb{E}\left(T_{11}\right)}_{p_{1}}\cdot\underbrace{\mathbb{E}\left(T_{12}\right)}_{p_{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teorema de Consistencia
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{G}\left(T_{n}\geq R_{n}\right)=P_{G}\left(\sqrt{n}\frac{T_{n}-\mu_{0}}{r_{o}}\geq\sqrt{n}\left(\frac{k_{m}-\mu_{0}}{r_{o}}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Parte final
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{G}\left(T_{n}\geq k_{n}\right)=P_{G}\left(T_{n}\geq\mu_{0}+z_{\alpha}\frac{r_{0}}{\sqrt{n}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{n}\overset{p}{\rightarrow}\mu\left(G\right)>\mu_{0}$
+\end_inset
+
+ con 
+\begin_inset Formula $G\in\Omega_{c}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Definición de convergencia en probabilidad
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall\varepsilon>0:\lim_{n}P_{G}\left(\left|T_{n}-\mu\left(G\right)\right|<\varepsilon\right)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hacemos 
+\begin_inset Formula $\varepsilon=\frac{\mu\left(G\right)-\mu_{0}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Nuestra prueba es
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi_{n}=\begin{cases}
+1 & T_{n}^{+}>k_{n}\\
+0 & \text{toc}
+\end{cases}=\begin{cases}
+1 & \frac{T_{n}^{+}}{n\left(n+1\right)}>\frac{k_{n}}{n\left(n+1\right)}\\
+0 & \text{toc}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Busquemos 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{T}_{n}=\frac{T_{n}^{+}}{n\left(n+1\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{E}\left(\overline{T}_{n}\right)=\frac{np_{1}+\frac{n\left(n-1\right)}{2}p_{2}}{n\left(n+1\right)}=\frac{p_{1}}{n+1}+\frac{n-1}{2\left(n+1\right)}p_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\lim_{n}\mathbb{E}\left(\overline{T}_{n}\right)=\frac{1}{2}p_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{V}\left(\overline{T}\right)=\frac{1}{n^{2}\left(n+1\right)^{2}}\text{V}\left(T^{+}\right)\rightarrow0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo importante para la varianza es que probamos que es un polinomio de grado
+ 3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\mathbb{E}\left(z_{n}\right)\rightarrow a\\
+\text{V}\left(z_{n}\right)\rightarrow0
+\end{cases}\Rightarrow z_{n}\rightarrow a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+demostramos con Markov, 
+\begin_inset Formula $P\left(\left|z\right|>\varepsilon\right)\leq\frac{\mathbb{E}\left(z^{2}\right)}{\varepsilon^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\left|z_{n}-i\right|>\varepsilon\right)\leq\frac{\mathbb{E}\left(z_{n}^{2}-a\right)}{\varepsilon^{2}}=\frac{\mathbb{E}\left(z_{n}^{2}-\mathbb{E}\left(z_{n}\right)+\mathbb{E}\left(z_{n}\right)-a\right)^{2}}{\varepsilon^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\left|z_{n}-i\right|>\varepsilon\right)\leq\frac{\text{V}\left(z_{n}\right)+\left(\mathbb{E}\left(z_{n}\right)-a\right)^{2}+2\mathbb{E}\left(z_{n}-a\right)\mathbb{E}\left(z_{n}-\mathbb{E}\left(z_{n}\right)\right)}{\varepsilon^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\left|z_{n}-i\right|>\varepsilon\right)\leq\frac{0+0^{2}+2\mathbb{E}\left(z_{n}-a\right)0}{\varepsilon^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\left|z_{n}-a\right|>\varepsilon\right)\leq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left(\left|z_{n}-a\right|>\varepsilon\right)\rightarrow0\Rightarrow z_{n}\overset{\mathcal{P}}{\rightarrow}a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}\overset{\mathcal{P}}{\rightarrow}\frac{1}{2}p_{2}=\begin{cases}
+\frac{1}{4} & H_{0}\\
+>\frac{1}{4} & H_{1}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

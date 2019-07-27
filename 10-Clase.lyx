@@ -1,0 +1,1193 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Volvemos a Hodges Lehman
+\end_layout
+
+\begin_layout Section
+Ejemplos Previos
+\end_layout
+
+\begin_layout Subsection
+Prueba T
+\end_layout
+
+\begin_layout Standard
+PEdir, llegué tarde.
+\end_layout
+
+\begin_layout Subsection
+Signo
+\end_layout
+
+\begin_layout Standard
+Está en las notas.
+ 
+\end_layout
+
+\begin_layout Remark
+USualmente aparece la mediana de los datos como estimador del promedio.
+\end_layout
+
+\begin_layout Section
+Caso de Wilcoxon
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\#\left\{ 1\leq i\leq j\leq n:\frac{X_{i}+X_{j}}{2}>0\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Definamos el estadístico 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}\left(\theta\right)=\#\left\{ \frac{\left(X_{i}-\theta\right)+\left(X_{j}-\theta\right)}{2}>0\right\} =\#\left\{ \frac{X_{i}+X_{j}}{2}-\frac{2\theta}{2}>0\right\} =\#\left\{ \frac{X_{i}+X_{j}}{2}>\theta\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya probamos que la distribuciòn del estadístico bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+,
+\begin_inset Formula $T^{+}\left(0\right)=V$
+\end_inset
+
+ es simétrica.
+ 
+\begin_inset Formula $\mathbb{E}\left(T^{+}\right)=\frac{n\left(n+1\right)}{4}=\mu_{0}=\tilde{T^{+}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es decir que 
+\begin_inset Formula $\hat{\theta}=\text{med}\left\{ 1\leq i\leq j\leq n:\frac{X_{i}+X_{j}}{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Repensar
+\end_layout
+
+\begin_layout Itemize
+¿Cuál es la heurística de este agregado de puntos?
+\end_layout
+
+\begin_layout Standard
+EStamos diciendo que todo grupo de 
+\begin_inset Formula $n$
+\end_inset
+
+ untos es 
+\begin_inset Formula $\binom{n}{2}$
+\end_inset
+
+ obserbacines de la muestra.
+\end_layout
+
+\begin_layout Section
+Mann-Whitney-Wilcoxon
+\end_layout
+
+\begin_layout Subsection
+Distribución del Estadístico Bajo la Alternativa
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+MMW
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=\sum_{i=1}^{m}\sum_{j=1}^{n}\underbrace{S\left(Y_{i}-X_{j}\right)}_{T_{ij}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\mathbb{E}\left(W\right)=mnp_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Esta es la esperanza de una indicadora.
+\end_layout
+
+\begin_layout Theorem
+A su vez, 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+ es la integral de la conjunta en la regiøn que define la indicadora.
+ como sonindependientes la conjunta es el producto de las marginales
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+p_{1}=P\left(Y>X\right)=\int_{-\infty}^{+\infty}\int_{x}^{+\infty}g\left(x\right)h\left(y\right)dxdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+p_{1}=\int_{-\infty}^{+\infty}g\left(x\right)\left[H\left(y\right)\bigg|_{x}^{+\infty}\right]dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+p_{1}=\int_{-\infty}^{+\infty}g\left(x\right)\left[1-H\left(x\right)\right]dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Para la otra identidad, parametrizamos la regió con 
+\begin_inset Formula $x\left(y\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+PAra 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+: 
+\begin_inset Formula $P\left(Y_{1}>X_{1};Y_{1}>X_{2}\right)$
+\end_inset
+
+ hacemos 
+\begin_inset Formula $\left(X_{1};Y_{1};Y_{2}\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $x<y_{1}<+\infty$
+\end_inset
+
+, 
+\begin_inset Formula $x<y_{2}<+\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Busca 
+\begin_inset Formula $\mathbb{E}\left(X^{2}\right)$
+\end_inset
+
+ para llegar a la varianza
+\end_layout
+
+\begin_layout Itemize
+Arma casos.
+ El primero es dos pares análogos de índices iguales.
+ El cuadrado de un elemento.
+ Uno primer pensaría en todos los índices iguales, pero estos pares se portan
+ igual ya que, 
+\begin_inset Formula $T_{11}=\begin{cases}
+1 & Y_{1}>X_{1}\\
+0
+\end{cases}=p_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $T_{12}=\begin{cases}
+1 & Y_{2}>X_{1}\\
+0
+\end{cases}$
+\end_inset
+
+ , en ambos casos es la misma probabilidad 
+\begin_inset Formula $p_{1}=P\left(Y>X\right)$
+\end_inset
+
+.
+ Son todas indicadoras con la misma probabilidad.
+ Entonces son 
+\begin_inset Formula $n\cdot m$
+\end_inset
+
+ términos donde el primer índice de cada una de las 
+\begin_inset Formula $T$
+\end_inset
+
+ es el mismo, tipo 
+\begin_inset Formula $T_{1j}T_{1j}=T_{1j}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+DEspués tenemos primeros iguales, segundos distintos.
+\end_layout
+
+\begin_layout Itemize
+Después segundos iguales 
+\begin_inset Formula $T_{11}T_{21}=\begin{cases}
+1 & y_{1}>x_{1}\wedge y_{2}>x_{1}\\
+0 & \text{toc}
+\end{cases}=p_{2}$
+\end_inset
+
+.
+ Puedo elegir de 
+\begin_inset Formula $ijkl$
+\end_inset
+
+ 
+\begin_inset Formula $m$
+\end_inset
+
+para 
+\begin_inset Formula $j$
+\end_inset
+
+ y 
+\begin_inset Formula $l$
+\end_inset
+
+ que son iguales, y para 
+\begin_inset Formula $j$
+\end_inset
+
+ que es lire 
+\begin_inset Formula $m$
+\end_inset
+
+ y para 
+\begin_inset Formula $k$
+\end_inset
+
+ que no debe ser igual a 
+\begin_inset Formula $i$
+\end_inset
+
+ y 
+\begin_inset Formula $l$
+\end_inset
+
+ tenemos 
+\begin_inset Formula $m-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Distribución asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{W-\mathbb{E}\left(W\right)}{\sqrt{nV\left(W\right)}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Teorema importante: otro teorema central
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{W}=\frac{W}{nm}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\sqrt{n}\left[\overline{W}-\mathbb{E}\left(\overline{W}\right)\right]}{\sqrt{\frac{p_{2}-p_{1}^{2}}{\lambda}+\frac{p_{3}-p_{1}^{2}}{1-\lambda}}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Empezaríamos con
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N=n+m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\sqrt{N}\overline{W}\right)\rightarrow\frac{p_{2}-p_{1}^{2}}{\lambda}+\frac{p_{3}-p_{1}^{2}}{1-\lambda}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calculamos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\sqrt{N}\overline{W}\right)=NV\left(\frac{W}{nm}\right)=\frac{N}{n^{2}m^{2}}V\left(W\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\sqrt{N}\overline{W}\right)=\frac{N}{n^{2}m^{2}}\left[nm\left(p_{1}-p_{1}^{2}\right)+nm\left(m-1\right)\left(p_{2}-p_{1}^{2}\right)+nm\left(n-1\right)\left(p_{3}-p_{1}\right)^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\sqrt{N}\overline{W}\right)=\frac{N}{nm}\left[\left(p_{1}-p_{1}^{2}\right)+\left(m-1\right)\left(p_{2}-p_{1}^{2}\right)+\left(n-1\right)\left(p_{3}-p_{1}\right)^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\sqrt{N}\overline{W}\right)=\left[\left(p_{1}-p_{1}^{2}\right)\frac{1}{\frac{n}{N}m}+\frac{m-1}{\frac{n}{N}m}\left(p_{2}-p_{1}^{2}\right)+\frac{n-1}{\frac{n}{N}m}\left(p_{3}-p_{1}\right)^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El teorema de proyección nos garantiza la convergencia siempre cuando la
+ razó sea proporcional.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{n}{N}\rightarrow\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{m-1}{m}\rightarrow\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\sqrt{N}\overline{W}\right)=\left[\rightarrow0\rightarrow\lambda+\rightarrow1\rightarrow\lambda\left(p_{2}-p_{1}^{2}\right)+\rightarrow1\cdot\rightarrow\left(1-\lambda\right)\left(p_{3}-p_{1}\right)^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Eficacia
+\end_layout
+
+\begin_layout Standard
+Vemos una forma de construirla.
+\end_layout
+
+\begin_layout Standard
+Es múltiplo de la eficacia de 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Esta es la expresión que sirve para definir 
+\begin_inset Formula $\mu_{n}\left(\theta\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\sigma_{n}^{2}\left(\theta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\sqrt{n}\left[\overline{W}-\mathbb{E}\left(\overline{W}\right)\right]}{\sqrt{\frac{p_{2}-p_{1}^{2}}{\lambda}+\frac{p_{3}-p_{1}^{2}}{1-\lambda}}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{E}\left(\overline{W}\right)=nmp_{1}$
+\end_inset
+
+ y bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbb{E}\left(\overline{W}\right)=nm\frac{1}{2}$
+\end_inset
+
+ entonces bajo 
+\begin_inset Formula $H_{0}:p_{1}=\frac{1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(\overline{W}\right)=\mathbb{E}\left(\frac{W}{nm}\right)=p_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\Delta\right)=p_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}\left(\Delta\right)=\frac{p_{2}-p_{1}^{2}}{\lambda}+\frac{p_{3}-p_{1}^{2}}{1-\lambda}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya se probó que bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{1}{\lambda\left(1-\lambda\right)12}=\sigma^{2}\left(0\right)$
+\end_inset
+
+, además
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\sqrt{n}\overline{W}\right)=\frac{N}{n^{2}m^{2}}nm\frac{N+1}{12}=\frac{1}{\frac{n}{N}\frac{m}{N+1}12}\rightarrow\frac{1}{\lambda\left(1-\lambda\right)12}=\sigma^{2}\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Buscamos 
+\begin_inset Formula $c$
+\end_inset
+
+ como es usual.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\Delta\right)=p_{1}=\int_{-\infty}^{\infty}\left[1-H\left(x\right)\right]g\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si bien 
+\begin_inset Formula $H$
+\end_inset
+
+ y 
+\begin_inset Formula $G$
+\end_inset
+
+ son genéricas, acá podemos precisar más a 
+\begin_inset Formula $H\sim F\left(X-\Delta\right)/F\in\Omega_{0}$
+\end_inset
+
+.
+ Podemos derivar bajo el signo de la integral.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G\sim F$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu'\left(\Delta\right)=\int_{-\infty}^{\infty}-f\left(x-\Delta\right)\left(-1\right)g\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu'\left(\Delta\right)=\int_{-\infty}^{\infty}f\left(x-\Delta\right)f\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu'\left(0\right)=\int_{-\infty}^{\infty}f^{2}\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\mu'\left(0\right)}{\sigma\left(0\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\int_{-\infty}^{\infty}f^{2}\left(x\right)dx}{\sqrt{\frac{1}{\lambda\left(1-\lambda\right)12}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se maximiza la eficacia cuando poblacinoes son similares y 
+\begin_inset Formula $\lambda=\frac{n}{N}=\frac{n}{n+m}=\frac{1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Práctica
+\end_layout
+
+\begin_layout Subsection
+1-8
+\end_layout
+
+\begin_layout Standard
+El 
+\begin_inset Formula $s$
+\end_inset
+
+ no es el usual, es el no insesgado.
+ Es un detalle menor.
+\end_layout
+
+\begin_layout Subsection
+1-7-a
+\end_layout
+
+\begin_layout Standard
+Buscamos binomiales hasta lograr un 
+\begin_inset Formula $p$
+\end_inset
+
+ adecuado, 
+\begin_inset Formula $\left(0,057;0,437\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+7c
+\end_layout
+
+\begin_layout Standard
+Intervao de confianza para la mediana.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha=0,1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(B\left(n;\frac{1}{2}\right)\leq k_{1}\right)\leq\frac{\alpha}{2}=0,05
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{1}=5\rightarrow0,0207
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{2}=14\rightarrow0,0207
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[X^{\left(5+1\right)};X^{\left(14+1\right)}\right]f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+9
+\end_layout
+
+\begin_layout Standard
+77
+\end_layout
+
+\begin_layout Standard
+Hay que usar 
+\begin_inset Formula $n/P\left(Bi\left(n;1-q\right)\leq r+m-1\right)\leq\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\alpha=0,1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Rango muestral:
+\begin_inset Formula $1,n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $q=0,95$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r=1$
+\end_inset
+
+ ,
+\begin_inset Formula $m=1$
+\end_inset
+
+.
+ Así encerramos entre el mayor y el menor estadístico el 
+\begin_inset Formula $q\%$
+\end_inset
+
+ de la población.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/P\left(Bi\left(n;0,05\right)\leq1\right)\leq0,1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Buscar lo de la función 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ella planteó un intervalo 
+\begin_inset Formula $\tau=\left[A_{1}\left(\boldsymbol{X}\right);A_{2}\left(\boldsymbol{X}\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left[P\left(X\in\tau|\boldsymbol{X}\right)\geq1\right]=1-\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tau=\left[X^{\left(1\right)};X^{\left(n\right)}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+10
+\end_layout
+
+\begin_layout Standard
+Debe dar 473.
+\end_layout
+
+\begin_layout Standard
+Este tiene 
+\begin_inset Formula $n$
+\end_inset
+
+ muy grande, podría ser mejor usar asintótico.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r=2$
+\end_inset
+
+, 
+\begin_inset Formula $m=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\alpha=0,05$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $q=0,99$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau=\left[0;+\infty\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/P\left(Bi\left(n;1-q\right)\leq n-m\right)\geq\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/P\left(Bi\left(n;0,01\right)\leq2\right)\geq0,95
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/1-\left[P\left(Bi\left(n;0,01\right)=0\right)+P\left(Bi\left(n;0,01\right)=1\right)\right]\geq0,95
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+11
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r=5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $m-1=4$
+\end_inset
+
+, 
+\begin_inset Formula $m=5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a=0,5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\alpha=0,1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/P\left(Bi\left(n;1-q\right)\leq r+m-1\right)\leq\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/P\left(Bi\left(n;\frac{1}{2}\right)\leq9\right)\leq0,1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Práctica 2
+\end_layout
+
+\begin_layout Subsection
+Ej 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k=8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S\sim Bi\left(n=10;p=\frac{1}{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+la probabilidad de mayores o iguales a 8 es 
+\begin_inset Formula $0,0547$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R=\left\{ 8;9;10\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Potencia para 
+\begin_inset Formula $\mathcal{N}\left(1;1\right)$
+\end_inset
+
+.
+ Ahora el parámetro es 
+\begin_inset Formula $\theta=1$
+\end_inset
+
+, estamos en 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{\theta=1}\left[Bi\left(n=10,p\right)\geq8\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p=P\left(X_{i}>0\right)=1-P\left(\frac{X_{i}-1}{1}\leq\frac{0-1}{1}\right)=1-\Phi\left(-1\right)=\Phi\left(1\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

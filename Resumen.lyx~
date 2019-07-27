@@ -1,0 +1,4197 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Métodos No Paramétricos
+\end_layout
+
+\begin_layout Section
+Bases Teóricas
+\end_layout
+
+\begin_layout Subsection
+Eficacia Asintótica de Pitman
+\end_layout
+
+\begin_layout Subsubsection
+Definición
+\end_layout
+
+\begin_layout Standard
+Para las mismas hipótesis sobre la distribución 
+\begin_inset Formula $F\left(X;\theta\right)$
+\end_inset
+
+, 
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+, se dispone de las pruebas 
+\begin_inset Formula $\left\{ \Phi_{n}^{\left(1\right)}\left(\boldsymbol{X}\right)\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $\left\{ \Phi_{n}^{\left(2\right)}\left(\boldsymbol{X}\right)\right\} $
+\end_inset
+
+.
+ Ambas tienen nivel asintótico 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi_{n}^{\left(1\right)}\left(\boldsymbol{X}\right)=\begin{cases}
+1 & T_{n}^{\left(1\right)}\geq k_{n}^{\left(1\right)}\\
+0 & T_{n}^{\left(1\right)}<k_{n}^{\left(1\right)}
+\end{cases}/P_{H_{0}}\left(T_{n}^{\left(1\right)}\geq k_{n}^{\left(1\right)}\right)\rightarrow\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi_{n}^{\left(2\right)}\left(\boldsymbol{X}\right)=\begin{cases}
+1 & T_{n}^{\left(2\right)}\geq k_{n}^{\left(2\right)}\\
+0 & T_{n}^{\left(2\right)}<k_{n}^{\left(2\right)}
+\end{cases}/P_{H_{0}}\left(T_{n}^{\left(2\right)}\geq k_{n}^{\left(2\right)}\right)\rightarrow\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $\beta\in\left(\alpha;1\right)$
+\end_inset
+
+ y dada una sucesión de alternativas 
+\begin_inset Formula $\left\{ \theta_{j}\right\} /\lim_{j}\theta_{j}=0$
+\end_inset
+
+, contiguas.
+\end_layout
+
+\begin_layout Standard
+Definimos la eficiencia como la razón entre las sucesiones de tamaños de
+ muestras que garantizan un nivel 
+\begin_inset Formula $\beta$
+\end_inset
+
+ asintóticamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{j}P_{\theta_{j}}\left(T_{n_{j}^{\left(1\right)}}^{\left(1\right)}\geq k_{n_{j}^{\left(1\right)}}^{\left(1\right)}\right)=\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{j}P_{\theta_{j}}\left(T_{n_{j}^{\left(2\right)}}^{\left(2\right)}\geq k_{n_{j}^{\left(2\right)}}^{\left(2\right)}\right)=\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Eficiencia Asintótica Relativa
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\lim_{j}\frac{n_{j}^{\left(2\right)}}{n_{j}^{\left(1\right)}}=e_{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+En los casos en que 
+\begin_inset Formula $e_{12}$
+\end_inset
+
+ existe y no depende de la sucesión de alternativas, de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ ni de 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Condición Necesaria
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $T_{n}$
+\end_inset
+
+ provee una prueba consistente.
+\end_layout
+
+\begin_layout Enumerate
+Existen las sucesiones 
+\begin_inset Formula $\left\{ \mu_{n}\left(\theta\right)\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $\left\{ \sigma_{n}\left(\theta\right)\right\} $
+\end_inset
+
+ para las cuales el siguiente límite se cumple uniformente en un entorno
+ de 
+\begin_inset Formula $0$
+\end_inset
+
+: 
+\begin_inset Formula $\frac{T_{n}-\mu_{n}\left(\theta\right)}{\sigma_{n}\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Existe 
+\begin_inset Formula $\frac{\partial\mu_{n}}{\partial\theta}\left(\theta\right)\bigg|_{\theta=0}=\mu_{n}\left(\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Disponemos de una sucesión de alternativas contiguas que tienden a 0 
+\begin_inset Formula $\left\{ \theta_{n}\right\} /\theta_{n}\rightarrow0$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\sigma_{n}\left(\theta_{n}\right)}{\sigma_{n}\left(0\right)}\rightarrow0$
+\end_inset
+
+ y 
+\begin_inset Formula $\frac{\mu_{n}'\left(\theta_{n}\right)}{\mu_{n}\left(0\right)}\rightarrow1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\lim_{n\rightarrow\infty}\frac{\mu_{n}\left(0\right)}{\sqrt{n}\sigma_{n}\left(0\right)}=c>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En este caso, la cantidad 
+\begin_inset Formula $c$
+\end_inset
+
+ es la eficacia de la prueba basada en 
+\begin_inset Formula $T_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Es deseable una eficacia relativamene alta.
+\end_layout
+
+\begin_layout Subsubsection
+Simplificación.
+\end_layout
+
+\begin_layout Standard
+Se puede lograr hacer más sencillas estas condiciones si se construye la
+ prueba de tal forma que se cumple: 
+\begin_inset Formula $T_{n}\overset{\mathcal{P}}{\rightarrow}\mu\left(\theta\right)$
+\end_inset
+
+ o 
+\begin_inset Formula $\mathbb{E}\left(T_{n}\right)\rightarrow\mu\left(\theta\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $n\cdot\text{Var}\left(T_{n}\right)\rightarrow\sigma^{2}\left(\theta\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Estas condiciones permiten tomar
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{n}\left(\theta\right)=\mu\left(\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{n}\left(\theta\right)=\frac{\sigma^{2}\left(\theta\right)}{\sqrt{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\mu'\left(0\right)}{\sigma\left(0\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Teoremas Útiles
+\end_layout
+
+\begin_layout Subsubsection
+Teorema de Berry Esseen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Chung, 1968.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Dadas 
+\begin_inset Formula $\boldsymbol{X}=\left(X_{i}\right)_{i=1}^{n}$
+\end_inset
+
+ iid tales que 
+\begin_inset Formula $\mathbb{E}\left(X_{i}\right)=\mu$
+\end_inset
+
+ y 
+\begin_inset Formula $\text{Var}\left(X_{i}\right)=\sigma^{2}/\sigma^{2}\in\left(0;\infty\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{E}\left(\left|X_{i}-\mu\right|^{3}\right)=\rho^{3}/\rho^{3}\in\left(0;\infty\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\exists d\in\mathbb{R}$
+\end_inset
+
+ tal que para todo 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\left|P\left(\frac{\overline{X}-\mu}{\sigma}\leq t\right)-\Phi\left(t\right)\right|\leq\frac{d\rho^{3}}{\sqrt{n}\cdot\sigma^{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Prueba Binomial
+\end_layout
+
+\begin_layout Subsection
+Caso General
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $\boldsymbol{X}=\left(X_{i}\right)_{i=1}^{n}/\forall i:X_{i}\sim Bi\left(1;p\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T=\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T\sim Bi\left(n;p\right)$
+\end_inset
+
+.
+ Típicamente requiere aleatorizar si se desea una prueba de nivel exacto.
+\end_layout
+
+\begin_layout Subsubsection
+Prueba Bilateral
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:p=p_{0};H_{1}:p\neq p_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & \text{si }T>k_{2}\text{ o }T<k_{1}\\
+0 & \text{si }k_{1}<T\leq k_{2}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{1};k_{2}/P_{p_{0}}\left(T\le k_{1}\right)=\alpha_{1}\wedge P_{p_{0}}\left(T\geq k_{2}\right)=\alpha_{2}\wedge\alpha_{1}+\alpha_{2}=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Pareja óptima de 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+P_{p_{0}}\left(T\leq k_{1}\right)+P_{p_{0}}\left(T>k_{2}\right)=\alpha\\
+\mathbb{E}\left[T\cdot\Phi\left(T\right)\right]=n\cdot\alpha\cdot p_{0}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+valor p
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+pv=2\cdot\text{mín}\left\{ P\left(T\leq T_{obs}\right);P\left(T>T_{obs}\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este fue discutido y propusimos otras alternativas.
+\end_layout
+
+\begin_layout Subsubsection
+Pruebas Unilaterales
+\end_layout
+
+\begin_layout Standard
+Estas dos pruebas son UMP para su nivel.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+H_{0}:p\geq p_{0};H_{1}:p<p_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & \text{si }T\leq k\\
+0 & \text{si }T>k
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k/P_{p_{0}}\left(T\leq k\right)=\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+pv=P_{p_{0}}\left(T\leq T_{\text{obs}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+H_{0}:p\leq p_{0};H_{1}:p>p_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & \text{si }T>k\\
+0 & \text{si }T\leq k
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+pv=P_{p_{0}}\left(T>T_{\text{obs}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k/P_{p_{0}}\left(T>k\right)=\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Prueba Asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T-np}{\sqrt{np\left(1-p\right)}}\sim\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Intervalos de Confianza para Probabilidad o Proporción, de nivel exacto.
+\end_layout
+
+\begin_layout Standard
+Para la prueba bilateral, la A.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathcal{A}=\left\{ T/k_{1}\leq T<k_{2}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{1}=k/P_{p_{o}}\left(T\leq k_{1}\left(p_{0};\frac{\alpha}{2}\right)\right)=\frac{\alpha}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{2}=k/P_{p_{o}}\left(T>k_{2}\left(p_{0};\frac{\alpha}{2}\right)\right)=\frac{\alpha}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Intervalos para Proporción
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I=\left(\hat{p}_{Inf};\hat{p}_{Sup}\right)/
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}_{Inf}=k_{2}^{-1}\left(T-1;\frac{\alpha}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{p}_{Inf}/P\left[Bi\left(n;\hat{p}_{Inf}\right)\leq T-1\right]=1-\frac{\alpha}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}_{Sup}=k_{1}^{-1}\left(T;\frac{\alpha}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{p}_{sup}/P\left[Bi\left(n;\hat{p}_{Sup}\right)\leq T\right]=\frac{\alpha}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Agregar Demostración
+\end_layout
+
+\begin_layout Subsubsection
+Aproximación Normal, para 
+\begin_inset Formula $n>30$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}_{Inf}=\frac{X}{n}-z_{\nicefrac{\alpha}{2}}\sqrt{\frac{1}{n}\frac{X}{n}\left(1-\frac{X}{n}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}_{Sup}=\frac{X}{n}+z_{\nicefrac{\alpha}{2}}\sqrt{\frac{1}{n}\frac{X}{n}\left(1-\frac{X}{n}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $X=T_{\text{obs}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Prueba para Cuantiles
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:X_{p_{0}}=x_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Traducible a
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+En el caso continuo es directamente 
+\begin_inset Formula $P\left(X\leq x_{0}\right)=p_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:P\left(X\leq x_{0}\right)\geq p_{0}\wedge P\left(X<x_{0}\right)\leq p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y=\underset{\left\{ X\leq x_{0}\right\} }{\mathbb{I}\left(x\right)}/Y\sim Bi\left(1;p\right)\wedge p=F\left(x_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z=\underset{\left\{ X<x_{0}\right\} }{\mathbb{I}\left(x\right)}/Z\sim Bi\left(1;\tilde{p}\right)\wedge\tilde{p}=P\left(X<x_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Volvemos a traducir las hipótesis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:p\geq p_{0}\wedge\tilde{p}\leq p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este problema puede ser adaptado a la prueba binomial.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{1}=\sum_{i=1}^{n}Y_{i}\Rightarrow T_{1}\sim Bi\left(n;p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{2}=\sum_{i=1}^{n}Z_{i}\Rightarrow T_{2}\sim Bi\left(n;\tilde{p}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Prueba Bilateral A
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:x_{p_{0}}=x_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:x_{p_{0}}\neq x_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Traducibles a 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+H_{0}:p\geq p_{0}\wedge\tilde{p}\leq p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+H_{1}:p<p_{0}\vee\tilde{p}>p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & T_{1}\geq k_{1}\left(p_{0};\alpha_{1}\right)\vee T_{2}>k_{2}\left(p_{0};\alpha_{2}\right)\\
+0 & \text{Toc}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha_{1}+\alpha_{2}=\alpha$
+\end_inset
+
+ y los 
+\begin_inset Formula $k$
+\end_inset
+
+ definidos como siempre.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{1}/P\left(Bi\left(n;p_{0}\right)\leq k_{1}\left(p_{0};\alpha_{1}\right)\right)=\alpha_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{2}/P\left(Bi\left(n;p_{0}\right)>k_{2}\left(p_{0};\alpha_{2}\right)\right)=\alpha_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Aproximación normal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{1}\left(p_{0};\alpha_{1}\right)=np_{0}-z_{\alpha_{1}}\sqrt{np_{0}\left(1-p_{0}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{2}\left(p_{0};\alpha_{2}\right)=np_{0}+z_{\alpha_{2}}\sqrt{np_{0}\left(1-p_{0}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Prueba de mayor o igual contra menor, caso B.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:x_{p_{0}}\geq x_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:x_{p_{0}}<x_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos buscar las equivalentes en el caso continuo:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+H_{0}:\tilde{p}\leq p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+H_{1}:\tilde{p}>p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & T_{2}>k\left(p_{0};\alpha\right)\\
+0 & \text{Toc}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k/P\left(Bi\left(n;p_{0}\right)>k\left(p_{0};\alpha\right)\right)=\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Menor o igual contra mayor, C.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+H_{0}:p\geq p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+H_{1}:p<p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & T_{1}\leq k\left(p_{0};\alpha\right)\\
+0 & \text{Toc}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k/P\left(Bi\left(n;p_{0}\right)\leq k\left(p_{0};\alpha\right)\right)=\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Intervalo De Confianza
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(X^{\left(r\right)};X^{\left(s\right)}\right)/P\left(X^{\left(r\right)}\leq x_{p}\leq X^{\left(s\right)}\right)=1-\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Método A:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{1}/P\left(Bi\left(n;p_{0}\right)\leq k_{1}\left(p_{0};\nicefrac{\alpha}{2}\right)\right)=\frac{\alpha}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{2}/P\left(Bi\left(n;p_{0}\right)>k_{2}\left(p_{0};\nicefrac{\alpha}{2}\right)\right)=\frac{\alpha}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r=k_{1}+1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s=k_{2}+1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[X^{\left(r\right)};X^{\left(s\right)}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+El razonamiento tras esto es que la probabilidad de que 
+\begin_inset Formula $x_{p_{0}}<X^{\left(r\right)}$
+\end_inset
+
+ (complemento de la deseada) es la probabilidad de que los primeros 
+\begin_inset Formula $r$
+\end_inset
+
+ elementos sean menores a 
+\begin_inset Formula $x_{p_{0}}$
+\end_inset
+
+ es decir la suma de los primeros 
+\begin_inset Formula $r$
+\end_inset
+
+ casos de la binomial ajustando 
+\begin_inset Formula $r-1$
+\end_inset
+
+ para lograr probabilidad 
+\begin_inset Formula $\alpha_{1}=\frac{\alpha}{2}$
+\end_inset
+
+ .
+ Idénticamente se ajusta 
+\begin_inset Formula $n$
+\end_inset
+
+ para que los últimos casos de 
+\begin_inset Formula $s$
+\end_inset
+
+ a 
+\begin_inset Formula $n$
+\end_inset
+
+ totalicen probabilidad 
+\begin_inset Formula $\alpha_{2}=\frac{\alpha}{2}$
+\end_inset
+
+, ubicando 
+\begin_inset Formula $X^{\left(s\right)}>x_{p_{0}}$
+\end_inset
+
+ con probabilidad 
+\begin_inset Formula $\alpha_{2}$
+\end_inset
+
+.
+ La probabilidad deseada es 
+\begin_inset Formula $1-\alpha_{1}-\alpha_{2}=1-\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Método B, asintótico:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{1}\left(p_{0};\nicefrac{\alpha}{2}\right)=np_{0}-z_{\nicefrac{\alpha}{2}\sqrt{np_{0}\left(1-p_{0}\right)}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{2}\left(p_{0};\nicefrac{\alpha}{2}\right)=np_{0}+z_{\nicefrac{\alpha}{2}\sqrt{np_{0}\left(1-p_{0}\right)}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r=\left[k_{1}\right]+1$
+\end_inset
+
+ y 
+\begin_inset Formula $s=\left[k_{2}\right]+1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[X^{\left(r\right)};X^{\left(s\right)}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Límites de Tolerancia
+\end_layout
+
+\begin_layout Definition
+Un límite de tolerancia es un intervalo que contiene una proporción de la
+ poblaciónl con alta probabilidad, 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+n/P\left(\frac{\#\left\{ i/X_{i}\in\left[X^{\left(r\right)};X^{\left(n+1-m\right)}\right]\right\} }{n}=q\right)\ge1-\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Desarrollo del Problema
+\end_layout
+
+\begin_layout Standard
+Es similar al intervalo de confianza, por ejemplo para el caso unilateral:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(x_{q}\leq X^{\left(n+1-m\right)}\right)\geq1-\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta probabilidad es la suma de las probabilidades de los primeros 
+\begin_inset Formula $n-m+1$
+\end_inset
+
+ valores de una variable binomial 
+\begin_inset Formula $Bi\left(q;n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/P\left(Bi\left(n;q\right)\leq n-m\right)\geq1-\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para el otro unilateral
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/P\left(Bi\left(n;1-q\right)\leq r-1\right)\geq\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bilateral
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n/P\left(Bi\left(n;1-q\right)\leq r+m-1\right)\leq\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n=\frac{1}{4}\chi_{1-\alpha;2\left(r+m\right)}\frac{1+q}{1-q}+\frac{1}{2}\left(r+m-1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Prueba del Signo
+\end_layout
+
+\begin_layout Definition
+Familia 
+\begin_inset Formula $\Omega_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+F\in\Omega_{0}\Leftrightarrow F\left(0\right)=\frac{1}{2};0\in\mathcal{C}\left(F\right);0\in C\uparrow\left(F\right)=\mathbb{R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Es decir, funciones de mediana única en 0, absolutamente continuas y crecientes
+ en 0.
+\end_layout
+
+\begin_layout Subsection
+Modelo de Posición
+\end_layout
+
+\begin_layout Subsubsection
+A
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X\sim F\left(x-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Ambas alternativas son compuestas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s\left(X_{i}\right)=\underset{\left\{ x/x>0\right\} }{\mathbb{I}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\#\left\{ i/X_{i}>0\right\} =\sum s\left(X_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=1\Leftrightarrow S\leq k\vee S\geq n-k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k/P\left(Bi\left(n;\frac{1}{2}\right)\leq k\right)=\frac{\alpha}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Versión Asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=\frac{n}{2}-z_{\frac{\alpha}{2}}\sqrt{\frac{n}{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+B 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta<0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=1\Leftrightarrow S\leq k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k/P\left(Bi\left(n;\frac{1}{2}\right)\leq k\right)=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O bien
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=\frac{n}{2}-z_{\frac{\alpha}{2}}\sqrt{\frac{n}{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+C
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=1\Leftrightarrow S\geq k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k/P\left(Bi\left(n;\frac{1}{2}\right)\geq k\right)=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O bien
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=\frac{n}{2}+z_{\frac{\alpha}{2}}\sqrt{\frac{n}{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $S$
+\end_inset
+
+ es de distribución libre.
+\end_layout
+
+\begin_layout Subsection
+La prueba es IUMP para la hipótesis bilateral y UMP para las unilaterales.
+\end_layout
+
+\begin_layout Subsubsection
+Función de potencia asintótica para el caso unilateral C
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi\left(\theta\right)=P_{\theta}\left(S\geq k\right)=P_{\theta}\left(Bi\left(n;p\right)\geq k\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p=P_{\theta}\left(X>0\right)>\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta función de potencia es una función creciente de 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para 
+\begin_inset Formula $n$
+\end_inset
+
+ grande bajo 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\theta_{1}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{S-n\left(1-F\left(-\theta_{1}\right)\right)}{\sqrt{nF\left(-\theta_{1}\right)\cdot\left(1-F\left(-\theta_{1}\right)\right)}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Prueba del Signo
+\end_layout
+
+\begin_layout Subsubsection
+Hipótesis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\{ \left(X_{i};Y_{i}\right)\right\} _{i=1}^{n}/D_{i}=Y_{i}-X_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\#\left\{ i/D_{i}>0\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(D_{i}=0\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta prueba permite estudiar la diferencia entre las medianas de dos muestras
+ 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ e 
+\series bold
+
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Este diseño reduce la comparación de muestras a la prueba binomial sobre
+ la nueva variable 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+, siendo 
+\begin_inset Formula $S=\sum D_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Los empates se eliminan.
+ Esto resulta en una prueba conservadora.
+\end_layout
+
+\begin_layout Standard
+*****Ya que se reduce la probabilidad de error de tipo I y se pierde potencia.
+\end_layout
+
+\begin_layout Itemize
+No se pide idéntica distribución entre las hipótesis, por eso todo el tiempo
+ hablamos de distribuciones 
+\begin_inset Formula $F_{i}$
+\end_inset
+
+.
+ Probamos todas las medianas a la vez.
+\end_layout
+
+\begin_layout Subsubsection
+Caso A, prueba bilateral.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:P\left(X_{i}>0\right)=P\left(X_{i}<0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:P\left(X_{i}>0\right)\neq P\left(X_{i}<0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Caso B.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:P\left(X_{i}>0\right)\geq P\left(X_{i}<0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:P\left(X_{i}>0\right)<P\left(X_{i}<0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Caso C
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:P\left(X_{i}>0\right)\leq P\left(X_{i}<0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:P\left(X_{i}>0\right)>P\left(X_{i}<0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Prueba para diferencia de medianas
+\end_layout
+
+\begin_layout Standard
+En este caso, las parejas provienen de una población de pares formados aleatoria
+ e independientemente.
+ 
+\end_layout
+
+\begin_layout Standard
+Se trata a los sujetos 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ en cada par 
+\begin_inset Formula $\left(X_{i};Y_{i}\right)$
+\end_inset
+
+ y se estudia la función 
+\begin_inset Formula $D_{i}=Y_{i}-X_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ahora la 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ indica que el tratamiento no tiene efecto y 
+\begin_inset Formula $D_{i}\sim-D_{i}$
+\end_inset
+
+, es decir que la distribución es simétrica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D_{i}\sim F_{i}/F_{i}$
+\end_inset
+
+es simétrica.
+\end_layout
+
+\begin_layout Standard
+Vamos a estudiar el corrimiento de la la mediana la distribución de la muestra
+ de diferencias respecto a la hipótesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{i}\left(x\right)=G_{i}\left(x-\Delta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left(D_{i}=0\right)=0$
+\end_inset
+
+, se rechazan los empates
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Ver bien en qué sentido la prueba así es conservadora.
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Remark
+La hipótesis es sobre la mediana de las diferencias y no la diferencia entre
+ medianas.
+\end_layout
+
+\begin_layout Remark
+Aplicamos la prueba del signo con 
+\begin_inset Formula $\theta=\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Intervalos de Confianza y Estimador Puntual Deducidos de una Prueba
+\end_layout
+
+\begin_layout Subsection*
+Ejemplo: Prueba 
+\begin_inset Formula $T$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Podemos expresar el estadístico de la prueba como una función lineal del
+ valor real del parámetro.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t\left(\theta\right)=\frac{\overline{X}-\theta}{\sqrt{n}\cdot s}=-\frac{1}{\sqrt{n}\cdot s}\cdot\theta+\frac{\overline{X}}{\sqrt{n}\cdot s}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el eje de abcisas está el espacio paramétrico.
+ 
+\end_layout
+
+\begin_layout Itemize
+En el eje de ordenadas está el espacio muestral.
+ Además, trazamos sobre estos valores el gráfico de la densidad con la región
+ de aceptación para 
+\begin_inset Formula $\theta_{H_{0}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto es
+\end_layout
+
+\begin_layout Enumerate
+Trazamos una recta en función de la distribución del estadístico y del valor
+ observado.
+\end_layout
+
+\begin_layout Enumerate
+Para diversos 
+\begin_inset Formula $\theta$
+\end_inset
+
+ nos indica en qué región del intervalo están (dentro o fuera del intervalo).
+ En particular, los límites 
+\begin_inset Formula $\hat{\theta}_{inf}$
+\end_inset
+
+ y 
+\begin_inset Formula $\hat{\theta}_{sup}$
+\end_inset
+
+ son las abcisas de los puntos límite de la región de aceptación.
+ Es decir, las preimágenes de los puntos de corte que esta aporta al eje
+ vertical.
+\end_layout
+
+\begin_layout Enumerate
+Al valor 
+\begin_inset Formula $\overline{X}$
+\end_inset
+
+ le corresponde 
+\begin_inset Formula $t\left(\theta\right)=0$
+\end_inset
+
+, el punto de simetría de la función de distribución bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+ En pruebas razonables esto nos va a levar a la moda de la misma.
+\end_layout
+
+\begin_layout Subsection
+Generalización
+\end_layout
+
+\begin_layout Standard
+El valor que asignamos a 
+\begin_inset Formula $t\left(\theta\right)$
+\end_inset
+
+ es el punto de simetría de la distribución bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, como hicimos 
+\end_layout
+
+\begin_layout Subsection
+Prueba del Signo
+\end_layout
+
+\begin_layout Standard
+Redefinimos 
+\begin_inset Formula $S\left(\theta\right)=\#\left\{ i/X_{i}>\theta\right\} =\#\left\{ i/X^{\left(i\right)}>\theta\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Esto nos permite escribir en el eje de los sucesivos estadísticos de orden,
+ que son los puntos donde la distribución de 
+\begin_inset Formula $S\left(\theta\right)$
+\end_inset
+
+, que es una función escalera no creciente.
+\end_layout
+
+\begin_layout Standard
+Estos van apareados a su probabilidad en la distribución de 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, que distribuye 
+\begin_inset Formula $Bi\left(n;\frac{1}{2}\right)$
+\end_inset
+
+.
+ La función es decreciente porque 
+\begin_inset Formula $S\left(\theta\right)$
+\end_inset
+
+ son los elementos mayores que cada estadístico de orden y por tanto es
+ máxima para 
+\begin_inset Formula $X^{\left(1\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X^{\left(k+1\right)}\leq\theta<X^{\left(n-k\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+***************¿No es una función decreciente del estadístico?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\left(X^{\left(n-k\right)}\right)<S\left(\theta\right)\leq S\left(X^{\left(k+1\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n-\left(n-k\right)<S\left(\theta\right)\leq n-\left(k+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k+1\leq S\left(\theta\right)\leq n-k-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Elijamos los valores de 
+\begin_inset Formula $k$
+\end_inset
+
+ que garantizan que una distribución binomial peretenzca al intervalo deseado,
+ y estos valen para el estimador:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k/S\left(\theta\right)\sim Bi\left(n;\frac{1}{2}\right):P\left(S\left(\theta\right)\leq n-k-1\right)\leq\frac{\alpha}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\left[X^{\left(k+1\right)};X^{\left(n-k\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si la distribución es continua, consideramos el intervado cerrado sencillamente.
+\end_layout
+
+\begin_layout Subsubsection
+Estimador de 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Cuando 
+\begin_inset Formula $n$
+\end_inset
+
+ es par, dado que vamos a adoptar el punto de simetría, tomamos 
+\begin_inset Formula $\frac{n}{2}$
+\end_inset
+
+ que es el el punto de simetría para una binomial con 
+\begin_inset Formula $p=\frac{1}{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $n=2m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}=\begin{cases}
+\frac{X^{\left(\frac{n}{2}\right)}+X^{\left(\frac{n}{2}+1\right)}}{2} & n=2m\\
+X^{m+1} & n=2m+1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estimador de Hodges-Lehman
+\end_layout
+
+\begin_layout Standard
+Es una generalización del proceso recién realizado.
+ 
+\end_layout
+
+\begin_layout Standard
+Se considera sobre 
+\begin_inset Formula $\left(X_{i}-\theta\right)_{i=1}^{n}$
+\end_inset
+
+ un estadístico que es una función no creciente de 
+\begin_inset Formula $\theta,$
+\end_inset
+
+
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+.
+ Su distribución en 
+\begin_inset Formula $H_{0}:V\left(0\right)$
+\end_inset
+
+, llamada 
+\begin_inset Formula $V$
+\end_inset
+
+, es simétrica en torno a un valor 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta^{*}=\text{sup}\left\{ V\left(\theta\right)/V\left(\theta\right)>\mu_{0}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta^{**}=\text{inf}\left\{ V\left(\theta\right)/V\left(\theta\right)<\mu_{0}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Es decir, en la medida en que 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ decrece al incrementar 
+\begin_inset Formula $\theta,$
+\end_inset
+
+primero pasamos por el punto 
+\begin_inset Formula $\theta^{*}$
+\end_inset
+
+ que es el último valor mayor que 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+ y después por 
+\begin_inset Formula $\theta^{**}$
+\end_inset
+
+ que es el primer valor menor que 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}=\frac{\theta^{**}+\theta^{*}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Intervalos obtenidos por Hodges-Lehman:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{1};C_{2}/P\left(V\geq C_{1}\right)=P\left(V\leq C_{2}\right)=\frac{\alpha}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estos valores permiten hallar los límites de los intervalos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}_{inf}=\text{inf}\left\{ \theta/V\left(\theta\right)<C_{1}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}_{sup}=\sup\left\{ \theta/V\left(\theta\right)>C_{2}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Es decir: si incremento 
+\begin_inset Formula $\theta$
+\end_inset
+
+ de tal forma que 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ decrece, primero cruzamos en las ordenadas por el valor 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+.
+ El primer valor que cruza 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ va a ser el ínfimo.
+ Este es el que asociamos al intervalo.
+ Si seguimos incrementando 
+\begin_inset Formula $\theta$
+\end_inset
+
+ de tal forma que 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ sigue decreciendo, eventualmente cruza 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+.
+ Tomamos el último punto dentro del intervalo, es decir el supremo entre
+ los que aún no lo cruzaron, que aún tienen 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ mayor a 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\left[\hat{\theta}_{inf};\hat{\theta}_{sup}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{\theta}_{inf}$
+\end_inset
+
+ y 
+\begin_inset Formula $\hat{\theta}_{sup}$
+\end_inset
+
+ son invariantes por traslaciones: 
+\begin_inset Formula $\hat{\theta}\left[\left(X_{1}+a;X_{2}+a...\right)\right]=\hat{\theta}\left[\left(X_{1};X_{2}...\right)\right]+a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La consecuencia fundamental de esto es que para buscar propiedades asintóticas
+ trabajamos sin pérdida de generalidad con 
+\begin_inset Formula $\theta=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ el estimador de H-L correspondiente a 
+\begin_inset Formula $V_{n}$
+\end_inset
+
+ que cumple las 5 condiciones de Pitman.
+ Entonces
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\lim_{n}P\left[\sqrt{n}\left(\hat{\theta}_{n}-\theta\right)\leq a\right]=\Phi\left(ac\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\sqrt{n}\left(\hat{\theta}_{n}-\theta\right)\leq a\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;\frac{1}{c^{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Es decir que la eficiencia asintótica relativa de esta prueba es 
+\begin_inset Formula $c$
+\end_inset
+
+, la de la prueba de estadístico 
+\begin_inset Formula $V$
+\end_inset
+
+ asociada.
+\end_layout
+
+\begin_layout Subsection
+Estabilidad
+\end_layout
+
+\begin_layout Subsubsection
+Tolerancia
+\end_layout
+
+\begin_layout Standard
+Dado un estimador 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+, sea 
+\begin_inset Formula $a\in\mathbb{N}/$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $X^{\left(a+1\right)}\leq\hat{\theta}\leq X^{\left(n-a\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Si para valores fijos en los 
+\begin_inset Formula $\left\{ X^{\left(i\right)}\right\} _{i=a+2}^{n}$
+\end_inset
+
+ si 
+\begin_inset Formula $X^{\left(a+1\right)}\rightarrow-\infty\Rightarrow\hat{\theta}\rightarrow-\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Si para valores fijos en los 
+\begin_inset Formula $\left\{ X^{\left(i\right)}\right\} _{i=1}^{n-a-1}$
+\end_inset
+
+ si 
+\begin_inset Formula $X^{\left(n-a\right)}\rightarrow+\infty\Rightarrow\hat{\theta}\rightarrow+\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $a^{*}$
+\end_inset
+
+ es el menor entero que satisface estas condiciones, entonces el estimador
+ 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ tolera a lo sumo 
+\begin_inset Formula $a^{*}$
+\end_inset
+
+ observaciones adulteradas.
+\end_layout
+
+\begin_layout Definition
+Tolerancia 
+\begin_inset Formula $\tau_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\tau_{n}=\frac{a^{*}}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Punto de ruptura o tolerancia asintótica:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\lim_{n}\tau_{n}=pr
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tolerancias de Aceptación y Rechazo
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $V_{n}$
+\end_inset
+
+ el estadístico de la prueba 
+\begin_inset Formula $\Phi_{n}$
+\end_inset
+
+ para 
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Phi_{n}$
+\end_inset
+
+ rechaza 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ si 
+\begin_inset Formula $V_{n}\geq k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Tolerancia de aceptación.
+\end_layout
+
+\begin_layout Definition
+Si es posible para toda muestra 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ fijar algún 
+\begin_inset Formula $a\in\mathbb{N}$
+\end_inset
+
+ tal que fijando su segmento final 
+\begin_inset Formula $\left\{ X_{i}\right\} _{i=a+2}^{n}$
+\end_inset
+
+ es posible encontrar valores del elemento incial 
+\begin_inset Formula $\left\{ X_{i}\right\} _{i=1}^{a+1}$
+\end_inset
+
+ tales que 
+\begin_inset Formula $V<k$
+\end_inset
+
+, siendo 
+\begin_inset Formula $a^{*}$
+\end_inset
+
+ el menor de estos valores, 
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\tau_{n}\left(\text{aceptación}\right)=\frac{a^{*}}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+El estadístico 
+\begin_inset Formula $V$
+\end_inset
+
+ 
+\emph on
+resiste
+\emph default
+ precisamente 
+\begin_inset Formula $a$
+\end_inset
+
+ elementos contaminados antes de cambiar su valor 
+\emph on
+natural
+\emph default
+ a uno 
+\emph on
+forzado a aceptar
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Tolerancia de rechazo.
+\end_layout
+
+\begin_layout Definition
+Es el menor valor de 
+\begin_inset Formula $b^{*}$
+\end_inset
+
+ tal que si se fija el segmento final de la muestra 
+\begin_inset Formula $\left\{ X_{i}\right\} _{i=b+2}^{n}$
+\end_inset
+
+ siempre se puede definir 
+\begin_inset Formula $\left\{ X_{i}\right\} _{i=1}^{b+1}$
+\end_inset
+
+ de modo que 
+\begin_inset Formula $V\geq k$
+\end_inset
+
+, es decir un rechazo forzado.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\tau_{n}\left(\text{rechazo}\right)=\frac{b^{*}}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark*
+Buscar obras de Ylvisacker.
+\end_layout
+
+\begin_layout Section
+Aplicaciones de la Prueba del Signo
+\end_layout
+
+\begin_layout Subsection
+Prueba de McNemar para la significación de cambios
+\end_layout
+
+\begin_layout Itemize
+Los pares 
+\begin_inset Formula $\left(X_{i};Y_{i}\right)$
+\end_inset
+
+ son VA independientes donde 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ representa el valor original en una variable dicotómica y 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ un valor posterior.
+\end_layout
+
+\begin_layout Itemize
+La diferencia 
+\begin_inset Formula $P\left[\left(1;0\right)\right]-P\left[\left(0;1\right)\right]$
+\end_inset
+
+ tiene signo constante (positivo, negativo o nulo).
+\end_layout
+
+\begin_layout Itemize
+No es necesaria la hipótesis de idéntica distribución.
+\end_layout
+
+\begin_layout Subsubsection
+Estadístico de la prueba y distribución nula
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tiempo 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tiempo 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a+b
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+d
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c+d
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a+c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b+d
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{1}=\frac{\left(b-c\right)^{2}}{b+c}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $b+c>20$
+\end_inset
+
+, usar 
+\begin_inset Formula $T_{2}=b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(0;1\right)\rightarrow+$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(1;0\right)\rightarrow-$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Los demás son empates.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:p_{+}=\frac{1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{2}^{H_{0}}\sim Bi\left(b+c;\frac{1}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=\frac{b-c}{\sqrt{b+c}}\sim\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Hipótesis:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:P_{+}=P_{1}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{0}:P_{+}\neq P_{1}$
+\end_inset
+
+.
+ Zona de Rechazo:
+\begin_inset Formula $T_{2}\geq b+c-c$
+\end_inset
+
+ o 
+\begin_inset Formula $T_{2}\leq k$
+\end_inset
+
+ y 
+\begin_inset Formula $P\left[Bi\left(b+c;\frac{1}{2}\right)\leq k\right]=\frac{\alpha}{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\left|U\right|\geq z_{\nicefrac{\alpha}{2}}$
+\end_inset
+
+; 
+\begin_inset Formula $T_{1}\geq\chi_{1;\alpha}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:P_{+}=P_{1}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{0}:P_{+}>P$
+\end_inset
+
+.
+ Zona de Rechazo: 
+\begin_inset Formula $T_{2}\geq k$
+\end_inset
+
+ y 
+\begin_inset Formula $P\left[Bi\left(b+c;\frac{1}{2}\right)\geq k\right]=\alpha$
+\end_inset
+
+; 
+\begin_inset Formula $U\geq z_{\alpha}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:P_{+}=P_{1}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{0}:P_{+}<P$
+\end_inset
+
+.
+ Zona de Rechazo: 
+\begin_inset Formula $T_{2}\leq k$
+\end_inset
+
+ y 
+\begin_inset Formula $P\left[Bi\left(b+c;\frac{1}{2}\right)\leq k\right]=\alpha$
+\end_inset
+
+; 
+\begin_inset Formula $U\leq-z_{\alpha}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Cox Stuart para Tendencia
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:P\left(X_{i+N}-X_{i}<0\right)=P\left(X_{i+N}-X_{i}<0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Los empates se eliminan de la muestra.
+\end_layout
+
+\begin_layout Itemize
+Para impares se elimina la observación central.
+\end_layout
+
+\begin_layout Itemize
+Es binomial sobre la cantidad de diferencias positivas.
+\end_layout
+
+\begin_layout Subsubsection
+Correlación
+\end_layout
+
+\begin_layout Standard
+ordenamos de acuerdo a la variable con menos empates y aplicamos el anterior.
+\end_layout
+
+\begin_layout Section
+Wilcoxon
+\end_layout
+
+\begin_layout Subsection
+Variables Involucradas
+\end_layout
+
+\begin_layout Definition
+Rango 
+\begin_inset Formula $R_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Dado un índice 
+\begin_inset Formula $j$
+\end_inset
+
+, indica el rango de la observación con ese índice: 
+\begin_inset Formula $\left|X_{j}\right|=\left|X\right|^{\left(R_{j}\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Va de índice a rango.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Antirango 
+\begin_inset Formula $D_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Dado un rango fijo 
+\begin_inset Formula $j$
+\end_inset
+
+, indica cuál es el índice de la observación que tiene ese rango: 
+\begin_inset Formula $\left|X_{D_{j}}\right|=\left|X\right|^{\left(j\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Va de rango a índice.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $W_{j}=\begin{cases}
+1 & \left|X\right|^{\left(j\right)}\text{ es positiva}\\
+0 & \text{si no}
+\end{cases}$
+\end_inset
+
+, 
+\begin_inset Formula $s\left(X_{j}\right)=\begin{cases}
+1 & X>0\\
+0 & X<0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\sum jW_{j}=\sum R_{j}s\left(X_{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Hipótesis y Regiones
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta\ne0$
+\end_inset
+
+, 
+\begin_inset Formula $R:T^{+}>W_{1-\nicefrac{\alpha}{2}}\cup T^{+}\leq W_{\nicefrac{\alpha}{2}}$
+\end_inset
+
+.
+ Para 
+\begin_inset Formula $n$
+\end_inset
+
+ grande 
+\begin_inset Formula $\left|T\right|>z_{\nicefrac{\alpha}{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta<0$
+\end_inset
+
+, 
+\begin_inset Formula $R:T^{+}>W_{\alpha}$
+\end_inset
+
+, 
+\begin_inset Formula $T^{-}<W_{1-\alpha}$
+\end_inset
+
+.Para 
+\begin_inset Formula $n$
+\end_inset
+
+ grande 
+\begin_inset Formula $T\leq-z_{\alpha}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+, 
+\begin_inset Formula $R:T^{+}>W_{1-\alpha}$
+\end_inset
+
+.
+ Para 
+\begin_inset Formula $n$
+\end_inset
+
+ grande 
+\begin_inset Formula $T>z_{\alpha}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Empates
+\end_layout
+
+\begin_layout Itemize
+Se asigna rango normalmente, despuès se reemplaza los de observacines iguales
+ por su promedio.
+\end_layout
+
+\begin_layout Itemize
+Usar 
+\begin_inset Formula $T=\frac{T^{+}-T^{-}}{\sqrt{\sum R_{i}^{2}}}$
+\end_inset
+
+, distribuye normal estándar.
+ Sin empates es 
+\begin_inset Formula $T=\frac{T^{+}-T^{-}}{\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{6}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Observaciones iguales al valor a probar, 0
+\end_layout
+
+\begin_layout Itemize
+Eliminar los 0 y trabajar con el tamaño d emuestra reducido.
+\end_layout
+
+\begin_layout Itemize
+El otro método requiere tablas especiales o aproximación normal.
+\end_layout
+
+\begin_layout Subsection
+Asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T^{+}-\frac{n\left(n+1\right)}{4}}{\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{24}}}\overset{d}{\rightarrow}\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estimador Puntual e Intervaos por H-L
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}=\text{med}_{i\leq j}\left\{ \frac{X_{i}+X_{j}}{2}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $\left\{ V^{\left(i\right)}\right\} $
+\end_inset
+
+ son los promedios de walsh ordenados y 
+\begin_inset Formula $P\left(T^{+}\leq a\right)=P\left(T^{+}>N-a\right)=\frac{\alpha}{2}$
+\end_inset
+
+ donde 
+\begin_inset Formula $N$
+\end_inset
+
+ es el total de promedios, 
+\begin_inset Formula $\frac{n\left(n+1\right)}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[V^{\left(a+1\right)};V^{\left(N-a\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aproximacion normal a 
+\begin_inset Formula $a$
+\end_inset
+
+, con corrección por continuidad
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\approx\frac{n\left(n+1\right)}{4}-z_{\nicefrac{\alpha}{2}}\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{24}}-\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Prueba para tendencia
+\end_layout
+
+\begin_layout Subsubsection
+Prueba para correlación
+\end_layout
+
+\begin_layout Standard
+*****Es una sola, ¿no?
+\end_layout
+
+\begin_layout Standard
+Se ordena los pares 
+\begin_inset Formula $\left(M_{i};X_{i}\right)$
+\end_inset
+
+ segú 
+\begin_inset Formula $M$
+\end_inset
+
+ y se aplica la prueba de rangos de wilcoxon a
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{i}=\frac{X_{N+i}-X_{i}}{M_{N+i}-M_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Scores
+\end_layout
+
+\begin_layout Standard
+Son funciones que transforman los índices en la definición de los estadísticos
+ basados en rangos o signo con el objeto de aumentar la potencia de las
+ pruebas.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $a\left(\cdot\right)$
+\end_inset
+
+ una sucesión, 
+\begin_inset Formula $V$
+\end_inset
+
+ es el estadístico transformado.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=\sum_{i=1}^{n}a\left(R_{j}\right)s\left(X_{j}\right)=\sum_{i=1}^{n}a\left(j\right)w_{j}=\sum_{i=1}^{n}a\left(j\right)s\left(X_{D_{j}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Propiedad: Esperanza, Varianza y Covarianza de los estadísticos de Scores
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(V_{1}\right)=\frac{1}{2}\sum_{j=1}^{n}a\left(j\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(V_{1}\right)=\frac{1}{4}\sum_{j=1}^{n}a^{2}\left(j\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Cov}\left(V_{1};V_{2}\right)=\frac{1}{4}\sum_{j=1}^{n}a\left(j\right)b\left(j\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Funciones Generadoras de Scores
+\end_layout
+
+\begin_layout Definition
+Función Generadora de Scores 
+\begin_inset Formula $\Psi\left(u\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Psi\left(u\right):\left(0;1\right)\rightarrow\mathbb{R}_{0}^{+}$
+\end_inset
+
+, no decreciente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\int_{0}^{1}\Psi\left(u\right)du<\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $0<\int_{0}^{1}\Psi^{2}\left(u\right)du<\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Estadístico generado por una FGS.
+\end_layout
+
+\begin_layout Definition
+Sea 
+\begin_inset Formula $a\left(i\right)=\Psi\left(\frac{i}{n+1}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\overline{V}=\frac{1}{n}\sum_{i=1}^{n}\Psi\left(\frac{R_{j}}{n+1}\right)s\left(X_{j}\right)=\frac{1}{n}\sum_{i=1}^{n}\Psi\left(\frac{j}{n+1}\right)w_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Esperanza y Varianza y distribución asintótica de un estadístico 
+\begin_inset Formula $\overline{V}$
+\end_inset
+
+ generado por 
+\begin_inset Formula $\Psi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\mathbb{E}\left(\overline{V}\right)=\frac{1}{2n}\sum_{j=1}^{n}\Psi\left(\frac{j}{n+1}\right)\rightarrow\frac{1}{2}\int_{0}^{1}\Psi\left(u\right)du
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+n\mathbb{V}\left(\overline{V}\right)=\frac{1}{4n}\sum_{j=1}^{n}\Psi^{2}\left(\frac{j}{n+1}\right)\rightarrow\frac{1}{4}\int_{0}^{1}\Psi^{2}\left(u\right)du
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset Formula 
+\[
+\frac{\overline{V}-\mathbb{E}\left(\overline{V}\right)}{\sqrt{\text{Var}\left(\overline{V}\right)}}\rightarrow\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ejemplos de Funciones de Scores
+\end_layout
+
+\begin_layout Subsubsection
+Scores Normales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi_{+}\left(x\right)=P\left[\left|Z\right|\leq X\right]=2\Phi\left(x\right)-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+\Psi\left(u\right)=\Phi^{-1}\left(x\right)=\left(\frac{1}{2}+\frac{1}{2}u\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+\overline{V}=\frac{1}{n}\underbrace{\sum_{j=1}^{n}\Phi^{-1}\left(\frac{1}{2}+\frac{1}{2}\frac{R_{j}}{n+1}\right)}_{A_{j}}s\left(X_{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usamos las pruebas asintóticamente normales, para 
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+ rechazamos si 
+\end_layout
+
+\begin_layout Standard
+Armando la prueba con los estimadores de esperanza y varianza dados:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{V}>\frac{1}{2n}\sum_{j=1}^{n}\Psi\left(\frac{j}{n+1}\right)+z_{\alpha}\cdot\frac{1}{\sqrt{n}}\sqrt{\frac{1}{4n}\sum_{j=1}^{n}\Psi^{2}\left(\frac{j}{n+1}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{V}>\frac{1}{2n}\sum_{j=1}^{n}A_{j}+z_{\alpha}\cdot\frac{1}{\sqrt{n}}\sqrt{\frac{1}{4n}\sum_{j=1}^{n}A_{j}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Rangos Signados Winsorizados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Psi:\left(0;1\right)\rightarrow\mathbb{R}_{0}^{+}/\Psi\left(u\right)=\min\left(u;1-\gamma\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{V}=\frac{1}{n}\sum_{j=1}^{n}\min\left(\frac{R_{j}}{n+1};1-\gamma\right)s\left(X_{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Esta función termina por asignar su rango ponderado por el total a las primeras
+ 
+\begin_inset Formula $1-\gamma$
+\end_inset
+
+% observaciones y después un valor fijo a las mayores.
+ En ese sentido, es una 
+\begin_inset Quotes fld
+\end_inset
+
+mezcla
+\begin_inset Quotes frd
+\end_inset
+
+ de Wilcoxon y signo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(\overline{V}\right)=\frac{1}{2n}\sum_{j=1}^{n}\Psi\left(\frac{j}{n+1}\right)\rightarrow\frac{1}{2}\int_{0}^{1}\Psi\left(u\right)du=\frac{1}{4}\left(1-\gamma\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n\mathbb{V}\left(\overline{V}\right)=\frac{1}{4n}\sum_{j=1}^{n}\Psi^{2}\left(\frac{j}{n+1}\right)\rightarrow\frac{1}{4}\int_{0}^{1}\Psi^{2}\left(u\right)du=\frac{1}{12}\left(1-\gamma\right)^{2}\left(1+2\gamma\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\overline{V}-\mathbb{E}\left(\overline{V}\right)}{\sqrt{\text{Var}\left(\overline{V}\right)}}\rightarrow\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\overline{V}-\frac{1}{4}\left(1-\gamma\right)^{2}}{\sqrt{\frac{1}{12}\left(1-\gamma\right)^{2}\left(1+2\gamma\right)}}\rightarrow\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mientras más pesada la cola, mayor debe ser 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ para excluir atípicos.
+ Para la normal el valor es cercano a 0.
+ Para la distribución de Cauchy, el óptimo es cercano a 
+\begin_inset Formula $0,75$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Signos Modificados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Psi\left(u\right)=\begin{cases}
+0 & 0<u\leq1-\gamma\\
+1 & 1-\gamma<u<1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $u=\frac{R_{j}}{n+1}$
+\end_inset
+
+, estamos eliminando los casos donde 
+\begin_inset Formula $\frac{R_{j}}{n+1}\leq1-\gamma$
+\end_inset
+
+, es decir 
+\begin_inset Formula $R_{j}\leq\left(1-\gamma\right)\left(n+1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Este estadístico elimina la cola de rangos inferiores y sólo considera los
+ que acumulan cierto intervalo superior.
+ Esto lo representamos mediante la función 
+\begin_inset Quotes fld
+\end_inset
+
+piso
+\begin_inset Quotes frd
+\end_inset
+
+ 
+\begin_inset Formula $\left[\cdot\right]$
+\end_inset
+
+ como 
+\begin_inset Formula $j\geq\left[\left(1-\gamma\right)\left(n+1\right)\right]+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{V}=\frac{1}{n}\sum_{j=\left[\left(1-\gamma\right)\left(n+1\right)\right]}^{n}W_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir que 
+\begin_inset Formula $n\overline{V}$
+\end_inset
+
+ es la cantidad de observaciones positivas cuyo rango excede la cola.
+ 
+\end_layout
+
+\begin_layout Standard
+Como estamos tomando rangos 
+\begin_inset Formula $n-\left[\left(1-\gamma\right)\left(n+1\right)\right]$
+\end_inset
+
+ que bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ tienen igual probabilidad de pertenecer a observaciones negativas o positivas,
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n\overline{V}=V/V\sim Bi\left(n-\left[\left(1-\gamma\right)\left(n+1\right)\right];\frac{1}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estimadores Puntuales Derivados
+\end_layout
+
+\begin_layout Standard
+Para lograr estimadores puntuales, buscamos una expresión de este estadístico
+ que quepa bajo las definiciones de Hodges-Lehman.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=\sum_{i=1}^{n}a\left(R_{j}\right)s\left(X_{j}\right)=\sum_{j=1}^{n}a\left(j\right)W_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+V\left(\theta\right)=\sum_{i=1}^{n}a\left[R_{j}\left(\theta\right)\right]s\left(X_{j}-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Definimos 
+\begin_inset Formula $R_{j}\left(\theta\right)$
+\end_inset
+
+ como el rango de 
+\begin_inset Formula $\left|X_{j}-\theta\right|$
+\end_inset
+
+ entre los 
+\begin_inset Formula $\left\{ \left|X_{i}-\theta\right|\right\} _{i=1}^{n}$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Si bien el orden se mantiene, lo que va a cambiar son los singos en los
+ rangos signados.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+de Bauer, 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ es un estimador de Hodges-Lehman.
+\end_layout
+
+\begin_layout Theorem
+Como función de 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ una función escalera no decreciente con las siguientes propiedades.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ decrece 
+\begin_inset Formula $a\left(1\right)$
+\end_inset
+
+ en cada 
+\begin_inset Formula $X^{\left(i\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ decrece 
+\begin_inset Formula $a\left(j-i+1\right)-a\left(j-i\right)$
+\end_inset
+
+ en cada 
+\begin_inset Formula $\frac{X^{\left(i\right)}+X^{\left(j\right)}}{2}\left(i<j\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para lograr el estimador definimos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{ij}\left(\theta\right)=\begin{cases}
+1 & \frac{X^{\left(i\right)}+X^{\left(j\right)}}{2}>\theta\\
+0 & \text{Si no}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\theta\right)=\sum_{i\leq j}\sum\left(a_{j-i+1}-a_{j-1}\right)\cdot T_{ij}\left(\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ es simétrica alrededor de 
+\begin_inset Formula $\sum\frac{a_{i}}{2}$
+\end_inset
+
+ y por lo tanto el estimador de H-L es 
+\begin_inset Formula $\hat{\theta}/V\left(\hat{\theta}\right)=\sum\frac{a_{i}}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

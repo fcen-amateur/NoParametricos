@@ -1,0 +1,810 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Práctica 2- Prueba del Signo
+\end_layout
+
+\begin_layout Section
+Para 
+\begin_inset Formula $n=10$
+\end_inset
+
+ y 
+\begin_inset Formula $\alpha=0,0547$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Subsection
+Construya la prueba del signo de nivel 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ para 
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=8
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & k\geq8\\
+0 & k<8
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Halle la potencia de la prueba para
+\end_layout
+
+\begin_layout Subsubsection
+La distribución 
+\begin_inset Formula $\mathcal{N}\left(1;1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta_{\mathcal{N}\left(1;1\right)}\left[\Phi\left(\boldsymbol{X}\right)\right]=P\left(\Phi\left(\boldsymbol{X}\right)=1\right)=P\left(S\left(\boldsymbol{X}\right)\geq8\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{i}\sim\mathcal{N}\left(1;1\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z=\frac{X_{1}-10}{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left(n\overline{\boldsymbol{X}}\geq8\right)=P\left(Z\geq-2\right)=1-P\left(Z<-2\right)=1-0,2275=0,97725$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta_{\mathcal{N}\left(1;1\right)}\left[\Phi\left(\boldsymbol{X}\right)\right]=0,97725
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Esto significa que en este caso tendríamos altísimas posibilidades de rechazar,
+ lo cual es deseable dado que es un caso radicalmente diferente al de la
+ hipótesis.
+\end_layout
+
+\begin_layout Subsubsection
+La distribución de densidad 
+\begin_inset Formula $f\left(x\right)=\frac{1}{2}e^{-\left|x-1\right|}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum\frac{1}{2}e^{-\left|x-1\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{1}\sim dexp\left(1;2\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sum X_{i}=n\overline{X}\sim$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+La potencia aproximada en la distribución 
+\begin_inset Formula $\mathcal{N}\left(1;1\right)$
+\end_inset
+
+ usando la aproximación normal con corrección por continuidad.
+\end_layout
+
+\begin_layout Section
+.
+\end_layout
+
+\begin_layout Section
+.
+\end_layout
+
+\begin_layout Section
+.
+\end_layout
+
+\begin_layout Section
+.
+\end_layout
+
+\begin_layout Section
+Sean 
+\begin_inset Formula $\boldsymbol{X}=\left(X_{i}\right)_{i=1}^{n}$
+\end_inset
+
+ con distribución 
+\begin_inset Formula $G\left(x\right)=F\left(x-\theta\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $F\in\Omega_{0}$
+\end_inset
+
+.
+ Se desea probar 
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+ o equivalentemente 
+\begin_inset Formula $H_{0}:G\left(0\right)=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:G\left(0\right)<\frac{1}{2}$
+\end_inset
+
+ usando la prueba basada en 
+\begin_inset Formula $S=\#\left\{ i/x_{i}>0\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Pistas de la Guía
+\end_layout
+
+\begin_layout Enumerate
+Por la LGN: 
+\begin_inset Formula $\frac{\overline{S}}{n}\overset{\mathcal{P}}{\rightarrow}\mathbb{E}\left[s\left(X_{i}\right)\right]=P\left(X_{i}>0\right)=\mu\left(F;\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Abajo probé que 
+\begin_inset Formula $S^{*}\rightarrow\begin{cases}
+\frac{1}{2} & F\in\Omega_{0};\theta=0\\
+>\frac{1}{2} & F\in\Omega_{0};\theta>0
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Probar que la distribución asintótica bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ es normal y por tanto es consistente, de la clase de las distribuciones
+ con mediana única positiva.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)$
+\end_inset
+
+ , esta convergencia debe ser uniforme en un entorno de 
+\begin_inset Formula $\theta=0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mu_{n}\left(\theta\right)=np\left(\theta\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\sigma_{n}^{2}\left(\theta\right)=np\left(\theta\right)\left[1-p\left(\theta\right)\right]$
+\end_inset
+
+ y a su vez 
+\begin_inset Formula $p\left(\theta\right)=1-F\left(-\theta\right)$
+\end_inset
+
+, es decir 
+\begin_inset Formula $1-G\left(0\right)=1-F\left(0-\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsection
+Muestre que bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $S$
+\end_inset
+
+ tiene distribución libre.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:P\left(X_{i}<0\right)=G_{H_{0}}\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por hipótesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:P\left(X_{i}<0\right)=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\sum X_{i}/S\sim Bi\left(n;\frac{1}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Considere el caso de 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:P\left(X_{i}<0\right)=G_{H_{1}}\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por hipótesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:P\left(X_{i}<0\right)=p/p<\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\sum X_{i}/S\sim Bi\left(n;p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si bien no depende explícitamente de la distribución, no es libre ya que
+ está condicionada por 
+\begin_inset Formula $G_{H_{1}}\left(0\right)=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Considere el caso de 
+\begin_inset Formula $S^{*}=\frac{S}{n}$
+\end_inset
+
+.
+ Probar la condición indicada abajo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S^{*}\rightarrow\begin{cases}
+\frac{1}{2} & F\in\Omega_{0};\theta=0\\
+>\frac{1}{2} & F\in\Omega_{0};\theta>0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos aplicar la LGN a 
+\begin_inset Formula $S^{*}$
+\end_inset
+
+ como transformada de 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(S^{*}\right)=\frac{1}{n}\mathbb{E}\left(S\right)=\frac{np}{n}=p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(S^{*}\right)=\frac{1}{n^{2}}V\left(S\right)=\frac{np\left(1-p\right)}{n^{2}}=\frac{p\left(1-p\right)}{n}<\frac{1}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se cumplen las hipótesis de la ley fuerte.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left\{ X_{i}\right\} $
+\end_inset
+
+ va independientes 
+\begin_inset Formula $E\left(X_{i}\right)=\mu_{i}<\infty$
+\end_inset
+
+ 
+\begin_inset Formula $\sum_{i=1}^{\infty}\frac{\sigma^{2}}{i^{2}}<\infty$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Débil 
+\begin_inset Formula $\left\{ X_{n}\right\} $
+\end_inset
+
+ va independientes y 
+\begin_inset Formula $\forall i:\underbrace{E\left(X_{i}\right)}_{\mu_{i}}<\infty$
+\end_inset
+
+, 
+\begin_inset Formula $\forall i:V\left(X_{i}\right)<c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula 
+\[
+S^{*}\overset{\text{ctp}}{\rightarrow}p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+La conclusión es que para en el caso B para 
+\begin_inset Formula $H_{0}:p=\frac{1}{2}$
+\end_inset
+
+ y para 
+\begin_inset Formula $H_{1}:p<\frac{1}{2}$
+\end_inset
+
+ con lo cual se cumple lo observado.
+\end_layout
+
+\begin_layout Quote
+Además, ahora tenemos un estadístico con una forma funcional constante (no
+ una sucesión de ellos) 
+\end_layout
+
+\begin_layout Subsection
+En base a los resultados anteriores, muestre que 
+\begin_inset Formula $c_{S}=2f\left(0\right)$
+\end_inset
+
+ donde 
+\begin_inset Formula $f$
+\end_inset
+
+ es la densidad de 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ Se asume válidas las condiciones 1 y 2 de Pitman.
+ Muestre que la prueba paramétrica usual, 
+\begin_inset Formula $t$
+\end_inset
+
+, tiene eficacia 
+\begin_inset Formula $c_{t}=\frac{1}{\sigma_{f}}/\sigma_{f}^{2}=\int x^{2}f\left(x\right)dx$
+\end_inset
+
+.
+ Calcule la eficiencia de la prueba del signo respecto de la prueba 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Como ambas distribuciones pueden hacerse converger a una normal usando el
+ teorema del límite central, es sencillo encontrar las sucesiones que cumplen
+ lo pedido.
+\end_layout
+
+\begin_layout Subsubsection
+Coeficiente de la prueba del signo, 
+\begin_inset Formula $c_{S}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El estadístico elegido nos lleva a trabajar con la media de una muestra
+ de tipo 
+\begin_inset Formula $Bi\left(1;p\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}=\frac{\frac{S}{n}-G\left(0\right)}{\sqrt{np\left(1-p\right)}}=\frac{\overline{S}-\mathbb{E}_{p}\left(S\right)}{\sqrt{\text{Var}\left(S\right)}}\rightarrow\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\theta\right)=G\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\theta}\mu\left(\theta\right)=g\left(0\right)\underset{H_{0}}{=}f\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}\left(\theta\right)=n\cdot\text{Var}\left(\frac{S}{n}\right)=\frac{1}{n}\text{Var}\left(S\right)=p\left(1-p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma\left(\theta\right)=\sqrt{p\left(1-p\right)}\underset{H_{0}}{=}\sqrt{\frac{1}{4}}=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\frac{\partial}{\partial\theta}\mu\left(0\right)}{\sigma\left(0\right)}=\frac{f\left(0\right)}{\frac{1}{2}}=2f\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Coeficiente de la prueba 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $c_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El estadístico es 
+\begin_inset Formula $T_{n}=\frac{\sum X_{i}}{n}=\overline{X}_{n}$
+\end_inset
+
+.
+ Su esperanza y varianza son conocidas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{X}\sim\mathcal{N}\Rightarrow\mathbb{E}\left(\overline{X}\right)=\mu=\tilde{X}=\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}=\frac{\overline{X}_{n}-\theta}{\sigma\left(\theta\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\theta\right)=\theta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\theta}\mu\left(0\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}\left(\theta\right)=\int x^{2}\cdot g\left(x\right)dx=\int x^{2}\cdot f\left(x-\theta\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\frac{\partial}{\partial\theta}\mu\left(0\right)}{\sigma\left(0\right)}=\frac{1}{\sqrt{\int x^{2}\cdot f\left(x-\theta\right)dx}\bigg|_{0}}=\frac{1}{\sqrt{\int x^{2}\cdot f\left(x\right)dx}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{1}{\sigma_{f}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

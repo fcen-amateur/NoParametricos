@@ -1,0 +1,1517 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package babel
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Clase 2: Prueba Binomial
+\end_layout
+
+\begin_layout Section
+Ejemplo en el Apunte
+\end_layout
+
+\begin_layout Subsection
+¿Por qué la prueba del ejemplo es UMP?
+\end_layout
+
+\begin_layout Definition
+Una familia de distribuciones 
+\begin_inset Formula $\theta\in\Theta\subset\mathbb{R}:f\left(x;\theta\right)$
+\end_inset
+
+ se llama de cociente de verosimilitud monótono en 
+\begin_inset Formula $T=r\left(\boldsymbol{x}\right)$
+\end_inset
+
+ si 
+\begin_inset Formula $\forall\theta_{1}<\theta_{2}$
+\end_inset
+
+ si
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(x;\theta_{1}\right)\neq f\left(x;\theta_{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\frac{f\left(x;\theta_{2}\right)}{f\left(x;\theta_{1}\right)}=g_{\theta_{1};\theta_{2}}\left(T\right)$
+\end_inset
+
+, con 
+\begin_inset Formula $g$
+\end_inset
+
+ no decreciente en 
+\begin_inset Formula $S=\left\{ T:t=t\left(\boldsymbol{x}\right);f\left(x;\theta\right)>0\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El ejemplo usual es que toda familia exponencial cumple esto cuando 
+\begin_inset Formula $c\left(\theta\right)$
+\end_inset
+
+ es creciente.
+\end_layout
+
+\begin_layout Theorem
+Si 
+\begin_inset Formula $X$
+\end_inset
+
+ con función de densidad o probabilidad puntual 
+\begin_inset Formula $\theta\in\Theta\subset\mathbb{R}:f\left(x;\theta\right)$
+\end_inset
+
+ tiene CVM entonces:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\exists k_{\alpha};\gamma_{\alpha}$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & T>k_{\alpha}\\
+\gamma_{\alpha} & T=k_{\alpha}\\
+0 & T<k_{\alpha}
+\end{cases}$
+\end_inset
+
+ y 
+\begin_inset Formula $\beta_{\Phi}\left(\theta_{0}\right)=\alpha$
+\end_inset
+
+.
+ Esta prueba es UMP para hipótesis del tipo igual contra mayor.
+\end_layout
+
+\begin_layout Enumerate
+La función de potencia es monótona no decreciente.
+ Es estrictamente creciente 
+\begin_inset Formula $\forall\theta/\pi\left(\theta\right)\in\left(0;1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Phi$
+\end_inset
+
+ es también UMP de nivel 
+\begin_inset Formula $\leq\alpha$
+\end_inset
+
+ para menor o igual contra mayor.
+\end_layout
+
+\begin_layout Remark
+Para armar los 
+\emph on
+p
+\emph default
+valores consideramos que las desigualdades no se portan igual: para menor
+ es menor o igual pero para mayor es una desigualdad estricta.
+\end_layout
+
+\begin_layout Definition
+Generalizada del 
+\emph on
+p
+\emph default
+valor
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+RR es la zona de rechazo.
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+p\leq\alpha\Leftrightarrow T_{obs}\in RR
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Justificación para la prueba bilateral de su condición de IUMP.
+\end_layout
+
+\begin_layout Itemize
+Hay que acudir al Lehman dominando la teoría de la medida.
+\end_layout
+
+\begin_layout Standard
+Si queremos que sea de nivel 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+\beta\left(p_{0}\right)=\mathbb{E}_{p_{0}}\left[\Phi\left(\boldsymbol{X}\right)\right]=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para lograr que sea insesgado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall p\ne p_{0}:\mathbb{E}_{p}\left[\Phi\left(\boldsymbol{X}\right)\right]\geq\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(En un gráfico de la potencia, hay una cima cuando toma el valor 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ para el parámetro 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+La función de potencia de una binomial 
+\begin_inset Formula $\beta\left(p\right)$
+\end_inset
+
+ es una función continua sencilla.
+\end_layout
+
+\begin_layout Standard
+Por lo razonado gráficamete ,para que sea insesgadao en 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ hay un mínimo absoluto.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+\beta'\left(p_{0}\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta es una condición necesaria pero no suficiente.
+\end_layout
+
+\begin_layout Subsubsection
+Punto Crítico en la Función de potencia 
+\begin_inset Formula $\beta\left(p\right)$
+\end_inset
+
+ de una familia exponencial.
+\end_layout
+
+\begin_layout Standard
+Generalizamos a una familia exponencial.
+ 
+\begin_inset Formula $T\sim A\left(\theta\right)e^{c\left(\theta\right)t}h\left(t\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta\left(\theta\right)=\mathbb{E}_{\theta}\left[\Phi\left(\boldsymbol{X}\right)\right]=\int\Phi\left(t\right)\left[A\left(\theta\right)e^{c\left(\theta\right)t}h\left(t\right)\right]dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta\left(\theta\right)=A\left(\theta\right)\int\Phi\left(t\right)\left[e^{c\left(\theta\right)t}h\left(t\right)\right]dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Derivemos según 
+\begin_inset Formula $\theta$
+\end_inset
+
+, en particular 
+\series bold
+dentro del signo de la integral
+\series default
+ para el segundo término
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\theta}\beta\left(\theta\right)=\frac{\partial}{\partial\theta}\left\{ A\left(\theta\right)\int\Phi\left(t\right)\left[e^{c\left(\theta\right)t}h\left(t\right)\right]dt\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\theta}\beta\left(\theta\right)=\left[\frac{\partial}{\partial\theta}A\left(\theta\right)\right]\int\Phi\left(t\right)\left[e^{c\left(\theta\right)t}h\left(t\right)\right]dt+A\left(\theta\right)\int\frac{\partial}{\partial\theta}\left\{ \Phi\left(t\right)\left[e^{c\left(\theta\right)t}h\left(t\right)\right]\right\} dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta'\left(\theta\right)=A'\left(\theta\right)\int\Phi\left(t\right)\left[e^{c\left(\theta\right)t}h\left(t\right)\right]dt+A\left(\theta\right)\int\Phi\left(t\right)\left[e^{c\left(\theta\right)t}c'\left(\theta\right)t\cdot h\left(t\right)\right]dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Multiplicamos y dividimos por 
+\begin_inset Formula $A\left(\theta\right)$
+\end_inset
+
+ para llegar a la expresión de esperanzas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta'\left(\theta\right)=\frac{A'\left(\theta\right)}{A\left(\theta\right)}\underbrace{\int\Phi\left(t\right)\left[e^{c\left(\theta\right)t}A\left(\theta\right)h\left(t\right)\right]dt}_{\mathbb{E}\left(\Phi\left(T\right)\right)}+\underbrace{c'\left(\theta\right)\cdot\int t\cdot\Phi\left(t\right)\left[e^{c\left(\theta\right)t}A\left(\theta\right)h\left(t\right)\right]dt}_{c'\left(\theta\right)\mathbb{E}\left(T\cdot\Phi\left(T\right)\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta'\left(\theta\right)=\frac{A'\left(\theta\right)}{A\left(\theta\right)}\mathbb{E}\left(\Phi\left(T\right)\right)+c'\left(\theta\right)\mathbb{E}\left(T\cdot\Phi\left(T\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tomamos un caso particular:
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ es constantemente 1, la derivada es nula y 
+\begin_inset Formula $0=\frac{A'\left(\theta\right)}{A\left(\theta\right)}+c'\left(\theta\right)\mathbb{E}\left(T\cdot1\right)$
+\end_inset
+
+, es decir 
+\begin_inset Formula $\frac{A'\left(\theta\right)}{A\left(\theta\right)}=-c'\left(\theta\right)\mathbb{E}\left(T\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta'\left(\theta\right)=-c'\left(\theta\right)\mathbb{E}\left(T\right)\mathbb{E}\left(\Phi\left(T\right)\right)+c'\left(\theta\right)\mathbb{E}\left(T\cdot\Phi\left(T\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sabemos que es nula porque hay un extremo en 
+\begin_inset Formula $\theta=p_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta'\left(p_{0}\right)=-c'\left(p_{0}\right)\mathbb{E}\left(T\cdot\Phi\left(T\right)\right)\mathbb{E}\left(\Phi\left(T\right)\right)+c'\left(p_{0}\right)\mathbb{E}\left(T\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c'\left(p_{0}\right)\left[-\mathbb{E}\left(T\right)\mathbb{E}\left(\Phi\left(T\right)\right)+\mathbb{E}\left(T\cdot\Phi\left(T\right)\right)\right]=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como es familia exponencial (hace falta pedir CVM? acá ella dijo 
+\begin_inset Quotes fld
+\end_inset
+
+pensemos solo en la binomial
+\begin_inset Quotes frd
+\end_inset
+
+) entonces 
+\begin_inset Formula $c'\left(p_{0}\right)\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Aclaración posterior a esa duda: dijimos que 
+\begin_inset Formula $c$
+\end_inset
+
+ es estrictamente monótona, asi que esto vale más en general.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c'\left(p_{0}\right)\neq0\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(T\cdot\Phi\left(T\right)\right)=\mathbb{E}\left(T\right)\cdot\underbrace{\mathbb{E}\left(\Phi\left(T\right)\right)}_{\beta\left(p_{0}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T$
+\end_inset
+
+ es binomial
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(T\cdot\Phi\left(T\right)\right)=np_{0}\cdot\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Verificamos que la segunda ecuación equivale a esta expresión: 
+\begin_inset Formula $P\left(k_{1}\leq Bi\left(n-1;p_{0}\right)<k_{2}\right)=1-\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left[T\cdot\Phi\left(T\right)\right]=n\alpha p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left[T\cdot\Phi\left(T\right)-T+T\right]=n\alpha p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[\Phi\left(T\right)-1\right]+T\right\} =n\alpha p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[\Phi\left(T\right)-1\right]\right\} +\underbrace{\mathbb{E}_{p_{0}}\left(T\right)}_{np_{0}}=n\alpha p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[\Phi\left(T\right)-1\right]\right\} =n\left(\alpha-1\right)p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ \left(-1\right)T\cdot\left[1-\Phi\left(T\right)\right]\right\} =n\left(-1\right)\left(\alpha-1\right)p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =n\left(1-\alpha\right)p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Trabajamos con 
+\begin_inset Formula $\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T\sim Bi\left(n;p_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(T\right)=\begin{cases}
+1 & T\leq k_{1}\vee T>k_{2}\\
+0 & k_{1}<T\leq k_{2}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =\sum_{k=0}^{n}k\left(1-\Phi\left(k\right)\right)\binom{n}{k}p_{0}^{k}\left(1-p_{0}\right)^{n-k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Separamos por casos, si 
+\begin_inset Formula $k_{1}<T\leq k_{2}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\Phi\left(T\right)=0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =\sum_{k_{1}<k\leq k_{2}}k\left(1-\Phi\left(k\right)\right)\binom{n}{k}p_{0}^{k}\left(1-p_{0}\right)^{n-k}+0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =\sum_{k=k_{1}+1}^{k_{2}}\cancel{k}\frac{n!}{\underbrace{\cancel{k!}}_{k-1!}\left(n-k\right)!}p_{0}^{k}\left(1-p_{0}\right)^{n-k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s=k-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k=s+1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =\sum_{s=k_{1}+1}^{k_{2}}\frac{n!}{s!\left(n-s-1\right)!}p_{0}^{s+1}\left(1-p_{0}\right)^{n-\left(s+1\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =np_{0}\sum_{s=k_{1}+1}^{k_{2}}\underbrace{\frac{\left(n-1\right)!}{s!\left(n-1-s\right)!}}_{\binom{n-1}{s}}p_{0}^{s}\left(1-p_{0}\right)^{\left(n-1\right)-s}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =np_{0}P\left(k_{1}\leq Bi\left(n-1;p_{0}\right)\leq k_{2}-1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =np_{0}P\left(k_{1}\leq Bi\left(n-1;p_{0}\right)<k_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hab'iamos llamado 
+\begin_inset Formula $\mathbb{E}_{p_{0}}\left\{ T\cdot\left[1-\Phi\left(T\right)\right]\right\} =np_{0}\left(1-\alpha\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+np_{0}\left(1-\alpha\right)=np_{0}P\left(k_{1}\leq Bi\left(n-1;p_{0}\right)<k_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+1-\alpha=P\left(k_{1}\leq Bi\left(n-1;p_{0}\right)<k_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tenemos el complemento de la probabilidad que queríamos asegurar, para el
+ conjunto complementario a 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Las condiciones quedan así
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+1-\alpha=P\left(k_{1}<Bi\left(n;p_{0}\right)\leq k_{2}\right)\\
+1-\alpha=P\left(k_{1}\leq Bi\left(n-1;p_{0}\right)<k_{2}\right)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Lo que no demostramos es que es IUMP.
+\end_layout
+
+\begin_layout Example
+Armamos una prueba para ver cómo aplica el resultado
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+H_{0}:p=0,4\text{ contra}H_{1}:p\neq0,4
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $n=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\alpha=0,05$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Secciones del Lehman que justifican la condición de IUMP.
+\end_layout
+
+\begin_layout Itemize
+Lehmann: 
+\emph on
+Testing Statistical Hypothesis.
+\end_layout
+
+\begin_layout Standard
+El primer problema es obtener 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ en una distribución discreta.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(T\right)=\begin{cases}
+1 & T<k_{1}\vee T>k_{2}\\
+\gamma_{1} & T=k_{1}\\
+\gamma_{2} & T=k_{2}\\
+0 & k_{1}<T<k_{2}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde los parámetros 
+\begin_inset Formula $\gamma_{i}$
+\end_inset
+
+ y 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ están determinados por 
+\begin_inset Formula $\mathbb{E}_{p_{0}}\left[\Phi\left(X\right)\right]=\alpha$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{E}_{p_{0}}\left[T\cdot\Phi\left(T\right)\right]=\mathbb{E}_{p_{0}}\left[\Phi\left(T\right)\right]\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Págs 111,112 y lo más importante en la bala de abajo.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $\alpha_{1}=\alpha_{2}=\frac{\alpha}{2}\Leftrightarrow\gamma_{1}=\gamma_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+ son simétricos
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+En nuestro caso, 
+\begin_inset Formula $p_{0}=\frac{1}{2}$
+\end_inset
+
+ en la binomial.
+\end_layout
+
+\end_inset
+
+: 
+\begin_inset Formula $k_{2}=2a-k_{1}$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Él usa desigualdades estrictas.
+\end_layout
+
+\end_inset
+
+ .
+ Hay que considerar las desigualdades estrictas y no estrictas para identificar
+ bien los percentiles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{2}=n-\left(k_{1}+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Pe-va Perón: Discutimos la definición de p valor para prueba bilateral.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p\leq\alpha\Leftrightarrow$
+\end_inset
+
+ rechazar 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+
+\begin_inset Formula $T_{obs}\in RR$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La docente no concuerda con la deifnicnión del apunte porque, por ejemplo
+\end_layout
+
+\begin_layout Standard
+Suponemos 
+\begin_inset Formula $\alpha_{2}<\alpha_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+La región de rechazo es abierta en el máximo 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+ y cerrada en 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Al tomar el doble del mínimo estamos perdiendo una parte de la región de
+ rechazo en algunos casos.
+\end_layout
+
+\begin_layout Standard
+con ese mínimo, si ese es 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+pv=2P\left(T>\underbrace{T_{\text{obs}}}_{k_{2}}\right)=2\alpha_{2}<\alpha_{1}+\alpha_{2}=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es absurdo no lograr que las regiones se complementen.
+\end_layout
+
+\begin_layout Itemize
+Si son iguales es sensato.
+ 
+\end_layout
+
+\begin_layout Itemize
+Pareciera que puede definirse los demás casos con una función por ramas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Intervalos de Confianza
+\end_layout
+
+\begin_layout Subsection
+Relación con la prueba bilateral
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\sqrt{n}\frac{\overline{X}_{n}-p_{0}}{\sqrt{p_{0}\left(1-p_{0}\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para pivotear, aproximamos 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\sqrt{n}\frac{\overline{X}_{n}-p_{0}}{\sqrt{\overline{X}_{n}\left(1-\overline{X}_{n}\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Intervalo asintótio
+\begin_inset Formula 
+\[
+1-\alpha=\lim_{n}P\left(-z_{\nicefrac{\alpha}{2}}\leq\sqrt{n}\frac{\overline{X}_{n}-p_{0}}{\sqrt{\overline{X}_{n}\left(1-\overline{X}_{n}\right)}}\le z_{\nicefrac{\alpha}{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-\alpha=\lim_{n}P\left(\overline{X}_{n}-z_{\nicefrac{\alpha}{2}}\sqrt{\frac{\overline{X}_{n}\left(1-\overline{X}_{n}\right)}{n}}\le p\leq\overline{X}_{n}+z_{\nicefrac{\alpha}{2}}\sqrt{\frac{\overline{X}_{n}\left(1-\overline{X}_{n}\right)}{n}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Despejamos 
+\begin_inset Formula $\overline{X}_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-\alpha=\lim_{n}P\left(p_{0}-z_{\nicefrac{\alpha}{2}}\sqrt{\frac{p_{0}\left(1-p_{0}\right)}{n}}\le\overline{X}_{n}\leq p_{0}+z_{\nicefrac{\alpha}{2}}\sqrt{\frac{p_{0}\left(1-p_{0}\right)}{n}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta probabilidad es la de la región de aceptación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{X}_{n}\leq p_{0}+z_{\nicefrac{\alpha}{2}}\sqrt{\frac{\overline{X}_{n}\left(1-\overline{X}_{n}\right)}{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{X}_{n}-z_{\nicefrac{\alpha}{2}}\sqrt{\frac{\overline{X}_{n}\left(1-\overline{X}_{n}\right)}{n}}\leq p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El p valor es el extremo inferior del intervalo de confianza.
+ 
+\begin_inset Formula $\hat{p}_{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Como estamos obligados a tomar los valores posibles de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ para una distribución discreta, ambas cotas son de menor o igual y el intervalo
+ es en general más amplio que lo deseado.
+\end_layout
+
+\begin_layout Subsubsection
+Por qué ambos extremos 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ crecen con 
+\begin_inset Formula $p$
+\end_inset
+
+: Al incrementar este parámetro disminuye el área bajo la cola izquierda
+ y corremos 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ a la derecha para incrementarla y se incrementa el área de la cola derecha
+ con lo cual para reducirla incrementamos 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La región de aceptación es 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathcal{A}=\left\{ T:k_{1}\left(p_{0}\right)<T\leq k_{2}\left(p_{0}\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathcal{A}=\left\{ p_{0}:\hat{p}_{inf}<p_{0}\leq\hat{p}_{sup}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Acá hay una disquisición sobre cómo se justifica el despeje pero el procedimient
+o es simple
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=k_{2}\left(p\right)+1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T-1=k_{2}\left(p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quiero el 
+\begin_inset Formula $p$
+\end_inset
+
+ que tiene ese borde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{\hat{p}_{inf}}\left(B\left(n;p\right)>T-1\right)\leq\frac{\alpha}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Análogamente
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{1}\left(\hat{p}_{sup}\right)=T
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{\hat{p}_{sup}}\left(B\left(n;p\right)\leq T\right)\leq\frac{\alpha}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el algoritmo, por el fenómeno estudiando antes, quedan determinadas las
+ búsquedas.
+ Se busca el primer 
+\begin_inset Formula $\hat{p}_{sup}$
+\end_inset
+
+ para el cual 
+\begin_inset Formula $P_{\hat{p}_{sup}}\left(B\left(n;p\right)\leq T\right)\leq\frac{\alpha}{2}$
+\end_inset
+
+ y el último 
+\begin_inset Formula $\hat{p}_{inf}$
+\end_inset
+
+ para el cual 
+\begin_inset Formula $P\left(B\left(n;\hat{p}_{inf}\right)\leq T-1\right)\geq1-\frac{\alpha}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise
+Revisar el programa.
+\end_layout
+
+\begin_layout Exercise
+La docente considera que no es correcto restarle al índice.
+ 
+\family typewriter
+lup
+\family default
+ debería ser 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Cuantiles
+\end_layout
+
+\begin_layout Standard
+La definición muestra que como puede ser discontinua en el punto, sobre
+ él precisamente puede ser mayor pero al sustraer el punto del intervalo
+ considerado pasa a ser menor, así aseguramos que es a lo sumo la primera
+ que acumula más que 
+\begin_inset Formula $p$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Recordar que sólo pedimos continuidad por izquierda al definir la función
+ de diostribución acumulada 
+\begin_inset Formula $F$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En las discretas puede haber infinitos valores porque no es estrictamente
+ creciente.
+\end_layout
+
+\begin_layout Itemize
+La prueba construye dos bernoulli para probar los dos intervalos de la definició
+n, el semiabierto y el cerrado.
+\end_layout
+
+\begin_layout Subsection
+¿Por qué vale en el caso continuo?
+\end_layout
+
+\begin_layout Standard
+Afirmar que las hipótesis 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{0}\leq x_{p_{0}}\Leftrightarrow\tilde{p}\leq p_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $\tilde{p}=P\left(X\leq x_{0}\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $p_{0}/\begin{cases}
+P\left(X\leq x_{_{0}}\right)\geq p_{0}\\
+P\left(X<x_{_{0}}\right)\leq p_{0}
+\end{cases}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{0}/\begin{cases}
+P\left(X\leq x_{_{0}}\right)\geq p_{0}\\
+P\left(X<x_{_{0}}\right)\leq p_{0}
+\end{cases}\Leftarrow F\left(x_{0}\right)=p_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Ida
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+x_{0}\leq x_{p_{0}}\le\underbrace{P\left(X<x_{0}\right)}_{\tilde{p}}\leq\underbrace{P\left(X\leq x_{p_{0}}\right)}_{p_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+no fue necesaria la continuidad
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+vuelta
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\underbrace{\tilde{p}}_{P\left(X<x_{0}\right)}\leq\underbrace{p_{0}}\leq P\left(X\leq x_{p_{0}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+con continuidad
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left(X<x_{0}\right)\leq F\left(x_{p_{0}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Por axiomas de cotniudad conjj de medida nula
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+F\left(x_{0}\right)\leq F\left(x_{p_{0}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+x_{0}\leq x_{p_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

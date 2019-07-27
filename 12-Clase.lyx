@@ -1,0 +1,907 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+KW, Comparaciones Múltiples
+\end_layout
+
+\begin_layout Section
+Repaso de la prueba K-W
+\end_layout
+
+\begin_layout Standard
+La población 
+\begin_inset Formula $i$
+\end_inset
+
+ tiene 
+\begin_inset Formula $n_{i}$
+\end_inset
+
+ elementos 
+\begin_inset Formula $\left(X_{ij}\right)_{j=1}^{n_{i}}\sim F\left(X-\theta_{i}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+De tal forma que 
+\begin_inset Formula $X_{ij}$
+\end_inset
+
+ es la observacion 
+\begin_inset Formula $j$
+\end_inset
+
+ de la población 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Todos los elementos son independientes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:\exists\theta/\forall i:\theta_{i}=\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estadístico
+\end_layout
+
+\begin_layout Subsubsection
+Sin empates
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{1}{S^{2}}\sum_{i=1}^{k}R_{i\bullet}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{2}=\frac{12}{N\left(N+1\right)}\sum_{i=1}^{k}\frac{R_{i\bullet}^{2}}{n_{i}}-3\left(N+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S^{2}=\frac{N\left(N+1\right)}{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{i\bullet}=\sum_{j=1}^{n_{i}}R_{ij}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ implica 
+\begin_inset Formula $T$
+\end_inset
+
+ relativamente bajo.
+ 
+\begin_inset Formula $\mathbb{E}_{H_{0}}\left(R_{i\bullet}\right)=\frac{n_{i}\left(N+1\right)}{2}\Rightarrow\mathbb{E}_{H_{0}}\left(\overline{R_{i\bullet}}\right)=\frac{N+1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Con o sin
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{1}{S^{2}}\sum_{i=1}^{k}\left[\frac{R_{i\bullet}^{2}}{_{i}}-\frac{N\left(N+1\right)^{2}}{4}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S^{2}=\frac{1}{N-1}\left(\sum_{i=1}^{k}\sum_{j=1}^{n_{i}}R_{ij}^{2}-\frac{N\left(N+1\right)^{2}}{4}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T\overset{\mathcal{D}}{\rightarrow}\chi_{k-1}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Comparaciones Múltiples
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k$
+\end_inset
+
+ es el número de poblacinoes o tratamientos.
+\end_layout
+
+\begin_layout Standard
+Hay 
+\begin_inset Formula $\binom{k}{2}=\frac{k\left(k-1\right)}{2}$
+\end_inset
+
+ comparaciones posibles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta_{j}-\theta_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{ij}=\frac{1}{\sqrt{N}}\left(\overline{R_{j\bullet}}-\overline{R_{i\bullet}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Esperanza y varianza de los 
+\begin_inset Formula $\overline{R_{i\bullet}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como ambos distribuyen igual:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(D_{ij}\right)=\mathbb{E}\left(\frac{1}{\sqrt{N}}\left(\overline{R_{j\bullet}}-\overline{R_{i\bullet}}\right)\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+no hay independencia, como siempre que usamos rangos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(D_{ij}\right)=\mathbb{V}\left(\frac{1}{\sqrt{N}}\left(\overline{R_{j\bullet}}-\overline{R_{i\bullet}}\right)\right)=\frac{1}{N}\left[\mathbb{V}\left(\overline{R_{j\bullet}}\right)+\mathbb{V}\left(\overline{R_{i\bullet}}\right)-2\text{Cov}\left(\overline{R_{j\bullet}};\overline{R_{i\bullet}}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{V}\left(\overline{R_{j\bullet}}\right)=\frac{1}{n_{j}^{2}}\cdot\mathbb{V}\left(R_{j\bullet}\right)=\frac{1}{n_{j}^{2}}\cdot\frac{n_{j}\left(N-n_{j}\right)\left(N+1\right)}{12}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{V}\left(\overline{R_{j\bullet}}\right)=\frac{1}{n_{j}}\cdot\frac{\left(N-n_{j}\right)\left(N+1\right)}{12}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{Cov}\left(\overline{R_{j\bullet}};\overline{R_{i\bullet}}\right)=\text{Cov}\left(R_{j\bullet};R_{i\bullet}\right)=\frac{1}{n_{j}n_{i}}\left(-n_{i}n_{j}\right)\frac{N+1}{12}=-\frac{N+1}{12}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(D_{ij}\right)=\mathbb{V}\left(\frac{1}{\sqrt{N}}\left(\overline{R_{j\bullet}}-\overline{R_{i\bullet}}\right)\right)=\frac{1}{N}\left[\mathbb{V}\left(\overline{R_{j\bullet}}\right)+\mathbb{V}\left(\overline{R_{i\bullet}}\right)-2\text{Cov}\left(\overline{R_{j\bullet}};\overline{R_{i\bullet}}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(D_{ij}\right)=\frac{1}{N}\left[\frac{1}{n_{j}}\cdot\frac{\left(N-n_{j}\right)\left(N+1\right)}{12}+\frac{1}{n_{i}}\cdot\frac{\left(N-n_{i}\right)\left(N+1\right)}{12}+2\frac{N+1}{12}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(D_{ij}\right)=\frac{N+1}{N12}\left[\frac{1}{n_{j}}\cdot\left(N-n_{j}\right)+\frac{1}{n_{i}}\cdot\left(N-n_{i}\right)+2\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(D_{ij}\right)=\frac{N+1}{N12}\left[\frac{N}{n_{j}}-1+\frac{N}{n_{i}}-1+2\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(D_{ij}\right)=\frac{N\left(N+1\right)}{N12}\left(\frac{1}{n_{j}}+\frac{1}{n_{i}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(D_{ij}\right)=\frac{N+1}{12}\left(\frac{1}{n_{j}}+\frac{1}{n_{i}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+con la hipótesis 
+\begin_inset Formula $\frac{n_{i}}{N}\overset{n\rightarrow\infty}{\rightarrow}\lambda_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n}\mathbb{V}\left(D_{ij}\right)=\lim_{n}\frac{N+1}{12}\left(\frac{1}{\frac{n_{j}}{N+1}}+\frac{1}{\frac{n_{i}}{N+1}}\right)=\frac{1}{12}\left(\frac{1}{\lambda_{j}}+\frac{1}{\lambda_{i}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Asintóticamente tienen distribución normal (como cabe esperar porque probamos
+ que su suma es 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{ij}=\frac{1}{\sqrt{N}}\left(\overline{R_{j\bullet}}-\overline{R_{i\bullet}}\right)\overset{?}{=}V_{j}-V_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tomamos los 
+\begin_inset Formula $c_{in}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{j}-V_{i}=\frac{1}{\sqrt{N}}\left[\left(\overline{R_{j\bullet}}-\frac{N+1}{2}\right)-\left(\overline{R_{i\bullet}}-\frac{N+1}{2}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{j}-V_{i}=D_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos aprovechar el teorema para combinacinoes lineales de sucesinoes
+ que convergen en distribución a normales:
+\end_layout
+
+\begin_layout Itemize
+Definimos 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{ij}=\left(\boldsymbol{e}_{j}-\boldsymbol{e}_{i}\right)'V\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;\left(\boldsymbol{e}_{j}-\boldsymbol{e}_{i}\right)'B\left(\boldsymbol{e}_{j}-\boldsymbol{e}_{i}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{D_{ij}}{\sqrt{\mathbb{V}\left(D_{ij}\right)}}=\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ESta varianza se averiguó antes también.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{D_{ij}}{\sqrt{\frac{N+1}{12}\left(\frac{1}{n_{j}}-\frac{1}{n_{i}}\right)}}=\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ojo con el primado en el 
+\begin_inset Formula $\alpha'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\frac{\left|D_{ij}\right|}{\sqrt{\frac{N+1}{12}\left(\frac{1}{n_{j}}-\frac{1}{n_{i}}\right)}}\geq z_{\frac{\alpha'}{2}}\right)\leq\alpha'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+¿Cómo es 
+\begin_inset Formula $\alpha'$
+\end_inset
+
+ si quiero que la probabilidad de que al menos un 
+\begin_inset Formula $\theta_{i}\ne\theta_{j}$
+\end_inset
+
+ sea 
+\begin_inset Formula $\alpha$
+\end_inset
+
+? (error de tipo 1)
+\end_layout
+
+\begin_layout Subsubsection
+Bonferroni
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\left|D_{ij}\right|\geq z_{\frac{\alpha'}{2}}\sqrt{\frac{N+1}{12}\left(\frac{1}{n_{j}}-\frac{1}{n_{i}}\right)}\right)=\alpha'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\frac{1}{\sqrt{N}}\left|\overline{R_{j\bullet}}-\overline{R_{i\bullet}}\right|\geq z_{\frac{\alpha'}{2}}\sqrt{\frac{N+1}{12}\left(\frac{1}{n_{j}}-\frac{1}{n_{i}}\right)}\right)=\alpha'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\left|\overline{R_{j\bullet}}-\overline{R_{i\bullet}}\right|\geq z_{\frac{\alpha'}{2}}\sqrt{N\frac{N+1}{12}\left(\frac{1}{n_{j}}-\frac{1}{n_{i}}\right)}\right)=\alpha'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto lo hacemos para las 
+\begin_inset Formula $\binom{k}{2}$
+\end_inset
+
+ comparaciones 
+\begin_inset Formula $D_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Definimos el evento 
+\begin_inset Formula $E_{ij}:\left|D_{ij}\right|\geq z_{\frac{\alpha'}{2}}\sqrt{\frac{N+1}{12}\left(\frac{1}{n_{j}}-\frac{1}{n_{i}}\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\bigcup_{i,j}E_{ij}\right)\leq\sum_{i,j}P\left(E_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+como queremos definir una probabilidad igual
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\bigcup_{i,j}E_{ij}\right)\leq\binom{k}{2}\alpha'=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha'=\frac{\alpha}{\binom{k}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Alternativas Ordenadas
+\end_layout
+
+\begin_layout Standard
+Consideramos la crfeciente.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta prueba es equivalente a alternativas unilaterales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:\exists\theta/\forall i:\theta_{i}=\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{1}:i<j\Rightarrow\theta_{i}<\theta_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Análisis del estadistico propuesto
+\end_layout
+
+\begin_layout Standard
+Sumarlas todas es 
+\begin_inset Formula $\frac{k+1}{2}$
+\end_inset
+
+ una especie de mediana.
+ También es el promedio, 
+\begin_inset Formula $\sum i=\frac{k\left(k+1\right)}{2}$
+\end_inset
+
+, al promediar queda la misma expresión.
+\end_layout
+
+\begin_layout Standard
+Consideramos la distancia de cada elemento al valor central y la distancia
+ de su rango acumulado a la media de los rangos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L$
+\end_inset
+
+ crece tanto cuando los primeros elementos tienen bajo rango (ponderado
+ por el índice distante a la mitad) como cuando los elementos del final
+ de la tira tienen rangos grandes.
+ Ante 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ tiene que ser muy grande.
+\end_layout
+
+\begin_layout Subsection
+Prueba alternativa tipo MWW
+\end_layout
+
+\begin_layout Standard
+La ventaja es que la diferencia entre dos medianas es independiente de las
+ demás.
+\end_layout
+
+\begin_layout Standard
+Realiza todas las diferencias punto a punto (ordena los índices para no
+ repetir parejas ni cancelarlas).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{J-\mathbb{E}\left(J\right)}{\mathbb{V}\left(J\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+J>z_{\alpha}\sqrt{\mathbb{V}\left(J\right)}+\mathbb{E}\left(J\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Esperanza y varianza bajo la alternativa
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{H_{0}}\left(J\right)=\mathbb{E}_{H_{0}}\left(\sum W_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{H_{0}}\left(J\right)=\mathbb{E}_{H_{0}}\left(\sum_{u=1}^{n_{j}}\sum_{t=1}^{n_{i}}s\left(X_{ju}-X_{it}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s\left(X_{ju}-X_{it}\right)\sim Be$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{H_{0}}\left(J\right)=\sum_{u=1}^{n_{j}}\sum_{t=1}^{n_{i}}\mathbb{E}_{H_{0}}\left(X_{ju}-X_{it}>0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{H_{0}}\left(J\right)=n_{i}n_{j}\mathbb{E}_{H_{0}}\left(X_{ju}>X_{it}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ es la igualdad de medianas, las distribucinoes se hacen iguales, 
+\begin_inset Formula $X\sim F\wedge Y\sim F\left(-\Delta\right)\Rightarrow p_{1}=P\left(Y>X\right)=\int_{-\infty}^{+\infty}G\left(y\right)h\left(y\right)dy=\frac{G^{2}\left(y\right)}{2}\bigg|_{-\infty}^{+\infty}=\frac{1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}_{H_{0}}\left(J\right)=\sum_{i<j}n_{i}n_{j}\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Scores Generales
+\end_layout
+
+\begin_layout Standard
+Tomamos una sucesión no decreciente 
+\begin_inset Formula $\left\{ a_{n}\right\} $
+\end_inset
+
+ y hacemos 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=\sum_{i=1}^{m}a_{R_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{i}$
+\end_inset
+
+ es el rango de 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+ en la muestra combinada.
+\end_layout
+
+\begin_layout Subsection
+En la demo de esperanza y varianza
+\end_layout
+
+\begin_layout Itemize
+para la varianza como no hay independencia hay que evaluar la covarianza.
+\end_layout
+
+\begin_layout Itemize
+al buscar la covarianza en la doble suma ino puede ser igual a j por no
+ haber empates.
+\end_layout
+
+\begin_layout Itemize
+En ese desarrollo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=1}^{N}\left[a\left(i\right)-\overline{a}\right]\sum_{j\neq i}\left[a\left(j\right)-\overline{a}\right]=\sum_{i=1}^{N}\left[a\left(i\right)-\overline{a}\right]\left\{ \underbrace{\sum_{j=1}^{N}\left[a\left(j\right)-\overline{a}\right]}_{0}-\left[a\left(i\right)-\overline{a}\right]\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ya no se pide 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ positiva.
+\end_layout
+
+\begin_layout Itemize
+Los 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ y 
+\begin_inset Formula $1-\lambda$
+\end_inset
+
+ tamaños relativos de muestra corrigen la eficiencia.
+\end_layout
+
+\begin_layout Section
+Pruebas a Dos Factores
+\end_layout
+
+\end_body
+\end_document

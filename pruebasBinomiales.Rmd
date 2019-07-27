@@ -1,0 +1,55 @@
+```{r buscar k}
+library(purrr)
+library(tidyverse)
+
+## proba <- 0.5
+## muestra <- 10
+## alfa <- 0.05
+## caso <- 'A'
+## tabla <- tibble(
+##   X = seq(0,muestra),
+##   probaX = map_dbl(X,
+##                    ~dbinom(prob = proba, size = muestra, x = .),
+##                    ),
+##   acumuladaCreciente = accumulate(probaX,~sum(.x,.y)),
+##   acumuladaDecreciente = accumulate(tabla$probaX %>% rev() ,~sum(.y,.x)) %>% rev
+## )
+
+## menorQue <- function(x) x < alfa
+## mayorQue <- function(x) x > alfa
+
+## alfa_inf <- tabla$acumuladaCreciente %>% tail_while(mayorQue) %>% min()
+## indice_k_inf <- detect_index(tabla$acumuladaCreciente,~.==alfa_inf)
+## k_inf <-  tabla$X[[indice_k_inf]]
+## alfa_sup <- tabla$acumuladaDecreciente %>% rev() %>% tail_while(mayorQue) %>% min()
+## indice_k_sup <- detect_index(tabla$acumuladaDecreciente,~.==alfa_sup)
+## k_sup <- tabla$X[[indice_k_sup]]
+
+
+buscarBinomial <- function(proba, muestra, alfa, caso) {
+  tabla <- tibble( X = seq(0,muestra))
+  tabla$probaX <- map_dbl(tabla$X, ~dbinom(prob = proba, size = muestra, x = .) )
+  tabla %>% mutate(
+    acumuladaCreciente = accumulate(probaX,~sum(.x,.y)),
+    acumuladaDecreciente = accumulate(tabla$probaX %>% rev() ,~sum(.y,.x)) %>% rev
+  ) -> tabla
+
+  menorQue <- function(x) x < alfa
+  mayorQue <- function(x) x > alfa
+
+  alfa_inf <- tabla$acumuladaCreciente %>% tail_while(mayorQue) %>% min()
+  indice_k_inf <- detect_index(tabla$acumuladaCreciente,~.==alfa_inf)
+  k_inf <-  tabla$X[[indice_k_inf]]
+  alfa_sup <- tabla$acumuladaDecreciente %>% rev() %>% tail_while(mayorQue) %>% min()
+  indice_k_sup <- detect_index(tabla$acumuladaDecreciente,~.==alfa_sup)
+  k_sup <- tabla$X[[indice_k_sup]]
+  if (caso == 'A') { k_inf %>% return() }
+  else if (caso == 'B') { k_sup %>% return() }
+  else if (caso == 'tabla') { tabla %>% return() }
+  else {return('Caso no comtemplado, tenemos A y B o la tabla , con llamadas homónimas. ')}
+}
+
+buscarBinomial(proba=0.5,muestra=10,alfa=0.05,caso='A')
+
+buscarBinomial(proba=0.5,muestra=10,alfa=0.05,caso='B')
+```

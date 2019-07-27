@@ -1,0 +1,1432 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package babel
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Prueba del Rango de Wilcoxon
+\end_layout
+
+\begin_layout Section
+Definición
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Omega_{S}=\left\{ F:F\text{ es absolutamente continua},\text{simétrica},\text{única mediana}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:x_{i}\sim F\left(x-\theta\right)=\begin{cases}
+F\left(x-\theta\right) & H_{1}\\
+F\left(x\right) & H_{0}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|x\right|^{\left(1\right)}\leq\left|x\right|^{\left(2\right)}\leq...\leq\left|x\right|^{\left(n\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{j}=R\left(x_{j}\right)=\left\{ x_{i}:\left|x_{i}\right|\leq\left|x_{j}\right|\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Antirango
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|X_{D_{j}}\right|=\left|x\right|^{\left(j\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Repeticiones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i<j<i+n:x_{j}=k/k\in\mathbb{R}\Rightarrow x_{i}'=\frac{\sum_{k=0}^{n}i+k}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir, reemplazamos por el rango promedio.
+\end_layout
+
+\begin_layout Itemize
+Las repeticiones hablan contra la continuidad de la distribución, pero podemos
+ aplicar la prueba sin la hipótesis de continuidad.
+ El nivel se mantiene, se pierde otras propiedades.
+\end_layout
+
+\begin_layout Subsection
+Estadístico de la Prueba
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\sum R_{j}s\left(x_{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\sum_{j=1}^{n}j\cdot\underbrace{s\left(x_{D_{j}}\right)}_{w_{j}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Antirango
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{-}=\sum_{j=1}^{n}R_{j}\text{\ensuremath{\tilde{s}\left(x_{j}\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tilde{s}\left(x_{j}\right)=\begin{cases}
+1 & x_{j}<0\\
+0 & \text{oc}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s\left(x_{j}\right)=\begin{cases}
+1 & x_{j}>0\\
+0 & \text{oc}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si no hay 0
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}+T^{-}=\sum R_{j}s\left(x_{j}\right)+\sum R_{j}\tilde{s}\left(x_{j}\right)=\sum_{i=1}^{n}j=\frac{n\left(n+1\right)}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ante muchos 0
+\end_layout
+
+\begin_layout Standard
+Hacemos una condicional.
+\end_layout
+
+\begin_layout Subsection
+Prueba Asintótica 
+\end_layout
+
+\begin_layout Standard
+Primero se adecúa a los empates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{T^{+}-T^{-}}{\sqrt{\sum_{i=1}^{n}R_{i}^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+si no hay 0
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{2T^{+}-\frac{n\left(n+1\right)}{2}}{\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{6}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{T^{+}-\frac{n\left(n+1\right)}{4}}{\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{24}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{E}_{H_{0}}\left(T^{+}\right)=\frac{1}{2}\frac{n\left(n+1\right)}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{H_{0}}\left(T^{+}\right)=\left(\frac{1}{2}\right)^{2}\frac{n\left(n+1\right)\left(2n+1\right)}{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vamos a probar que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T^{+}-\frac{n\left(n+1\right)}{4}}{\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{24}}}\overset{a}{\sim}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Es necesario usar una versión adecuada del Teorema del Límite Central porque
+ los términos no son iid (no tienen distribución única, varía la varianza),
+ la 
+\begin_inset Formula $j$
+\end_inset
+
+ les cambia la varianza.
+\end_layout
+
+\begin_layout Section
+Demostración
+\end_layout
+
+\begin_layout Lemma
+FGM de 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Formula 
+\[
+M_{T^{+}}\left(s\right)=\mathbb{E}\left[e^{t\cdot T^{+}}\right]=\frac{1}{2}\prod_{i=1}^{n}\left(1+e^{tj}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[e^{t\cdot T^{+}}\right]=\mathbb{E}\left[e^{t\cdot\sum_{j=1}^{n}j\cdot w_{j}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[e^{t\cdot T^{+}}\right]=\mathbb{E}\left[e^{\sum_{j=1}^{n}t\cdot j\cdot w_{j}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[e^{t\cdot T^{+}}\right]=\mathbb{E}\left[\prod e^{t\cdot j\cdot w_{j}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+indep
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[e^{t\cdot T^{+}}\right]=\prod\mathbb{E}\left[e^{t\cdot j\cdot w_{j}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $w_{j}\begin{cases}
+p\left(0\right)=\frac{1}{2}\\
+p\left(1\right)=\frac{1}{2}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[e^{t\cdot T^{+}}\right]=\prod\left[e^{t\cdot j\cdot0}\frac{1}{2}+e^{t\cdot j\cdot1}\frac{1}{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[e^{t\cdot T^{+}}\right]=\left(\frac{1}{2}\right)^{n}\prod\left(1+e^{tj}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+ distribuye
+\end_layout
+
+\begin_layout Proof
+Considerando el momento
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left(e^{tT^{+}}\right)=\sum_{i=0}^{\frac{n\left(n+1\right)}{2}}e^{tk}P\left(T^{+}=k\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left(e^{tT^{+}}\right)=\sum_{i=0}^{\frac{n\left(n+1\right)}{2}}e^{tk}a_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Igualamos con la fgm.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i=0}^{\frac{n\left(n+1\right)}{2}}e^{tk}a_{k}=\left(\frac{1}{2}\right)^{n}\prod\left(1+e^{tj}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Esta es una igualdad polinómica de variable 
+\begin_inset Formula $e^{tk}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Esbozamos la prueba inductiva mostrando cómo ssuman los coeficientes, que
+ son del tipo 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+al hacer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left(t\right)=\frac{1}{2}M_{2}\left(t\right)\left(1+e^{3t}\right)=\frac{1}{2}\left[M_{2}\left(t\right)+M_{2}\left(t\right)e^{3t}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+forma de gonzalo: ¡Funcionó!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(T^{+}=k\right)=P\left(T^{-}=k\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(T^{+}=k\right)=P\left(T^{+}=\frac{n\left(1+n\right)}{2}-k\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(T^{+}=k\right)=P\left(T^{+}=\frac{n\left(1+n\right)}{2}-k\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Forma asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T^{+}-\frac{n\left(n+1\right)}{4}}{\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{24}}}\overset{a}{\sim}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\sum_{j=1}^{n}j\cdot w_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Teorema de Lindenberg
+\end_layout
+
+\begin_layout Theorem
+sean 
+\begin_inset Formula $\left\{ V_{i}\right\} $
+\end_inset
+
+ iid con 
+\begin_inset Formula $\mathbb{E}\left(V_{i}\right)=0$
+\end_inset
+
+ y 
+\begin_inset Formula $\text{Var}\left(V_{i}\right)=\sigma^{2}/0<\sigma^{2}<\infty$
+\end_inset
+
+, definamos 
+\begin_inset Formula $\frac{\max\left|a_{i}\right|}{\sqrt{\sum a_{i}^{2}}}\rightarrow0$
+\end_inset
+
+ entonces 
+\begin_inset Formula $V\left(S\right)=\sum a_{i}^{2}r^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $S=\sum a_{i}V_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\frac{S}{\sqrt{\text{Var}\left(S\right)}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Aplicamos a la forma asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\sum_{j=1}^{n}j\left(\underbrace{w_{j}-\frac{1}{2}}_{V_{j}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\sum_{j=1}^{n}jw_{j}-\sum_{j=1}^{n}j\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=T^{+}-\frac{1}{2}\frac{n\left(n+1\right)}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=T^{+}-\frac{n\left(n+1\right)}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{E}\left(S\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{Var}\left(S\right)=\sum_{j=1}^{n}j^{2}\frac{1}{4}=\frac{1}{4}\frac{n\left(n+1\right)\left(2n+1\right)}{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La condición del máximo se reduce a un mínimo de polinomios
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\max a_{i}\leq j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n}\frac{j}{\sqrt{\sum j^{2}}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Otra Escritura de la Prueba: Promedios de Walsh
+\end_layout
+
+\begin_layout Standard
+PAra contar los promedios posibles entre elementos de una muestra, contando
+ los de elementos iguales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+i<j:\binom{n}{2}=\frac{n\left(n-1\right)}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+i=j:n
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+total 
+\begin_inset Formula $\frac{n\left(n+1\right)}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El estadístico es la cantidad de promedios de Walsh positivos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\#\left\{ \frac{X_{i}+X_{j}}{2}>0;1\leq i\leq j\leq n\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ver demostración en el Libro.
+\end_layout
+
+\begin_layout Standard
+Consideramos una sucesión de VA positivas, 
+\begin_inset Formula $\left\{ X_{ik}\right\} _{i=1}^{p}$
+\end_inset
+
+., subconjunto de la muestra 
+\begin_inset Formula $\left\{ X_{i}\right\} _{i=1}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|X_{ik}\right|=X_{ik}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $k=1$
+\end_inset
+
+, seguro que no hay positivas menores, pero sí negativas de mayor módulo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R\left(X_{i1}\right)=\#\left\{ X_{j}:\left|X_{j}\right|\leq\left|X_{i1}\right|\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estas sólo pueden ser negativas.
+ Negativas de menor módulo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R\left(X_{i1}\right)=\#\left\{ X_{j}:\left|X_{j}\right|\leq\left|X_{i1}\right|\right\} =\#\left\{ k:\frac{X_{k}+X_{i1}}{2}>0;j\notin\left\{ ik\right\} _{k=2}^{n}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya que sabemos que todas las de menor módulo son negativas.
+ Con pedir que la suma sea positiva me deshago de los negativos mayores,
+ con pedir que no sea ninguno de los demás índices, cubro los positivos
+ mayores.
+\end_layout
+
+\begin_layout Standard
+En 
+\begin_inset Formula $R\left(X_{i2}\right)$
+\end_inset
+
+ el único positivo es 
+\begin_inset Formula $X_{i1}$
+\end_inset
+
+ y todos los demás son negativos de menor módulo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R\left(X_{i1}\right)=\#\left\{ X_{j}:\left|X_{j}\right|\leq\left|X_{i2}\right|\right\} =\#\left\{ k:\frac{X_{k}+X_{i2}}{2}>0;j\notin\left\{ ik\right\} _{k=3}^{n}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TEnemos una biyección de unos conjuntos a otros entonces los cardinales
+ son iguales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\sum_{i=1}^{p}R\left(X_{ik}\right)=\left\{ \frac{X_{i}+X_{j}}{2}>0;1\leq i\leq j\leq n\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Idea de gonzalo
+\end_layout
+
+\begin_layout Standard
+Armar pares ordenados y tratar de garantizar algo con la idea de que si
+ el elemento de mayor rango en el par es positivo, el de menor rango va
+ a estar obligado a sumar positivo con él.
+\end_layout
+
+\begin_layout Subsection
+Seguimos
+\end_layout
+
+\begin_layout Section
+Práctica
+\end_layout
+
+\begin_layout Subsection
+Licor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X\sim Bi\left(277;p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\sum X-277p}{\sqrt{277p\left(1-p\right)}}\rightarrow\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\left|\frac{\sum X-277p}{\sqrt{277p\left(1-p\right)}}\right|>z_{1-\frac{0,01}{2}}\right)=2\Phi\left(1-\frac{0,01}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ambulancia
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X\sim Bi\left(15;p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Signif
+\end_layout
+
+\begin_layout Standard
+Sumamos 8 probabilidades para encontrar 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Potencia
+\end_layout
+
+\begin_layout Standard
+Ojo, redefine 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi\left(p\right)=1-\beta\left(p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Disco
+\end_layout
+
+\begin_layout Subsubsection
+Las colas deben sumar igual porque ante 
+\begin_inset Formula $p=\frac{1}{2}$
+\end_inset
+
+ es simétrico.
+\end_layout
+
+\begin_layout Standard
+Probamos que es IUMP cuando la región es del tipo 
+\begin_inset Formula $\mathbb{E}\left(X\right)\pm k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Error de tipo II
+\end_layout
+
+\begin_layout Standard
+Es la probabilidad de no rechazar 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ cuando es falsa.
+\end_layout
+
+\begin_layout Standard
+La armamos sumando para cada parámetro las probabilidades de la región de
+ aceptación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $pv$
+\end_inset
+
+: suma de los casos tanto o máß extremos que 8, 9,10,0,1,2.
+ También se puede ver con la regla del mínimo que ella dió.
+\end_layout
+
+\begin_layout Subsubsection
+Para armar la prueba exacta:
+\end_layout
+
+\begin_layout Standard
+Hay que reducir la región porque si no nos pasamos.
+ 
+\end_layout
+
+\begin_layout Standard
+Se rechaza en 9,10 y 0,1.
+\end_layout
+
+\begin_layout Standard
+En los bordes, 2 y 8, introducimos gamma.
+ Para 
+\begin_inset Formula $p=\frac{1}{2}$
+\end_inset
+
+ coinciden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X\geq1\right)+P\left(X\geq9\right)+\alpha\left[P\left(X=8\right)+P\left(X=2\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Café
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X_{i}=P\left(\text{el frasco }i\text{ no contiene el café}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Hipótesis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:p>0,1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:p<0,1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+A lo sumo dos frascos, rechazo en 0,1 y 2.
+\end_layout
+
+\begin_layout Subsubsection
+Obtenemos el 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ sumando las probabilidades de los casos de rechazon para 
+\begin_inset Formula $p=0,1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\sqrt{n}\left(\overline{X}_{n}-p\right)}{\sqrt{\overline{X}_{n}\left(1-\overline{X}_{n}\right)}}\overset{a}{\sim}\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p=P\left(X_{1}+X_{2}=7\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,2212 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Práctica 2- Prueba del Signo
+\end_layout
+
+\begin_layout Section
+Para 
+\begin_inset Formula $n=10$
+\end_inset
+
+ y 
+\begin_inset Formula $\alpha=0,0547$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Subsection
+Construya la prueba del signo de nivel 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ para 
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=8
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(\boldsymbol{X}\right)=\begin{cases}
+1 & k\geq8\\
+0 & k<8
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Halle la potencia de la prueba para
+\end_layout
+
+\begin_layout Subsubsection
+La distribución 
+\begin_inset Formula $\mathcal{N}\left(1;1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta_{\mathcal{N}\left(1;1\right)}\left[\Phi\left(\boldsymbol{X}\right)\right]=P\left(\Phi\left(\boldsymbol{X}\right)=1\right)=P\left(S\left(\boldsymbol{X}\right)\geq8\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{i}\sim\mathcal{N}\left(1;1\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z=\frac{X_{1}-1}{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left(X>0\right)=P\left(Z>-1\right)=1-P\left(Z<-1\right)=1-\phi\left(-1\right)=0,8413$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\Phi\left(\boldsymbol{X}\right)=1\right)=P\left(Bi\left(0,8413;10\right)\geq8\right)=0,7972
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta_{\mathcal{N}\left(1;1\right)}\left[\Phi\left(\boldsymbol{X}\right)\right]=0,7972
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Esto significa que en este caso tendríamos muy considerables posibilidades
+ de no rechazar, a pesar de que estamos en un caso radicalmente diferente
+ al supuesto.
+ El error de tipo 2 es alto.
+\end_layout
+
+\begin_layout Subsubsection
+La distribución de densidad 
+\begin_inset Formula $f\left(x\right)=\frac{1}{2}e^{-\left|x-1\right|}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X_{1}\sim dexp\left(1;2\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X>0\right)=\int_{0}^{+\infty}\frac{1}{2}e^{-\left|x-1\right|}dx=\int_{0}^{1}\frac{1}{2}e^{x-1}dx+\int_{1}^{+\infty}\frac{1}{2}e^{1-x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X>0\right)=\frac{1}{2}\left\{ \frac{1}{e}\int_{0}^{1}e^{x}dx+e\int_{1}^{+\infty}-e^{-x}dx\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X>0\right)=\frac{1}{2}\left\{ \frac{1}{e}\left(e-1\right)+e\left(-0+\frac{1}{e}\right)\right\} =\frac{1}{2}\left\{ 1-\frac{1}{e}+1\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X>0\right)=0,8160
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\Phi\left(\boldsymbol{X}\right)=1\right)=P\left(Bi\left(0,8160;10\right)\geq8\right)=0,7255
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta_{dexp\left(1;1\right)}\left[\Phi\left(\boldsymbol{X}\right)\right]=0,7255
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+La potencia aproximada en la distribución 
+\begin_inset Formula $\mathcal{N}\left(1;1\right)$
+\end_inset
+
+ usando la aproximación normal con corrección por continuidad.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=\frac{n}{2}+z_{\frac{\alpha}{2}}\sqrt{\frac{n}{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=5+z_{0,025}\sqrt{2,5}=5,806
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por corrección por continuidad
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k_{corr}=6,306\approx6
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta'_{\mathcal{N}\left(1;1\right)}\left[\Phi\left(\boldsymbol{X}\right)\right]=P\left(Bi\left(0,8413;10\right)\geq6\right)=0,94
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Construya el gráfico de 
+\begin_inset Formula $S\left(\theta\right)$
+\end_inset
+
+ y deduzca el estimador para 
+\begin_inset Formula $\theta$
+\end_inset
+
+ cuando 
+\begin_inset Formula $n$
+\end_inset
+
+ es impar.
+\end_layout
+
+\begin_layout Section
+Pájaros en días Nublados
+\end_layout
+
+\begin_layout Subsection
+Prueba
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=\frac{n}{2}-z_{\frac{\alpha}{2}}\sqrt{\frac{n}{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k=5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n-k=8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{obs}=4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\begin_inset Formula $pv$
+\end_inset
+
+ es 0,13.
+\end_layout
+
+\begin_layout Standard
+******¿Qué pasa con el pv al aproximar así? Pareciera ser esperable, 10
+ es un valor bajo para observar convergencia.
+\end_layout
+
+\begin_layout Standard
+El exacto nos da 
+\begin_inset Formula $k'=3$
+\end_inset
+
+ para un alfa de 0,046 .
+ Con este valor no logramos el alfa pero obtenemos un resultado acorde al
+ pvalor.
+ 
+\end_layout
+
+\begin_layout Subsection
+Estimador Puntual e Intervalo
+\end_layout
+
+\begin_layout Itemize
+Recurrimos a Hodges-Lehman.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}=\begin{cases}
+\frac{X^{\left(\frac{n}{2}\right)}+X^{\left(\frac{n}{2}+1\right)}}{2} & n=2m\\
+X^{m+1} & n=2m+1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}=73
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Intervalo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\left[X^{\left(k+1\right)};X^{\left(n-k\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay que calcular un 
+\begin_inset Formula $k''_{1};k''_{2}$
+\end_inset
+
+ acorde al nivel pedido.
+ 
+\begin_inset Formula $k_{1}''=3$
+\end_inset
+
+ y 
+\begin_inset Formula $k_{2}''=9$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\left[43;105\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Insectos
+\end_layout
+
+\begin_layout Subsection
+Interpretando los insectos inmóviles como 
+\begin_inset Quotes fld
+\end_inset
+
+-
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T^{+}=33$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T^{-}=28$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=61$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(Bi\left(61;0,5\right)\leq33\right)=0,77
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Interpretando los insectos inmóviles como empates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(Bi\left(49;0,5\right)\leq33\right)=0,004
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este caso, rechazamos.
+\end_layout
+
+\begin_layout Section
+Seis Estudiantes
+\end_layout
+
+\begin_layout Standard
+Esta prueba es unilateral, dado que queremos que la mediana sea 0 o un valor
+ negativo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(Bi\left(6;0,5\right)\leq5\right)=0,98
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+***** No pude definir nivel 5%
+\end_layout
+
+\begin_layout Section
+Sean 
+\begin_inset Formula $\boldsymbol{X}=\left(X_{i}\right)_{i=1}^{n}$
+\end_inset
+
+ con distribución 
+\begin_inset Formula $G\left(x\right)=F\left(x-\theta\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $F\in\Omega_{0}$
+\end_inset
+
+.
+ Se desea probar 
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+ o equivalentemente 
+\begin_inset Formula $H_{0}:G\left(0\right)=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:G\left(0\right)<\frac{1}{2}$
+\end_inset
+
+ usando la prueba basada en 
+\begin_inset Formula $S=\#\left\{ i/x_{i}>0\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Pistas de la Guía
+\end_layout
+
+\begin_layout Enumerate
+Por la LGN: 
+\begin_inset Formula $\frac{\overline{S}}{n}\overset{\mathcal{P}}{\rightarrow}\mathbb{E}\left[s\left(X_{i}\right)\right]=P\left(X_{i}>0\right)=\mu\left(F;\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Abajo probé que 
+\begin_inset Formula $S^{*}\rightarrow\begin{cases}
+\frac{1}{2} & F\in\Omega_{0};\theta=0\\
+>\frac{1}{2} & F\in\Omega_{0};\theta>0
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Probar que la distribución asintótica bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ es normal y por tanto es consistente, de la clase de las distribuciones
+ con mediana única positiva.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)$
+\end_inset
+
+ , esta convergencia debe ser uniforme en un entorno de 
+\begin_inset Formula $\theta=0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mu_{n}\left(\theta\right)=np\left(\theta\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\sigma_{n}^{2}\left(\theta\right)=np\left(\theta\right)\left[1-p\left(\theta\right)\right]$
+\end_inset
+
+ y a su vez 
+\begin_inset Formula $p\left(\theta\right)=1-F\left(-\theta\right)$
+\end_inset
+
+, es decir 
+\begin_inset Formula $1-G\left(0\right)=1-F\left(0-\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Muestre que bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $S$
+\end_inset
+
+ tiene distribución libre.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:P\left(X_{i}<0\right)=G_{H_{0}}\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por hipótesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:P\left(X_{i}<0\right)=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\sum X_{i}/S\sim Bi\left(n;\frac{1}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Considere el caso de 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:P\left(X_{i}<0\right)=G_{H_{1}}\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por hipótesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i:P\left(X_{i}<0\right)=p/p<\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\sum X_{i}/S\sim Bi\left(n;p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si bien no depende explícitamente de la distribución, no es libre ya que
+ está condicionada por 
+\begin_inset Formula $G_{H_{1}}\left(0\right)=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Considere el caso de 
+\begin_inset Formula $S^{*}=\frac{S}{n}$
+\end_inset
+
+.
+ Probar la condición indicada abajo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S^{*}\rightarrow\begin{cases}
+\frac{1}{2} & F\in\Omega_{0};\theta=0\\
+>\frac{1}{2} & F\in\Omega_{0};\theta>0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos aplicar la LGN a 
+\begin_inset Formula $S^{*}$
+\end_inset
+
+ como transformada de 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(S^{*}\right)=\frac{1}{n}\mathbb{E}\left(S\right)=\frac{np}{n}=p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(S^{*}\right)=\frac{1}{n^{2}}V\left(S\right)=\frac{np\left(1-p\right)}{n^{2}}=\frac{p\left(1-p\right)}{n}<\frac{1}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se cumplen las hipótesis de la ley fuerte.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left\{ X_{i}\right\} $
+\end_inset
+
+ va independientes 
+\begin_inset Formula $E\left(X_{i}\right)=\mu_{i}<\infty$
+\end_inset
+
+ 
+\begin_inset Formula $\sum_{i=1}^{\infty}\frac{\sigma^{2}}{i^{2}}<\infty$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Débil 
+\begin_inset Formula $\left\{ X_{n}\right\} $
+\end_inset
+
+ va independientes y 
+\begin_inset Formula $\forall i:\underbrace{E\left(X_{i}\right)}_{\mu_{i}}<\infty$
+\end_inset
+
+, 
+\begin_inset Formula $\forall i:V\left(X_{i}\right)<c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula 
+\[
+S^{*}\overset{\text{ctp}}{\rightarrow}p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+La conclusión es que para en el caso B para 
+\begin_inset Formula $H_{0}:p=\frac{1}{2}$
+\end_inset
+
+ y para 
+\begin_inset Formula $H_{1}:p<\frac{1}{2}$
+\end_inset
+
+ con lo cual se cumple lo observado.
+\end_layout
+
+\begin_layout Quote
+Además, ahora tenemos un estadístico con una forma funcional constante (no
+ una sucesión de ellos) 
+\end_layout
+
+\begin_layout Subsection
+En base a los resultados anteriores, muestre que 
+\begin_inset Formula $c_{S}=2f\left(0\right)$
+\end_inset
+
+ donde 
+\begin_inset Formula $f$
+\end_inset
+
+ es la densidad de 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ Se asume válidas las condiciones 1 y 2 de Pitman.
+ Muestre que la prueba paramétrica usual, 
+\begin_inset Formula $t$
+\end_inset
+
+, tiene eficacia 
+\begin_inset Formula $c_{t}=\frac{1}{\sigma_{f}}/\sigma_{f}^{2}=\int x^{2}f\left(x\right)dx$
+\end_inset
+
+.
+ Calcule la eficiencia de la prueba del signo respecto de la prueba 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Como ambas distribuciones pueden hacerse converger a una normal usando el
+ teorema del límite central, es sencillo encontrar las sucesiones que cumplen
+ lo pedido.
+\end_layout
+
+\begin_layout Subsubsection
+Coeficiente de la prueba del signo, 
+\begin_inset Formula $c_{S}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El estadístico elegido nos lleva a trabajar con la media de una muestra
+ de tipo 
+\begin_inset Formula $Bi\left(1;p\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}=\frac{\frac{S}{n}-G\left(0\right)}{\sqrt{np\left(1-p\right)}}=\frac{\overline{S}-\mathbb{E}_{p}\left(S\right)}{\sqrt{\text{Var}\left(S\right)}}\rightarrow\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\theta\right)=G\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\theta}\mu\left(\theta\right)=g\left(0\right)\underset{H_{0}}{=}f\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}\left(\theta\right)=n\cdot\text{Var}\left(\frac{S}{n}\right)=\frac{1}{n}\text{Var}\left(S\right)=p\left(1-p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma\left(\theta\right)=\sqrt{p\left(1-p\right)}\underset{H_{0}}{=}\sqrt{\frac{1}{4}}=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\frac{\partial}{\partial\theta}\mu\left(0\right)}{\sigma\left(0\right)}=\frac{f\left(0\right)}{\frac{1}{2}}=2f\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Coeficiente de la prueba 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $c_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El estadístico es 
+\begin_inset Formula $T_{n}=\frac{\sum X_{i}}{n}=\overline{X}_{n}$
+\end_inset
+
+.
+ Su esperanza y varianza son conocidas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{X}\sim\mathcal{N}\Rightarrow\mathbb{E}\left(\overline{X}\right)=\mu=\tilde{X}=\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}=\frac{\overline{X}_{n}-\theta}{\sigma\left(\theta\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\theta\right)=\theta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\theta}\mu\left(0\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}\left(\theta\right)=\int x^{2}\cdot g\left(x\right)dx=\int x^{2}\cdot f\left(x-\theta\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\frac{\partial}{\partial\theta}\mu\left(0\right)}{\sigma\left(0\right)}=\frac{1}{\sqrt{\int x^{2}\cdot f\left(x-\theta\right)dx}\bigg|_{0}}=\frac{1}{\sqrt{\int x^{2}\cdot f\left(x\right)dx}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{1}{\sigma_{f}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ciudadanos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=135$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tiempo 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tiempo 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+88
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=40$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c=30$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{1}=\frac{\left(b-c\right)^{2}}{b+c}=\frac{100}{70}=1,428...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{1}\sim\chi_{1;\alpha}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Uso 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ porque 
+\begin_inset Formula $b+c>20$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{2}=40
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{2}\sim Bi\left(b+c;0,5\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:P^{+}=P^{-}\text{vs}H_{1}:P^{+}\neq P^{-}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:\left\{ T_{2}\leq21\right\} \cup\left\{ T_{2}>44\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\begin_inset Formula $pvalor$
+\end_inset
+
+ es 
+\begin_inset Formula 
+\[
+pv=2\cdot\text{mín}\left\{ P\left(T\leq T_{obs}\right);P\left(T>T_{obs}\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+pv=2\cdot\text{mín}\left\{ 0,96;0,03\right\} =0,06
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, aceptamos 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+****¿Para la versión 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ rechazamos? La región me da 
+\begin_inset Formula $T_{1}\geq0,0039$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Cambio en la tabla
+\end_layout
+
+\begin_layout Itemize
+Ahora los 37 que se oponen en 
+\begin_inset Formula $Y$
+\end_inset
+
+ son todos del conjunto original, todos se oponían en 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tiempo 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tiempo 1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+88
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{1}=\frac{\left(b-c\right)^{2}}{b+c}=10
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado que la región de rechazo se mantiene, ahora rechazamos para ambos criterios.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{2}=10
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mortalidad por Accidentes
+\end_layout
+
+\begin_layout Standard
+Queremos aplicar una prueba de tendencia, nos preguntamos si esta es positiva.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:P^{+}=P^{-}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:P^{+}>P^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Rechazamos 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ para valores grandes de 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $\alpha=0,05$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:k/P\left[Bi\left(15;0,5\right)>k\right]=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Bi\left(15;0,5\right)>12=0,0037
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Bi\left(15;0,5\right)>11=0,017
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El mejor alfa disponible es 
+\begin_inset Formula $0,017$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:T>11
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{obs}=7
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No se rechaza 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Alturas de los Varones
+\end_layout
+
+\begin_layout Itemize
+Dado que hay un empate, retiramos el par 14, 31.
+\end_layout
+
+\begin_layout Itemize
+El 
+\begin_inset Formula $n'=16$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:P^{+}=P^{-}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:P^{+}>P^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Rechazamos 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ para valores grandes de 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $\alpha=0,05$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:k/P\left[Bi\left(16;0,5\right)>k\right]=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Bi\left(15;0,5\right)>12=0,01
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Bi\left(15;0,5\right)>13=0,002
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Elegimos un 
+\begin_inset Formula $\alpha=0,01$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:T>12
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{obs}=15$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, rechazamos 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Sugestión
+\end_layout
+
+\begin_layout Standard
+La sugestión va a ser correlación positiva entre errores dado que esperamos
+ que si B subestima en la primera parte a subestime y si B sobreestima en
+ la segunda parte A sobreestime.
+ 
+\end_layout
+
+\begin_layout Standard
+Vamos a ordenar la muestra de acuerdo al error controlado de B para ver
+ si genera error en A.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:P^{+}=P^{-}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:P^{+}>P^{-}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:k/P\left[Bi\left(10,\frac{1}{2}\right)>k\right]=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[Bi\left(10,\frac{1}{2}\right)>7\right]=0,05
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No hay empates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{obs}=9$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, se rechaza 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Inmunización
+\end_layout
+
+\begin_layout Standard
+Los autores aplican la prueba paramétrica para 
+\begin_inset Formula $H_{0}:\mu=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\mu\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Esta depende de la hipótesis de normalidad asintótica y además la cantidad
+ de datos es escasa.
+ 
+\end_layout
+
+\begin_layout Standard
+Conviene usar una prueba Cox Stuart para la tendencia.
+\end_layout
+
+\begin_layout Standard
+***** Acá es discutible porque la alta cantidad de empates disminuye la
+ potencia de esta prueba, pero en general sería válido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n'=12$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{obs}=11$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:P^{+}=P^{-}\text{contra}H_{1}:P^{+}>P^{-}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:k/P\left[Bi\left(12;\frac{1}{2}\right)>k\right]=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left[Bi\left(12;\frac{1}{2}\right)>9\right]=0,019
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left[Bi\left(12;\frac{1}{2}\right)>8\right]=0,07
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:T_{obs}>9
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con significación 
+\begin_inset Formula $\alpha=0,019$
+\end_inset
+
+ rechazamos para 
+\begin_inset Formula $T_{obs}>9$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En este caso, a diferencia de los investigadores, rechazamos 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

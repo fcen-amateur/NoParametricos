@@ -1,0 +1,88 @@
+
+# Ejercicio 2
+
+```{r }
+
+library("tidyverse")
+library("MASS")
+
+tabla2 <- tribble(~sujeto, ~antes, ~despues,
+1, 0.68, 0.73,
+11, 0.65, 0.72 ,
+2, 0.64, 0.62 ,
+12 , 0.59 , 0.60 ,
+3 , 0.68 , 0.66 ,
+13 , 0.78 , 0.78 ,
+4 , 0.82 , 0.92 ,
+14 , 0.67 , 0.66 ,
+5 , 0.58 , 0.68 ,
+15 , 0.65 , 0.68 ,
+6 , 0.80 , 0.87 ,
+16 , 0.76 , 0.77 ,
+7 , 0.72 , 0.77 ,
+17 , 0.61 , 0.72 ,
+8 , 0.65 , 0.70 ,
+18 , 0.86 , 0.86 ,
+9 , 0.84 , 0.88 ,
+19 , 0.74 , 0.72 ,
+10 , 0.73 , 0.79 ,
+20 , 0.88 , 0.97 )
+
+
+ordenPorSujeto <- map_dbl(seq(1,20),~which( tabla2$sujeto == .x))
+
+tabla2 <- tabla2[ordenPorSujeto,]
+
+tabla2
+
+tabla2 <- tabla2 %>% mutate( diferencia = despues - antes , norma = abs(diferencia), obs = seq(1,20))
+
+tabla2 <- tabla2[-c(13,18),]
+
+ordenconRepeticiones <- map(sort(tabla2$norma), ~which( tabla2$norma == .x ) )
+
+orden2 <- ordenconRepeticiones
+
+asignarRango <- function(observacion) {
+ aparece <- map_lgl(ordenconRepeticiones, ~ observacion %in% .x)
+ indices <- which( aparece == T )
+ return(mean(indices))
+}
+
+tabla2$rango <- map_dbl(seq(1,18),asignarRango)
+
+tabla2
+
+tObs <- map_dbl( which(tabla2$diferencia > 0), asignarRango ) %>% sum() 
+
+tObs
+
+```
+
+
+
+# Ejercicio5: Rehacer el 2 con Scores Normales. 
+
+```{r scores en el 2}
+
+sucScore <- function(rango,n) {
+  return( ((1 + rango / (n+1) )/2) %>% qnorm() )
+}
+
+tabla5 <- tabla2
+
+tObs5 <- map_dbl( which(tabla5$diferencia > 0), asignarRango ) %>% map_dbl(~sucScore(.x,18)) %>% sum()  %>% ( function(x) x/18 )
+
+tObs5
+
+centroInt5 <- map_dbl(tabla5$rango,~sucScore(.x,18) ) %>% sum() %>% ( function(x) x/36 )
+deltaInt5 <- map_dbl(tabla5$rango,~( sucScore(.x,20) )^2 ) %>% sum() %>% ( function(x) x/72 ) %>% sqrt() %>% ( function(x) (x/sqrt(18)) * qnorm(0.95) ) 
+
+intervalo5 <- c(
+  centroInt5 - deltaInt5,
+  centroInt5 + deltaInt5
+)
+
+intervalo5
+```
+

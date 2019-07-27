@@ -1,0 +1,612 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Práctica 3: Wilcoxon
+\end_layout
+
+\begin_layout Section
+Hallar la distribución para 
+\begin_inset Formula $n=5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Alcohol y Reacción
+\end_layout
+
+\begin_layout Standard
+Vamos a probar si la mediana es igual contra mayor a 0.
+ así estamos poniendo a prueba la hipótesis de efecto positivo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=0\text{vs}H_{1}:\theta>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como hay empates, 
+\begin_inset Formula $n'=18$
+\end_inset
+
+, extraemos los valores empatados del conjunto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T^{+}=154$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Rechazamos para valores grandes de 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+, es decir que queremos 
+\begin_inset Formula $W_{1-\frac{\alpha}{2}}$
+\end_inset
+
+, que es 
+\begin_inset Formula $123$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Rechazamos 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Ítems Vendidos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{obs}=53$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La prueba se indica como igual contra distinto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:T_{obs}<W_{\frac{\alpha}{2}}\vee T_{obs}>W_{1-\frac{\alpha}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:T_{obs}<14\vee T_{obs}>64
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No rechazamos 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Candidato Voluntarioso
+\end_layout
+
+\begin_layout Standard
+Buscamos un intervalo por Hodges-Lehman.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}=\text{med}\left\{ \frac{X_{i}+X_{j}}{2}\right\} _{i<j}=6,5
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[V^{\left(a+1\right)};V^{\left(N-a\right)}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a/P\left(T^{+}\leq a\right)=P\left(T^{+}>N-a\right)=\frac{\alpha}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a=26$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[V^{\left(25\right)};V^{\left(96\right)}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado que el rango 25 no existe, elegimos el 24,5 que es el más conservativo.
+ De los valores que lo cumplen, vamos a elegir el menor.
+ 
+\end_layout
+
+\begin_layout Standard
+Con 96 pasa lo mismo, así que elegimos 98.
+ De estos valores elegimos el mayor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[5,45;8,35\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+5bis Lo hice por Error: Scores Normales en el 4
+\end_layout
+
+\begin_layout Itemize
+El método exacto es muy trabajoso, requiere un algoritmo iterativo sobre
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Asumo que se desea una aproximación normal.
+\end_layout
+
+\begin_layout Standard
+*****
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{V}=0,3249$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{V}\in\frac{1}{2n}\sum_{j=1}^{n}A_{j}\pm z_{\alpha}\cdot\frac{1}{\sqrt{n}}\sqrt{\frac{1}{4n}\sum_{j=1}^{n}A_{j}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[0,3352;0,4297\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Rehacer el 2 con Scores Normales
+\end_layout
+
+\begin_layout Standard
+**** Ver el tema del valor crítico.
+\end_layout
+
+\begin_layout Section
+Caudal del Río
+\end_layout
+
+\begin_layout Standard
+Aplicamos el mismo procedimiento que con Cox-Stuart pero usando la prueba
+ de rangos signados en vez de la del signo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T^{+}=37$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=0\text{vs}H_{1}:\theta>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:T^{+}>W_{1-\frac{\alpha}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R:T^{+}>60
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No hay evidencia suficiente para rechazar 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+*****Este es unilateral, ¿No?
+\end_layout
+
+\begin_layout Section
+Drogas 1 y 2
+\end_layout
+
+\begin_layout Standard
+Dado que la cantidad de empates es 0 para ambas drogas, podemos ordenar
+ según cualquiera de ellas.
+\end_layout
+
+\begin_layout Standard
+En este caso, todas las diferencias son positivas, así que 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+ es la suma de todos los rangos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\frac{5\left(5+1\right)}{2}=15
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Garantizamos un 
+\begin_inset Formula $\alpha=0,05$
+\end_inset
+
+ para 
+\begin_inset Formula $R:T^{+}>W_{1-\frac{\alpha}{2}}$
+\end_inset
+
+, en este caso el valor de corte es 14.
+ 
+\end_layout
+
+\begin_layout Standard
+Se rechaza 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+.
+\end_layout
+
+\begin_layout Section
+.
+\end_layout
+
+\begin_layout Section
+.
+\end_layout
+
+\begin_layout Section
+Pánico Escénico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W_{1-\frac{\alpha}{2}}=30
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=35
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se rechaza 
+\begin_inset Formula $H^{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Estimador Puntual e Intervalo de Confianza
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}=34
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+no es posible definir el intervalo porque al haber muchos empates no existe
+ el rango 32 que pide la fórmula.
+ Podemos tomar el más grande observado, que es 28.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[16;53,5\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Versión normal
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\approx\frac{n\left(n+1\right)}{4}-z_{\nicefrac{\alpha}{2}}\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{24}}-\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\approx\frac{8\left(8+1\right)}{4}-z_{\nicefrac{\alpha}{2}}\sqrt{\frac{8\left(8+1\right)\left(2\cdot8+1\right)}{24}}-\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\approx18-2,84-\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\approx14,65\approx15
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N=32$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[V^{\left(16\right)};V^{\left(17\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[37;38,5\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+******no me da la cuenta
+\end_layout
+
+\end_body
+\end_document

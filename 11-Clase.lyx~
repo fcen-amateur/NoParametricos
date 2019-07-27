@@ -1,0 +1,673 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Más Hodges Lehman
+\end_layout
+
+\begin_layout Section
+Problema de Fischer Behrens
+\end_layout
+
+\begin_layout Itemize
+Comparamos las medianas de dos muestras, una con función de distribución
+ 
+\begin_inset Formula $G$
+\end_inset
+
+ y otra con función de distribución 
+\begin_inset Formula $H\left(y-\Delta\right)$
+\end_inset
+
+, de tal forma que investigamos la diferencia entre medianas 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $p$
+\end_inset
+
+-valor simulado
+\end_layout
+
+\begin_layout Standard
+Lo obtenemos tomando el valor del estadístico para muestras generadas según
+ la distrbución hipotética y contando la cantidad más extrema que la observada.
+\end_layout
+
+\begin_layout Subsection
+Estimamos las funcinoes de los 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ usando las distribucines empíricas.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ está mal escrito.
+\end_layout
+
+\begin_layout Standard
+Aprovechando los cálculos para MWW
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{1}=\int_{-\infty}^{+\infty}g\left(x\right)\left[1-H\left(x\right)\right]dx=\int_{-\infty}^{+\infty}\int_{x}^{+\infty}G\left(y\right)h\left(y\right)dxdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-p_{1}=1-\int_{-\infty}^{+\infty}g\left(x\right)\left[1-H\left(x\right)\right]dx=1-\underbrace{\int_{-\infty}^{+\infty}g\left(x\right)dx}_{1}+\int_{-\infty}^{+\infty}g\left(x\right)H\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-p_{1}=\int_{-\infty}^{+\infty}g\left(x\right)H\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+p_{1}-p_{1}^{2}=p_{1}\left(1-p_{1}\right)=\int_{-\infty}^{+\infty}G\left(y\right)h\left(y\right)dxdy\cdot\int_{-\infty}^{+\infty}H\left(x\right)g\left(x\right)dxdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aprovechamos un planteo de tipo Riemann-Stieltjes para justificar la aproximació
+n:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\int H_{n}\left(t\right)dG_{n}\left(t\right)=\sum_{i=1}^{n}\frac{1}{n}H_{n}\left(X_{i}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Kruskall y Wallis
+\end_layout
+
+\begin_layout Standard
+Extendemos el prolema de MWW a 
+\begin_inset Formula $k>2$
+\end_inset
+
+ muestras indepedientes.
+\end_layout
+
+\begin_layout Standard
+Se desea probar con la hipótesis nula de que todas las poblacinoes tienen
+ idéntica mediana.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\boldsymbol{X}=\left\{ X_{ij}\right\} _{i=1;k=1}^{I;J}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La mediana de la población 
+\begin_inset Formula $\left\{ X_{1j}\right\} $
+\end_inset
+
+ es 
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall j:X_{nj}\sim F\left(X-\theta_{j}\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $F\in\Omega_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N=\sum_{i=1}^{I}n_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los rangos 
+\begin_inset Formula $R_{ij}$
+\end_inset
+
+ se obtienen sobre la muestra total ordenada.
+\end_layout
+
+\begin_layout Standard
+Los rangos por fila son los 
+\begin_inset Formula $R_{i}=\sum_{j=1}^{J}R_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{R}_{1\bullet}=\frac{1}{n_{1}}R_{1\bullet}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+si no hay empates, otra vez aparece la suma de una serie aritmética: 
+\begin_inset Formula $\sum\sum R_{ij}=\frac{N\left(N+1\right)}{2}=\sum R_{i\bullet}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Estadístico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{1}{S^{2}}\cdot\left(\sum_{i=1}^{I}\frac{R_{i}^{2}}{n_{i}}-\frac{N\left(N+1\right)^{2}}{4}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando no hay empates, vale una suma aritmética.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S^{2}=\frac{1}{N-1}\left\{ \frac{N\left(N+1\right)\left(2N+1\right)}{6}-\frac{N\left(N+1\right)^{2}}{4}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S^{2}=\frac{N\left(N+1\right)}{12}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{12}{N\left(N+1\right)}\cdot\left(\sum_{i=1}^{I}\frac{R_{i}^{2}}{n_{i}}-\frac{N\left(N+1\right)^{2}}{4}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{12}{N\left(N+1\right)}\cdot\sum_{i=1}^{I}\frac{R_{i}^{2}}{n_{i}}-3\left(N+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Distribución Nula del Estadístico
+\end_layout
+
+\begin_layout Theorem
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ podemos suponer que las 
+\begin_inset Formula $k$
+\end_inset
+
+ muestras provienen de una misma población.
+\end_layout
+
+\begin_layout Itemize
+Puedo asimilar la demostración a MWW tomando siempre una població contra
+ todo lo demás.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\overline{R}_{i\bullet}\right)=V\left(\frac{R_{i\bullet}}{n_{i}}\right)=\frac{1}{n_{i}^{2}}\frac{n_{i}\left(N-n_{i}\right)\left(N+1\right)}{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(\overline{R}_{i\bullet}\right)=V\left(\frac{R_{i\bullet}}{n_{i}}\right)=\frac{\left(N-n_{i}\right)\left(N+1\right)}{n_{i}12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para contar los casos, usamos el coeficiente multinomial.
+ Esto sirve para obtener la distribución exacta.
+\end_layout
+
+\begin_layout Theorem
+Si la población crece manteniendo una proporció fija y otras hipótesis,
+ el vector de los V_i es una normal y la suma de estos va a ser normal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, considerando 
+\begin_inset Formula $c_{iN}=\sqrt{1-\frac{n_{i}}{N}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+T=\sum_{i=1}^{k}\left(1-\frac{n_{i}}{N}\right)\left[\frac{\overline{R}_{i}-\frac{N+1}{2}}{\sqrt{\frac{\left(N-n_{i}\right)\left(N+1\right)}{12n_{i}}}}\right]^{2}=\left\{ \frac{12}{N\left(N+1\right)}\sum\left(\nicefrac{R_{i}^{2}}{n_{i}}\right)\right\} -3\left(N+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+empezamos pr el t conocido
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+T=\sum_{i=1}^{k}c_{iN}^{2}\left(\frac{\overline{R}_{i\bullet}-\frac{N+1}{2}}{\sqrt{V\left(\overline{R}_{i\bullet}\right)}}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $V\left(\overline{R}_{i\bullet}\right)=\frac{\left(N-n_{i}\right)\left(N+1\right)}{n_{i}12}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+T=\sum_{i=1}^{k}\left(1-\frac{n_{i}}{N}\right)\left(\frac{\overline{R}_{i\bullet}-\frac{N+1}{2}}{\sqrt{\frac{\left(N-n_{i}\right)\left(N+1\right)}{n_{i}12}}}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+T=\sum_{i=1}^{k}\left(1-\frac{n_{i}}{N}\right)\left(\frac{\overline{R}_{i\bullet}-\frac{N+1}{2}}{\sqrt{\frac{N}{n_{i}}\left(1-\frac{n_{i}}{N}\right)}}\right)^{2}\cdot\frac{12}{N+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Para usar el teorema 3
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+T=\sum_{i=1}^{k}\left(1-\frac{n_{i}}{N}\right)\left(\frac{1}{\sqrt{N}}\frac{\overline{R}_{i\bullet}-\frac{N+1}{2}}{\sqrt{\frac{N}{n_{i}}\left(1-\frac{n_{i}}{N}\right)}}\right)^{2}\cdot\frac{N12}{N+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+T=\frac{N}{N+1}\sum_{i=1}^{k}\cancel{\left(1-\frac{n_{i}}{N}\right)}\cdot12\left(\frac{1}{\sqrt{N}}\cdot\frac{\overline{R}_{i\bullet}-\frac{N+1}{2}}{\sqrt{\frac{N}{n_{i}}\cancel{\left(1-\frac{n_{i}}{N}\right)}}}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+T=\frac{N}{N+1}\sum_{i=1}^{k}\left(12\frac{1}{\sqrt{N}}\cdot\frac{\overline{R}_{i\bullet}-\frac{N+1}{2}}{\sqrt{\frac{N}{n_{i}}}}\right)^{2}=\underbrace{\frac{N}{N+1}}_{\rightarrow1}\cdot\sum_{i=1}^{k}V_{i}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+T=\frac{N}{N+1}\sum_{i=1}^{k}\left[\underbrace{\sqrt{12\frac{n_{i}}{N}}}_{c_{iN}\rightarrow\sqrt{12\lambda_{i}}}\frac{1}{\sqrt{N}}\cdot\left(\overline{R}_{i\bullet}-\frac{N+1}{2}\right)\right]^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+B_{ij}=\begin{cases}
+\frac{12\lambda_{i}\left(1-\lambda_{i}\right)}{12\lambda_{i}} & i=j\\
+-\frac{\sqrt{12\lambda_{i}}\cdot\sqrt{12\lambda_{j}}}{12} & i\neq j
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+B_{ij}=\begin{cases}
+1-\lambda_{i} & i=j\\
+-\sqrt{\lambda_{i}\lambda_{j}} & i\neq j
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+B_{ij}=I-\boldsymbol{\delta}\cdot\boldsymbol{\delta}'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\boldsymbol{\delta}=\left(\begin{matrix}\sqrt{\lambda_{i}}\\
+\vdots\\
+\sqrt{\lambda_{j}}
+\end{matrix}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\boldsymbol{\delta}\cdot\boldsymbol{\delta}'=\sum\frac{n_{i}}{N}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\lVert\boldsymbol{\delta}\rVert=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+es idempotente y simétrico
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\text{rg}B=\text{tr}B=k-\text{tr}\boldsymbol{\delta}\cdot\boldsymbol{\delta}'=k-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hay que probar que es chi cuadrado.
+ Como la matriz es idempotente y simétrica, ya conocemos la distribución.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Práctica
+\end_layout
+
+\begin_layout Subsection
+4 Insectos
+\end_layout
+
+\begin_layout Standard
+Vamos a tomar signo como la dirección de la velocidad.
+\end_layout
+
+\begin_layout Itemize
+Los 12 empates pueden ser parte de 
+\begin_inset Quotes fld
+\end_inset
+
+signo -
+\begin_inset Quotes frd
+\end_inset
+
+, o pueden ser empates.
+\end_layout
+
+\begin_layout Itemize
+Pareciera orientado a que son empates.
+ Está claro que en ese caso se retiran.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}\sim Bi\left(49;\frac{1}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(Bi\left(49;\frac{1}{2}\right)>33\right)=0,0047
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1 - pbinom(prob = 0.5,size = 49,q=33) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(Bi\left(61;\frac{1}{2}\right)>33\right)=0,22
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

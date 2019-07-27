@@ -1,0 +1,691 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Prueba Para dos Muestras Independientes: Mann-Whitney-Wilcoxon
+\end_layout
+
+\begin_layout Standard
+Esta prueba busca distinguir dos poblaciones con la idea de que si tienen
+ distribuciones similares deberían repartirse homogéneamente los rangos.
+ Si se estratifican, sospechamos que son diferentes.
+\end_layout
+
+\begin_layout Subsection
+Definición de la prueba
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(X_{i}\right)_{i=1}^{n}/\forall i:X_{i}\sim F\left(x\right)$
+\end_inset
+
+, muestra iid.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(Y_{i}\right)_{i=1}^{m}/\forall i:Y_{i}\sim F\left(x-\Delta\right)$
+\end_inset
+
+, muestra iid.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $F\in\Omega_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n+m=N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Estadístico y Zona de Rechazo
+\end_layout
+
+\begin_layout Definition
+Estadístico 
+\begin_inset Formula $U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Para la muestra unificada 
+\begin_inset Formula $\boldsymbol{X}\cup\boldsymbol{Y}$
+\end_inset
+
+, 
+\begin_inset Formula $U=\sum_{i}R\left(Y_{i}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Estadístico 
+\begin_inset Formula $W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $W=\sum_{i;j}s\left(Y_{i}-X_{j}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Las variables que intervienen en la suma no son independientes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Dado que por ejemplo 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ aparece en combinación con cada 
+\begin_inset Formula $Y_{j}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Relación entre 
+\begin_inset Formula $W$
+\end_inset
+
+ y 
+\begin_inset Formula $U$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Esta se observa fácilmente si no hay empates.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R\left(Y_{i}\right)=\#\left\{ 1\leq j\leq n/X_{j}<Y_{i}\right\} +\#\left\{ 1\leq k\leq m/Y_{j}<Y_{i}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i}R\left(Y_{i}\right)=\sum_{i}\#\left\{ 1\leq j\leq n/X_{j}<Y_{i}\right\} +\sum_{i}\#\left\{ 1\leq k\leq m/Y_{j}<Y_{i}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=\#\left\{ 1\leq i\leq m;1\leq j\leq n/s\left(Y_{i}-X_{j}\right)=1\right\} +\sum_{i=1}^{m}i
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U=W+\frac{m\left(m+1\right)}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Propiedades de Distribución
+\end_layout
+
+\begin_layout Standard
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(R\left(Y_{i}\right)=k\right)=\frac{1}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(R\left(Y_{i}\right)=k;R\left(Y_{j}\right)=l\right)=\begin{cases}
+\frac{1}{N\left(N+1\right)} & k\neq l,i\neq j\\
+0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con probabilidad condicional se ve fácil que la probabilidad libre de que
+ el rango de la primera variable sea precisamente cierto rango es 
+\begin_inset Formula $\frac{1}{N}$
+\end_inset
+
+ y la segunda queda condicionada con 
+\begin_inset Formula $N-1$
+\end_inset
+
+ posiciones para elegir.
+\end_layout
+
+\begin_layout Standard
+Si no, en general hay 
+\begin_inset Formula $N!$
+\end_inset
+
+ rangos y 
+\begin_inset Formula $N-2$
+\end_inset
+
+ formas de permutar las no condicionadas, con lo que la probabilidad da
+ igual.
+\end_layout
+
+\begin_layout Theorem
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ y con 
+\begin_inset Formula $F\in\Omega_{0}$
+\end_inset
+
+, podemos conocer la esperanza y varianza de los estadísticos.
+\end_layout
+
+\begin_layout Proof
+Esperanza y Varianza.
+\end_layout
+
+\begin_layout Standard
+Para la esperanza
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left(R\left(Y_{i}\right)\right)=\frac{N+1}{2}=\sum_{i=1}^{N}\frac{1}{N}i
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(R\left(Y_{i}\right)\right)=\mathbb{E}\left(R^{2}\left(Y_{i}\right)\right)-\mathbb{E}\left(R\left(Y_{i}\right)\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(R\left(Y_{i}\right)\right)=\sum_{i=1}^{N}\frac{1}{N}i^{2}-\left(\frac{N+1}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(R\left(Y_{i}\right)\right)=\frac{N\left(N+2\right)\left(2n+1\right)}{24}-\left(\frac{N+1}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(R\left(Y_{i}\right)\right)=\frac{N-1}{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Covarianza.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\text{Cov}\left[R\left(Y_{i}\right);R\left(Y_{j}\right)\right]=\mathbb{E}\left[R\left(Y_{i}\right)R\left(Y_{j}\right)\right]-\mathbb{E}\left(R\left(Y_{i}\right)\right)\mathbb{E}\left(R\left(Y_{j}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left[R\left(Y_{i}\right)R\left(Y_{j}\right)\right]-\mathbb{E}\left(R\left(Y_{i}\right)\right)\mathbb{E}\left(R\left(Y_{j}\right)\right)=\underset{s\neq k}{\sum_{s=0}^{N}\sum_{k=0}^{N}}sk\frac{1}{N\left(N-1\right)}-\left(\frac{N+1}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left[R\left(Y_{i}\right)R\left(Y_{j}\right)\right]-\mathbb{E}\left(R\left(Y_{i}\right)\right)\mathbb{E}\left(R\left(Y_{j}\right)\right)=\frac{1}{N\left(N-1\right)}\underset{s\neq k}{\sum_{s=0}^{N}s\left(\sum_{k=0}^{N}k\right)}-\left(\frac{N+1}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sumo y resto el término donde 
+\begin_inset Formula $s=k$
+\end_inset
+
+, 
+\begin_inset Formula $s^{2}$
+\end_inset
+
+ para obtener la suma de toda la serie parcial.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left[R\left(Y_{i}\right)R\left(Y_{j}\right)\right]-\mathbb{E}\left(R\left(Y_{i}\right)\right)\mathbb{E}\left(R\left(Y_{j}\right)\right)=\frac{1}{N\left(N-1\right)}\sum_{s=0}^{N}\left[\sum_{k=0}^{N}sk-s^{2}\right]-\left(\frac{N+1}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left[R\left(Y_{i}\right)R\left(Y_{j}\right)\right]-\mathbb{E}\left(R\left(Y_{i}\right)\right)\mathbb{E}\left(R\left(Y_{j}\right)\right)=\frac{1}{N\left(N-1\right)}\left[\sum_{s=0}^{N}\sum_{k=0}^{N}sk-\sum_{s=0}^{N}s^{2}\right]-\left(\frac{N+1}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left[R\left(Y_{i}\right)R\left(Y_{j}\right)\right]-\mathbb{E}\left(R\left(Y_{i}\right)\right)\mathbb{E}\left(R\left(Y_{j}\right)\right)=\frac{1}{N\left(N-1\right)}\left[\sum_{s=0}^{N}s\sum_{k=0}^{N}k-\sum_{s=0}^{N}s^{2}\right]-\left(\frac{N+1}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathbb{E}\left[R\left(Y_{i}\right)R\left(Y_{j}\right)\right]-\mathbb{E}\left(R\left(Y_{i}\right)\right)\mathbb{E}\left(R\left(Y_{j}\right)\right) & =\\
+ & \frac{1}{N\left(N-1\right)}\left[\sum_{s=0}^{N}s\frac{N\left(N+1\right)}{2}-\frac{N\left(N+1\right)\left(2N+1\right)}{6}\right]-\left(\frac{N+1}{2}\right)^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Multiplicando y restando,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\text{Cov}\left[R\left(Y_{i}\right);R\left(Y_{j}\right)\right] & =\frac{N+1}{12}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Estadísticos 
+\begin_inset Formula $W$
+\end_inset
+
+, 
+\begin_inset Formula $T$
+\end_inset
+
+ y 
+\begin_inset Formula $U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Esperanzas
+\end_layout
+
+\begin_layout Corollary
+Si 
+\begin_inset Formula $U=\sum_{j=1}^{m}R\left(Y_{j}\right)$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\mathbb{E}\left(U\right)=m\left(\frac{N+1}{2}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $T=\sum_{i=1}^{n}R\left(X_{i}\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{E}\left(T\right)=n\frac{N+1}{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbb{E}\left(W\right)=\mathbb{E}\left(U-\frac{m\left(m+1\right)}{2}\right)=m\left(\frac{N+1}{2}\right)-\frac{m\left(m+1\right)}{2}=\frac{mn}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Varianza
+\end_layout
+
+\begin_layout Standard
+En este caso, no hay independencia.
+\end_layout
+
+\begin_layout Standard
+La covarianza entre dos rangos ya fue obtenida.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(U\right)=V\left(\sum_{j=1}^{n}R\left(Y_{j}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los rangos no son independientes, aparecen covarianzas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(U\right)=\sum_{j=1}^{n}V\left(R\left(Y_{j}\right)\right)-\sum_{i\neq j}^{n}\text{Cov}\left[R\left(Y_{j}\right);R\left(Y_{i}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(U\right)=m\frac{N^{2}-1}{12}-m\left(m-1\right)\frac{N+1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(U\right)=m\frac{\left(N-1\right)\left(N+1\right)}{12}-m\left(m-1\right)\frac{N+1}{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(U\right)=\frac{m\left(N+1\right)}{12}\left(N-1-m+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N-m=n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V\left(U\right)=nm\frac{N+1}{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Distribución con Empates
+\end_layout
+
+\begin_layout Standard
+***
+\end_layout
+
+\begin_layout Subsection
+Zonas de Rechazo de las Pruebas
+\end_layout
+
+\begin_layout Paragraph*
+Uso de la Tabla
+\end_layout
+
+\begin_layout Standard
+La tabla A7 contiene los cuantiles inferiores, se obtiene los superiores
+ considerando 
+\begin_inset Formula $U+T=\frac{N\left(N+1\right)}{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $w_{1-\beta}^{mn}=\frac{N\left(N+1\right)}{2}-w_{\beta}^{mn}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Caso 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}:\Delta\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi\left(U\right)=\begin{cases}
+1 & x\notin\left[w_{\nicefrac{\alpha}{2}}^{mn};w_{\nicefrac{1-\alpha}{2}}^{mn}\right)\\
+0 & x\in\left[w_{\nicefrac{\alpha}{2}}^{mn};w_{\nicefrac{1-\alpha}{2}}^{mn}\right)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

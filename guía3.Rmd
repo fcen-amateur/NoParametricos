@@ -1,0 +1,446 @@
+# Ejercicio 1
+
+## a
+
+# Ejercicio 2
+
+```{r }
+
+library("tidyverse")
+library("MASS")
+
+tabla2 <- tribble(~sujeto, ~antes, ~despues,
+1, 0.68, 0.73,
+11, 0.65, 0.72 ,
+2, 0.64, 0.62 ,
+12 , 0.59 , 0.60 ,
+3 , 0.68 , 0.66 ,
+13 , 0.78 , 0.78 ,
+4 , 0.82 , 0.92 ,
+14 , 0.67 , 0.66 ,
+5 , 0.58 , 0.68 ,
+15 , 0.65 , 0.68 ,
+6 , 0.80 , 0.87 ,
+16 , 0.76 , 0.77 ,
+7 , 0.72 , 0.77 ,
+17 , 0.61 , 0.72 ,
+8 , 0.65 , 0.70 ,
+18 , 0.86 , 0.86 ,
+9 , 0.84 , 0.88 ,
+19 , 0.74 , 0.72 ,
+10 , 0.73 , 0.79 ,
+20 , 0.88 , 0.97 )
+
+
+ordenPorSujeto <- map_dbl(seq(1,20),~which( tabla2$sujeto == .x))
+
+tabla2 <- tabla2[ordenPorSujeto,]
+
+tabla2
+
+tabla2 <- tabla2 %>% mutate( diferencia = despues - antes , norma = abs(diferencia), obs = seq(1,20))
+
+tabla2 <- tabla2[-c(13,18),]
+
+ordenconRepeticiones <- map(sort(tabla2$norma), ~which( tabla2$norma == .x ) )
+
+orden2 <- ordenconRepeticiones
+
+asignarRango <- function(observacion) {
+ aparece <- map_lgl(ordenconRepeticiones, ~ observacion %in% .x)
+ indices <- which( aparece == T )
+ return(mean(indices))
+}
+
+tabla2$rango <- map_dbl(seq(1,18),asignarRango)
+
+tabla2
+
+tObs <- map_dbl( which(tabla2$diferencia > 0), asignarRango ) %>% sum() 
+
+tObs
+
+```
+
+# Ejercicio3: Ítems
+
+```{r items}
+
+
+
+venta  <- c( seq(1,12) )
+
+nItems <- c (22,
+             9,
+             4 ,
+             5 ,
+             1 ,
+             16 ,
+             15 ,
+             26 ,
+             47 ,
+             8 ,
+             31 ,
+             7 )
+
+tabla3 <- tibble(
+  dia = venta,
+  cantidad = nItems,
+  diferencia = cantidad - 10,
+  norma = abs(diferencia)
+)
+
+
+ordRep3 <- map(sort(tabla3$norma), ~which( tabla3$norma == .x ) )
+
+orden3 <- ordRep3
+
+asignarRango3 <- function(observacion) {
+  aparece <- map_lgl(ordRep3, ~ observacion %in% .x)
+  indices <- which( aparece == T )
+  return(mean(indices))
+}
+
+tabla3$rango <- map_dbl(seq(1,12),asignarRango3)
+
+tabla3
+
+tObs3 <- map_dbl( which(tabla3$diferencia > 0), asignarRango3 ) %>% sum() 
+
+tObs3
+
+```
+
+# 4 Cantidato Voluntarioso
+
+```{r }
+
+tabla4 <- tribble (~Votante, ~Score,
+1 ,6.7 ,
+9 ,7.4 ,
+2 ,4.2 ,
+10 ,9.3 ,
+3 ,4.1 ,
+11 ,8.8 ,
+4 ,2.3 ,
+12 ,5.4 ,
+5 ,6.1 ,
+13 ,6.1 ,
+6 ,9.3 ,
+14 ,6.0 ,
+7 ,8.9 ,
+15 ,4.9 ,
+8 ,7.4 )
+
+tabla4 <- tabla4[
+  map_dbl( seq(1,15), ~which(tabla4$Votante == .x) )
+ ,]
+
+
+tablaWalsh <- crossing( componente1 = seq(1,15), componente2 = seq(1,15) )
+
+noCumplen <- which( tablaWalsh$componente1 >= tablaWalsh$componente2)
+
+tablaWalsh <- tablaWalsh[-noCumplen,]
+
+tablaWalsh <- tablaWalsh %>% mutate( promedioW = c( ( (tabla4$Score)[componente1] + (tabla4$Score)[componente2] ) / 2 )  )
+
+tablaWalsh
+
+estimadoTheta <- tablaWalsh$promedioW %>% median()
+
+N4 <- sum( seq(1,15) )
+
+extremoInf <- qsignrank(p=0.025,15)
+extremoInf
+extremoSup <- qsignrank(p=0.975,15)
+extremoSup
+
+tablaWalsh$norma <- abs(tablaWalsh$promedioW)
+
+ordWalsh4 <- map(sort(tablaWalsh$norma), ~which( tablaWalsh$norma == .x ) )
+
+orden4 <- ordWalsh4
+
+asignarRango4 <- function(observacion) {
+  aparece <- map_lgl(orden4, ~ observacion %in% .x)
+  indices <- which( aparece == T )
+  return(mean(indices))
+}
+
+tablaWalsh$rango <- map_dbl( seq(1, nrow(tablaWalsh) ), asignarRango4 )
+
+tablaWalsh
+
+tablaWalsh$rango %>% sort()
+
+which( tablaWalsh$rango == 24.5 )
+
+(tablaWalsh$promedioW)[1]
+
+which( tablaWalsh$rango == 97.5 )
+
+(tablaWalsh$promedioW)[62]
+
+
+```
+
+
+
+
+# bis Ejercicio 5
+
+Me equivoqué al leer la consigna
+
+
+Sólo cambia el estadístico, pero dado que no parece probable que esperen que trabajemos con el intervalo exacto, recalculo para buscar un intervalo aproximado normal. Este requiere un cálculo diferente, para hallar Tobs en vez del Theta estimado.
+
+
+Necesito un estimado de la mediana, uso el obtenido en el punto anterior. 
+
+```{r scores normales}
+
+sucScore <- function(rango,n) {
+  return( ((1 + rango / (n+1) )/2) %>% qnorm() )
+}
+
+tabla5 <- tabla4
+
+tabla5 <- tabla5 %>% mutate( Score = Score - estimadoTheta, norma = abs(Score))
+
+ordenRep5 <- map( sort(tabla5$norma), ~ which( tabla5$norma == .x ) )
+
+orden5 <- ordenRep5
+
+asignarRango5 <- function(observacion) {
+  aparece <- map_lgl(ordenRep5, ~ observacion %in% .x)
+  indices <- which( aparece == T )
+  return(mean(indices))
+}
+
+tabla5$rango <- map_dbl(seq(1,15),asignarRango5)
+
+tabla5
+
+tObsScore5 <-  map_dbl( which(tabla5$Score > 0), asignarRango ) %>% map_dbl(~sucScore(.x,15) ) %>% sum() %>% ( function(x) x/15 )
+
+tObsScore5
+
+centroInt5 <- map_dbl(seq(1,15),~sucScore(.x,15) ) %>% sum() %>% ( function(x) x/30 )
+deltaInt5 <- map_dbl(seq(1,15),~( sucScore(.x,15) )^2 ) %>% sum() %>% ( function(x) x/60 ) %>% sqrt() %>% ( function(x) (x/sqrt(15)) * dnorm(0.05) ) 
+
+intervalo5 <- c(
+  centroInt5 - deltaInt5,
+  centroInt5 + deltaInt5
+)
+
+intervalo5
+```
+# Ejercicio5: Rehacer el 2 con Scores Normales. 
+
+```{r scores en el 2}
+tabla5 <- tabla2
+
+tabla5
+
+tObs5 <- map_dbl( which(tabla5$diferencia > 0), asignarRango ) %>% map_dbl(~sucScore(.x,18)) %>% sum()  %>% ( function(x) x/18 )
+
+tObs5
+
+centroInt5 <- map_dbl(seq(1,18),~sucScore(.x,18) ) %>% sum() %>% ( function(x) x/36 )
+deltaInt5 <- map_dbl(seq(1,18),~( sucScore(.x,20) )^2 ) %>% sum() %>% ( function(x) x/72 ) %>% sqrt() %>% ( function(x) (x/sqrt(18)) * qnorm(0.05) ) 
+
+intervalo5 <- c(
+  centroInt5 - deltaInt5,
+  centroInt5 + deltaInt5
+)
+
+intervalo5
+```
+
+
+# Ejercicio 6
+
+```{r }
+
+tabla6 <- tribble(
+~mes , ~año1 , ~año2, ~D_i, 
+"Enero" , 14.6 , 14.2 , -0.4 ,
+"Febrero" , 12.2 , 10.5 , -1.7 ,
+"Marzo", 104.0 , 123.0 , 19.0 ,
+"Abril" , 220.0 , 190.0 , -30.0 ,
+"Mayo" , 110.0 , 138.0 , 28.0 ,
+"Junio" , 86.0 , 98.1 , 12.1 ,
+"Julio" , 92.8 , 88.1 , -14.0 ,
+"Agosto" , 74.4 , 80.0 , 5.6 ,
+"septiembre" , 75.4 , 75.6 , 0.2 ,
+"Octubre" , 51.7 , 48.8 , -2.9 ,
+"noviembre" , 29.3 , 27.1 , -1.8 ,
+"diciembre" , 16.0 , 15.7 , -0.3 )
+
+tabla6 <- tabla6 %>% mutate( norma = abs(D_i) )
+
+tabla6
+
+ordRep6 <- map(sort(tabla6$norma), ~which( tabla6$norma == .x ) )
+
+orden6 <- ordRep6
+
+asignarRango6 <- function(observacion) {
+  aparece <- map_lgl(ordRep6, ~ observacion %in% .x)
+  indices <- which( aparece == T )
+  return(mean(indices))
+}
+
+tabla6$rango <- map_dbl(seq(1,nrow(tabla6)),asignarRango6)
+
+tabla6
+
+tObs6 <- map_dbl( which(tabla6$D_i > 0), asignarRango6 ) %>% sum() 
+
+tObs6
+
+K6 <- qsignrank(p=0.95,n=12)
+
+K6
+
+
+```
+
+# Ejercicio 7
+
+```{r drogas}
+
+
+tabla7 <- tribble(
+~paciente, ~droga1, ~droga2,
+2 , -1.6 ,0.8 ,
+4 , -1.2 ,0.1 ,
+3 , -0.2 ,1.1 ,
+5 , -0.1 ,-0.1 ,
+9 , 0 ,4.6 ,
+1 , 0.7 ,1.9 ,
+8 , 0.8 ,1.6 ,
+10 , 2.0 ,3.4 ,
+6 , 3.4 ,4.4 ,
+7 , 3.7 ,5.5 )
+
+tabla7
+
+empatesD1 <- nrow(tabla7) - ( unique(tabla7$droga1) %>% length() )
+empatesD1
+empatesD2 <- nrow(tabla7) - (unique(tabla7$droga2) %>% length() )
+empatesD2
+
+ordenSegunDroga <- map_int( seq(1, nrow(tabla7) ), ~ which( tabla7$droga2 == (sort( tabla7$droga2 ) )[[.x]] ))
+
+droga1Ordenada <- (tabla7$droga1)[ordenSegunDroga]
+
+tablaPru7 <- tibble(
+  antes = droga1Ordenada[seq(1,5)],
+  despues = droga1Ordenada[seq(6,10)],
+  diferencia = despues - antes,
+  norma = abs(diferencia)
+)
+
+
+tObs7 <- sum( seq(1,5) )
+
+tObs7
+
+qsignrank(n=5, p=0.95)
+
+```
+# Ejercicio 11
+
+```{r }
+
+droga<-c(85,107,69,122,106,121,137,87)
+placebo<-c(126,140,95,148,142,172,133,143)
+
+tabla11 <- tibble(
+  droga = droga - 70,
+  placebo = placebo - 70,
+  diferencia = placebo - droga,
+  norma = abs(diferencia)
+)
+
+tabla11
+
+ordRep11 <- map(sort(tabla11$norma), ~which( tabla11$norma == .x ) )
+
+orden11 <- ordenconRepeticiones
+
+asignarRango11 <- function(observacion) {
+  aparece <- map_lgl(ordRep11, ~ observacion %in% .x)
+  indices <- which( aparece == T )
+  return(mean(indices))
+}
+
+tabla11$rango <- map_dbl(seq(1,8),asignarRango11)
+
+tabla11
+
+tObs11 <- map_dbl( which(tabla11$diferencia > 0), asignarRango11 ) %>% sum() 
+
+tObs11
+
+W11 <- qsignrank(p=0.95, n=8)
+
+W11
+
+tablaW11 <- crossing( comp1 = seq(1,8), comp2 = seq(1,8) )
+
+noCumplen <- which( tablaW11$comp1 >= tablaW11$comp2)
+
+tablaW11 <- tablaW11[-noCumplen,]
+
+tablaW11 <- tablaW11 %>% mutate( promedioW = c( ( (tabla11$diferencia)[comp1] + (tabla11$diferencia)[comp2] ) / 2 )  )
+
+tablaW11
+
+estimadoTheta <- median(tablaW11$promedioW)
+
+estimadoTheta
+
+N11 <- sum( seq(1,8) )
+
+
+tablaW11$norma <- abs(tablaW11$promedioW)
+
+ordWalsh11 <- map(sort(tablaW11$norma), ~which( tablaW11$norma == .x ) )
+
+orden11 <- ordWalsh11
+
+asignarRangoW11 <- function(observacion) {
+  aparece <- map_lgl(orden11, ~ observacion %in% .x)
+  indices <- which( aparece == T )
+  return(mean(indices))
+}
+
+tablaW11$rango <- map_dbl( seq(1, nrow(tablaW11) ), asignarRangoW11 )
+
+tablaW11
+
+
+extremoInf <- qsignrank(p=0.025,8)
+extremoInf
+extremoSup <- qsignrank(p=0.975,8)
+extremoSup
+
+tablaW11$rango %>% sort()
+
+rangoInf <- which( tablaW11$rango == 4.0 )
+
+extremoInf <- (tablaW11$promedioW)[rangoInf]
+
+extremoInf
+
+rangoSup <- which( tablaW11$rango == 28 )
+
+extremoSup <- (tablaW11$promedioW)[rangoSup]
+
+extremoSup
+
+```
+

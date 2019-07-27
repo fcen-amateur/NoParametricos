@@ -1,0 +1,1055 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package babel
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Clase 4
+\end_layout
+
+\begin_layout Section
+Anterior
+\end_layout
+
+\begin_layout Standard
+A la 3 falté.
+ Vieron percentiles y prueba del signo.
+\end_layout
+
+\begin_layout Standard
+p31, es la g3
+\end_layout
+
+\begin_layout Section
+Clase Actual
+\end_layout
+
+\begin_layout Standard
+Bajo la hipótesis alternativa de la prueba del signo, el estadístico 
+\begin_inset Formula $S$
+\end_inset
+
+ es binomial, pero con parámetro 
+\begin_inset Formula $p=1-F\left(-\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fijo 
+\begin_inset Formula $k$
+\end_inset
+
+, a medida que 
+\begin_inset Formula $p$
+\end_inset
+
+ crece la cola derecha aumenta su área (hay mayor probabilidad de mayor
+ cantidad de éxitos).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underbrace{P_{\theta_{1}}\left(S\geq k\right)}_{\text{rechazo}}\geq\underbrace{P_{\theta=0}\left(S\geq k\right)}_{\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+La primera versión vista es Hettmansperger.
+ 
+\end_layout
+
+\begin_layout Subsection
+Prueba del Signo, Versión Connover
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+p122
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Las versiones de Connover y Hettmansperger son distintas, uno pide menos
+ hipótesis.
+ 
+\end_layout
+
+\begin_layout Standard
+Puede ser sólo una prueba de medianas pero tiene usos más generales donde
+ esa explicación es forzada.
+\end_layout
+
+\begin_layout Standard
+Connover es más general.
+ Se plantea para muestras apareadas inicialmente.
+\end_layout
+
+\begin_layout Definition
+Prueba del signo
+\end_layout
+
+\begin_layout Definition
+Suponemos
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(X_{i};Y_{i}\right)_{i=1}^{n}$
+\end_inset
+
+ independientes.
+\end_layout
+
+\begin_layout Enumerate
+Cada par se clasifica como +,-,0 (también 1, -1, 0).
+\end_layout
+
+\begin_layout Enumerate
+Sólo puede ocurrir 
+\begin_inset Formula $\forall i:P\left(+\right)>P\left(-\right);P\left(-\right)>P\left(+\right)$
+\end_inset
+
+ o 
+\begin_inset Formula $P\left(+\right)=P\left(-\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Se puede definir como signo constante, 
+\begin_inset Formula $\text{sg}\left\{ P\left(+\right)-P\left(-\right)\right\} =k/k\in\left\{ 0,1,-1\right\} $
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+quiero decir, constante.
+\end_layout
+
+\end_inset
+
+.
+ Esta propiedad a veces se llama consistente internamente.
+\end_layout
+
+\begin_layout Standard
+Las componentes pueden tener distribuciones diferentes.
+\end_layout
+
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_layout Subsubsection
+En la clase pasada se listaron las H posibles
+\end_layout
+
+\begin_layout Standard
+Se construyen considerando las reglas para negación con cuantificadores.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall i:H_{0}:P\left(+\right)=P\left(-\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $H_{1}:P\left(+\right)\neq P\left(-\right)$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall i:H_{0}:P\left(+\right)\leq P\left(-\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $H_{1}:P\left(+\right)>P\left(-\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $P\left(0\right)=0\Rightarrow P\left(+\right)+P\left(-\right)=1$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+La categoría 0 es el empate, por supuesto.
+\end_layout
+
+\end_inset
+
+.
+ El caso 1 se reduce a una prueba binomial 
+\begin_inset Formula $P\left(+\right)=\frac{1}{2}$
+\end_inset
+
+.
+ El caso 
+\begin_inset Formula $B$
+\end_inset
+
+ sería 
+\begin_inset Formula $P\left(+\right)\leq\frac{1}{2}$
+\end_inset
+
+ (considerando que los parámetros suman 1 ahora).
+\end_layout
+
+\begin_layout Example
+Del Connover.
+\end_layout
+
+\begin_layout Quote
+\begin_inset Quotes fld
+\end_inset
+
+Producto proceso A o B.
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Por qué la 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ termina siendo 
+\begin_inset Formula $T^{+}\sim Bi\left(n;\frac{1}{2}\right)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(T^{+}\geq k\right)=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha=\sup_{p\in H_{0}}P=\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se obserba 
+\begin_inset Formula $T^{+}=8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{\frac{1}{2}}\left(T^{+}\geq8\right)=0,054688
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+podemos tolerar cualqiuer más tolerante que RR 
+\begin_inset Formula $T^{+}\geq8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{\frac{1}{2}}\left(T^{+}\leq9\right)=P_{\frac{1}{2}}\left(T^{+}\leq1\right)=0,010742
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si se pide 
+\begin_inset Formula $\alpha\leq0,05$
+\end_inset
+
+, la región de rechazo definida es 
+\begin_inset Formula $T^{+}\geq9$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No se rechaza.
+\end_layout
+
+\begin_layout Example
+Connover
+\end_layout
+
+\begin_layout Example
+En este caso 
+\begin_inset Formula $T^{+}=8$
+\end_inset
+
+, 
+\begin_inset Formula $T^{-}=1$
+\end_inset
+
+ y 
+\begin_inset Formula $T^{0}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Esto nos obliga a realizar una prueba binomial restringida.
+\end_layout
+
+\begin_layout Example
+Si 
+\begin_inset Formula $P\left(0\right)\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\left(T^{+};T^{-};T^{0}\right)\sim\mathcal{M}\left(P^{+};P^{-};P^{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Es fácil probar que 
+\begin_inset Formula $T^{+}|T^{0}\sim Bi\left(n-T^{0};\frac{P\left(+\right)}{P\left(+\right)+P\left(-\right)}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+En nuestro caso:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $T^{+}|T^{0}=1\sim Bi\left(10-1;\underbrace{\frac{P\left(+\right)}{P\left(+\right)+P\left(-\right)}}_{P_{*}^{+}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+P_{*}^{+}=\frac{P\left(+\right)}{P\left(+\right)+P\left(-\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+P_{*}^{-}=\frac{P\left(-\right)}{P\left(+\right)+P\left(-\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Por lo tanto logramos
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+P_{*}^{-}+P_{*}^{+}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+El nuevo estadístico es 
+\begin_inset Formula $T^{+}|_{T^{0}=1}=8$
+\end_inset
+
+ y 
+\begin_inset Formula $T^{+}|_{T^{0}=1}\sim Bi\left(9;P_{*}^{+}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Nuevas hipótesis
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $H_{0}:P_{*}^{+}\leq\frac{1}{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $H_{1}:P_{*}^{+}>\frac{1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ el estadístico es 
+\begin_inset Formula $P\left(B\left(9;\frac{1}{2}\right)\leq1\right)=P\left(B\left(9;\frac{1}{2}\right)\geq\underbrace{8}_{9-1}\right)=0,019531$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $P\left(B\left(9;\frac{1}{2}\right)\leq2\right)=P\left(B\left(9;\frac{1}{2}\right)\geq7\right)=0,0898$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+A nivel 
+\begin_inset Formula $\alpha\leq0,05$
+\end_inset
+
+ se rechaza.
+\end_layout
+
+\begin_layout Subsection
+Idea de prueba 
+\emph on
+conservadora
+\end_layout
+
+\begin_layout Standard
+En las notas, define conservador como de mayor 
+\emph on
+p
+\emph default
+valor para la muestra existente (de tal forma que tiende a llevarla a la
+ región de aceptación de 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+En el caso de esta prueba, 
+\begin_inset Formula $B\left(n-T_{0};\frac{P\left(+\right)}{P\left(+\right)+P\left(-\right)}\right)$
+\end_inset
+
+ es una prueba donde los valores extremos siempre son estrictamente menos
+ probables.
+ Entonces hace más probables a los valores pequeños.
+\end_layout
+
+\begin_layout Subsection
+Caso de tratamiento sin efecto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{i}=Y_{i}-X_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-D_{i}=X_{i}-Y_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D_{i}\sim-D_{i}\Rightarrow\text{D\_i}$
+\end_inset
+
+es simétrica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(D_{i}\leq t\right)=P\left(-D_{i}\leq t\right)=P\left(D_{i}\geq-t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Notas, ejemplo del cambio de opinión.
+\end_layout
+
+\begin_layout Example
+¿Por qué puede traducir las hipótesis?
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+P\left(X_{i}=0;Y_{i}=1\right)=P\left(X_{i}=1;Y_{i}=0\right)\Leftrightarrow P\left(X_{i}=1\right)=P\left(Y_{i}=1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X_{i}=1\right)=P\left(X_{i}=1;Y_{i}=0\right)+P\left(X_{i}=1;Y_{i}=1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con la primera hipótesis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X_{i}=1\right)=\underbrace{P\left(X_{i}=1;Y_{i}=0\right)}_{P\left(X_{i}=0;Y_{i}=1\right)}+P\left(X_{i}=1;Y_{i}=1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X_{i}=1\right)=P\left(X_{i}=0;Y_{i}=1\right)+P\left(X_{i}=1;Y_{i}=1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+P\left(X_{i}=1\right)=P\left(Y_{i}=1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vuelta
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X_{i}=1\right)=P\left(Y_{i}=1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Abro en sus casos con probabilidad total
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cancel{P\left(X_{i}=1;Y_{i}=1\right)+}P\left(X_{i}=1;Y_{i}=0\right)=\cancel{P\left(X_{i}=1;Y_{i}=1\right)+}P\left(X_{i}=0;Y_{i}=1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Prueba de Tendencia
+\end_layout
+
+\begin_layout Standard
+Probamos solo tendencia creciente o decreciente.
+\end_layout
+
+\begin_layout Standard
+La hipótesis nula es la ausencia de tendencia y la alternativa es tendencia
+ monótona.
+\end_layout
+
+\begin_layout Standard
+Interpretamos la falta de tendencia así
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X_{i}-X_{j}<0\right)=P\left(X_{i}-X_{j}>0\right)=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La hipótesis de crecimiento monótono para 
+\begin_inset Formula $i<j$
+\end_inset
+
+ es 
+\begin_inset Formula $P\left(X_{i}-X_{j}<0\right)>P\left(X_{i}-X_{j}>0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para evaluarla se cosntruye pares 
+\begin_inset Formula $\left(X_{i};X_{j}\right)$
+\end_inset
+
+.
+ En general evaluar en contiguos es mala idea porque tiene mucho peso la
+ variación aleatoria.
+ Es deseable aparear valores más distantes.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, si es cantidad par 
+\begin_inset Formula $n=2N$
+\end_inset
+
+, usamos 
+\begin_inset Formula $\left(X_{i};X_{i+N}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Para cantidades impares se elimina el elemento de índice 
+\begin_inset Formula $N+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{i}=\begin{cases}
+1 & X_{i+N}-X_{i}>0\\
+0 & X_{i+N}-X_{i}<0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suposiciones
+\end_layout
+
+\begin_layout Enumerate
+Los pares son independientes.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\text{sg}\left[P\left(X_{i}-X_{j}<0\right)-P\left(X_{i}-X_{j}>0\right)\right]$
+\end_inset
+
+ es el mismo para todo 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Ejemplo de los huevos
+\end_layout
+
+\begin_layout Standard
+Se ordenó simétricamente los datos respecto al mínimo.
+\end_layout
+
+\begin_layout Standard
+DEspués se aparea datos con distancia de 6 horas.
+\end_layout
+
+\begin_layout Standard
+Después se realiza el apareamiento.
+\end_layout
+
+\begin_layout Section
+Teoría
+\end_layout
+
+\begin_layout Standard
+Prueba del Signo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{0}:\theta=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\theta>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}=\sum_{i=1}^{n}s\left(X_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s\left(X_{i}\right)=\begin{cases}
+1 & X_{i}>0\\
+0 & X_{i}<0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p\left(x_{i}>0\right)=1-F\left(-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Pedir distribución del estadístico 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ bajo 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Consistencia y Eficiencia Asintótica de la prueba del Signo.
+\end_layout
+
+\begin_layout Subsubsection
+Consistencia:
+\end_layout
+
+\begin_layout Standard
+La sucesión de pruebas 
+\begin_inset Formula $\left\{ \Phi_{n}\right\} $
+\end_inset
+
+ para 
+\begin_inset Formula $H_{0}:\theta\in\Theta_{1}$
+\end_inset
+
+...
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall n:\alpha\geq\pi_{\Theta_{1}}\left(\Phi_{n}\right)\geq\gamma>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+...
+\end_layout
+
+\begin_layout Standard
+Vamos a usar la propiedad alternativa con la pseudoestandarización.
+\end_layout
+
+\begin_layout Subsubsection
+Primera Hipótesis de la Condición Suficiente
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi_{n}\left(\boldsymbol{X}\right)=\begin{cases}
+1 & S_{n}\geq k\\
+0 & S_{n}<k
+\end{cases}=\begin{cases}
+1 & \frac{S_{n}}{n}\ge\frac{k}{n}\\
+0 & \text{cc}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{n}=\frac{S_{n}}{n}\overset{LGN}{\rightarrow}_{n\rightarrow\infty}\mathbb{E}\left(\Delta\left(X_{i}\right)\right)=P\left(X_{i}\geq0\right)=1-F\left(-\theta\right)\begin{cases}
+\frac{1}{2} & H_{0}\\
+>\frac{1}{2} & H_{1}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TCL bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{n}\frac{\frac{S_{n}}{n}-\frac{1}{2}}{\sqrt{\frac{1}{2}\frac{1}{2}}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Eficiencia Asintótica
+\end_layout
+
+\begin_layout Itemize
+Tiene lógica pensar que necesito buscar la función 
+\begin_inset Formula $n\left(\pi\left(\Phi\right)\right)$
+\end_inset
+
+ y tomar el límite de eso.
+ En la definición relativa.
+ 
+\end_layout
+
+\begin_layout Itemize
+Para Pittman también, arma la sucesión.
+ Siempre es dada 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Escribir a la profesora
+\end_layout
+
+\begin_layout Standard
+Sobre el ejemplo:
+\end_layout
+
+\begin_layout Standard
+Estoy proveyendo un contraejemplo: 
+\begin_inset Quotes fld
+\end_inset
+
+Existe un orden para el cual...
+\begin_inset Quotes frd
+\end_inset
+
+ y eso alcanza para la negación.
+\end_layout
+
+\end_body
+\end_document

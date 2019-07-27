@@ -1,0 +1,289 @@
+```{r }
+library("tidyverse")
+```
+
+
+# Ejercicio 1
+## a)
+
+```{r 1a}
+
+intervaloProba <- function(n,T,alfa) {
+  zeta <- qnorm( 1-( alfa/2 ) )
+  delta <- zeta * sqrt( (1/n)  * (T/n)  * (1 - (T/n) ) )
+  pinf <- T/n - delta
+  psup <- T/n + delta
+  return(
+    list(
+      "pinf" = pinf,
+      "psup" = psup
+    )
+  )
+}
+
+intervalo <- intervaloProba(277,208,0.05)
+
+intervalo
+
+```
+
+
+# Ejercicio 2
+
+```{r alfa }
+
+alfa <- pbinom(prob = 0.7, size = 15, q = 7)
+
+```
+
+```{r potencias y errores }
+
+potencia1 <-  pbinom(prob = 0.5, size = 15, q = 7)
+errorTII1 <- 1 - pbinom(prob = 0.5, size = 15, q = 7)
+
+potencia1
+
+potencia2 <-  pbinom(prob = 0.3, size = 15, q = 7) 
+errorTII2 <- 1 - pbinom(prob = 0.3, size = 15, q = 7)
+
+potencia2 
+
+```
+
+# Ejercicio 3
+
+```{r nivel}
+
+colaSup <- 1 - pbinom( prob = 0.5, size = 10, q = 7 )
+colaInf <- pbinom( prob = 0.5, size = 10, q = 2 )
+
+alfa <- colaInf + colaSup
+
+alfa
+
+eTII1 <- pbinom( prob = 0.4, size = 10, q = 7 ) - pbinom( prob = 0.4, size = 10, q = 2 )
+
+eTII1
+
+eTII2 <- pbinom( prob = 0.6, size = 10, q = 7 ) - pbinom( prob = 0.6, size = 10, q = 2 )
+
+eTII2
+
+eTII3 <- pbinom( prob = 0.8, size = 10, q = 7 ) - pbinom( prob = 0.8, size = 10, q = 2 )
+
+eTII3
+
+pv <- pbinom( prob = 0.5, size = 10, q = 1 ) + 1 - pbinom( prob = 0.5, size = 10, q = 8 )
+
+
+pv 
+```
+
+```{r nivel 01}
+
+nivel <- 2 * pbinom( prob = 0.5, size = 10, q = 2 )
+
+nivel
+```
+
+
+# Ejercicio 4
+
+## Prueba
+
+```{r alfa}
+
+alfa4 <- 1 - pbinom( prob = 0.1, size = 15, q = 2 )
+
+alfa4
+```
+
+```{r p diversos}
+
+
+probp1 <- pbinom( prob = 0.05, size = 15, q = 2 )
+
+probp1
+
+probp2 <- pbinom( prob = 0.1, size = 15, q = 2 )
+
+probp2
+
+probp3 <- pbinom( prob = 0.2, size = 15, q = 2 )
+
+probp3
+```
+
+# Ejercicio 6
+
+```{r intervalo}
+
+intervalo6 <- intervaloProba(180,38,0.05)
+
+intervalo6
+
+```
+
+
+# Ejercicio 7
+
+```{r valores}
+
+obs <- c(
+  142,
+  134,
+  98,
+  119,
+  131,
+  103,
+  154,
+  122,
+  93,
+  137,
+  86,
+  119,
+  161,
+  144,
+  158,
+  165,
+  81,
+  117,
+  128,
+  103
+)
+
+tObs <- sum ( obs <= 100 )
+
+tObs
+
+pObs <- tObs / length(obs)
+
+pObs
+
+pbinom( size = 20, q = 4, p = 0.4365)
+
+pinf <- 0.4365
+
+1 - pbinom( size = 20 , q = 4 - 1, p = 0.057)
+
+psup <- 0.057
+
+
+## No terminé estas funciones. La idea es armar una función iterativa que encuentre los valores de p para el intervalo. 
+
+
+intervaloExacto <- function(n,T,alfa) {
+  pActual = 0
+  deltaActual = 1
+  for ( p in seq(0, 0.9, by=0.1) ) {
+    delta = pbinom(q = T, size = n, prob= p) - alfa
+    if ( delta < deltaActual ) {
+      pActual = p
+      deltaActual = delta
+    }
+  }
+  return(pActual)
+}
+
+
+intervaloExactoSup <- function(n,T,alfa) {
+  pActual = 0
+  deltaActual = 1
+  for ( p in seq(0, 0.9, by=0.1) ) {
+    delta = pbinom(q = T - 1, size = n , prob= p) - 1 + alfa
+    if ( delta < deltaActual ) {
+      pActual = p
+      deltaActual = delta
+    }
+  }
+  return(pActual)
+}
+
+bucleIntervaloExacto <- function(n,T,alfa,vectorEstado,orden) {
+  pActual <- vectorEstado[[1]]
+  deltaActual <- vectorEstado[[2]]
+  cifraP <- 0
+  candidatoInferior <- 1 * 10^( - orden )
+  candidatoSuperior <- 9 * 10^( - orden )
+  paso <- 10^( - orden)
+  for ( p in seq( candidatoInferior, candidatoSuperior, by= paso ) ) {
+    print(p)
+    delta <- abs( ( 1 - pbinom( q = T, size = n, prob= pActual + p ) - alfa/2 )  )
+    print(delta)
+    if ( delta < deltaActual ) {
+      cifraP <- p
+      deltaActual <- delta
+    }
+  }
+  return( c(pActual + p, deltaActual) )
+}
+
+buscarIntervalo
+
+```
+
+
+```{r punto B mediana}
+
+datosM <- sum ( obs < 103 )
+datosMoI <- sum ( obs <= 103 )
+
+datosM
+
+datosMoI
+
+k1 <- pbinom(size = 20, p = 0.5, 0.025)
+k2 <- pbinom(size = 20, p = 0.5, 0.025)
+
+
+ordenada <- sort(obs)
+
+elementoR <- ordenada[[7]]
+elementoS <- ordenada[[14]]
+
+intAsint <- function(n,p0,alfa) {
+  zeta <- qnorm(1 - alfa/2)
+  delta <- zeta * sqrt( n * p0 * (1 - p0) )
+  return(
+    list(
+      "inf" = n * p0 - delta + 1,
+      "sup" = n * p0 + delta + 1
+
+    )
+  )
+}
+
+intervaloMGrande <- intAsint(20,0.5,0.05)
+
+
+```
+
+# 9, 10 y 11 Tolerancia
+
+```{r }
+
+pbinom( size = 45 , q = 44 , p = 0.95)
+
+buscarEj10 <- function (nMuestral) pbinom( p = 0.01, size = nMuestral, q = 1 )
+
+toleranciaAsint <- function(r,m,q,alfa) {
+  cuantil <- qchisq(p=1-alfa, df = r + m)
+  return(
+    (1/4) * cuantil * (1+q)/(1-q)  + (1/2) * (r+m-1)
+  )
+}
+
+toleranciaAsint(2,0,0.99,0.05)
+
+
+buscarEj11 <- function (nMuestral) pbinom( p = 0.5, size = nMuestral, q = 8 )
+
+solalfa1 <- 23
+solalfa2 <- 25
+buscarEj11(25)
+
+
+
+
+```
+

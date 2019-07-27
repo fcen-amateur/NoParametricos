@@ -1,0 +1,450 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection
+Cox Stuart para Tendencia
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:P\left(X_{i+N}-X_{i}<0\right)=P\left(X_{i+N}-X_{i}<0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Los empates se eliminan de la muestra.
+\end_layout
+
+\begin_layout Itemize
+Para impares se elimina la observación central.
+\end_layout
+
+\begin_layout Itemize
+Es binomial sobre la cantidad de diferencias positivas.
+\end_layout
+
+\begin_layout Subsubsection
+Correlación
+\end_layout
+
+\begin_layout Standard
+ordenamos de acuerdo a la variable con menos empates y aplicamos el anterior
+\end_layout
+
+\begin_layout Section
+Wilcoxon
+\end_layout
+
+\begin_layout Subsection
+Variables Involucradas
+\end_layout
+
+\begin_layout Definition
+Rango 
+\begin_inset Formula $R_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Dado un índice 
+\begin_inset Formula $j$
+\end_inset
+
+, indica el rango de la observación con ese índice: 
+\begin_inset Formula $\left|X_{j}\right|=\left|X\right|^{\left(R_{j}\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Va de índice a rango.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Antirango 
+\begin_inset Formula $D_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Dado un rango fijo 
+\begin_inset Formula $j$
+\end_inset
+
+, indica cuál es el índice de la observación que tiene ese rango: 
+\begin_inset Formula $\left|X_{D_{j}}\right|=\left|X\right|^{\left(j\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Va de rango a índice.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $W_{j}=\begin{cases}
+1 & \left|X\right|^{\left(j\right)}\text{ es positiva}\\
+0 & \text{si no}
+\end{cases}$
+\end_inset
+
+, 
+\begin_inset Formula $s\left(X_{j}\right)=\begin{cases}
+1 & X>0\\
+0 & X<0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T^{+}=\sum jW_{j}=\sum R_{j}s\left(X_{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Hipótesis y Regiones
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta\ne0$
+\end_inset
+
+, 
+\begin_inset Formula $R:T^{+}>W_{1-\nicefrac{\alpha}{2}}\cup T^{+}\leq W_{\nicefrac{\alpha}{2}}$
+\end_inset
+
+.
+ Para 
+\begin_inset Formula $n$
+\end_inset
+
+ grande 
+\begin_inset Formula $\left|T\right|>z_{\nicefrac{\alpha}{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta<0$
+\end_inset
+
+, 
+\begin_inset Formula $R:T^{+}>W_{\alpha}$
+\end_inset
+
+, 
+\begin_inset Formula $T^{-}<W_{1-\alpha}$
+\end_inset
+
+.Para 
+\begin_inset Formula $n$
+\end_inset
+
+ grande 
+\begin_inset Formula $T\leq-z_{\alpha}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{0}:\theta=0$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta>0$
+\end_inset
+
+, 
+\begin_inset Formula $R:T^{+}>W_{1-\alpha}$
+\end_inset
+
+.
+ Para 
+\begin_inset Formula $n$
+\end_inset
+
+ grande 
+\begin_inset Formula $T>z_{\alpha}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Empates
+\end_layout
+
+\begin_layout Itemize
+Se asigna rango normalmente, despuès se reemplaza los de observacines iguales
+ por su promedio.
+\end_layout
+
+\begin_layout Itemize
+Usar 
+\begin_inset Formula $T=\frac{T^{+}-T^{-}}{\sqrt{\sum R_{i}^{2}}}$
+\end_inset
+
+, distribuye normal estándar.
+ Sin empates es 
+\begin_inset Formula $T=\frac{T^{+}-T^{-}}{\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{6}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Observaciones iguales al valor a probar, 0
+\end_layout
+
+\begin_layout Itemize
+Eliminar los 0 y trabajar con el tamaño d emuestra reducido.
+\end_layout
+
+\begin_layout Itemize
+El otro método requiere tablas especiales o aproximación normal.
+\end_layout
+
+\begin_layout Subsection
+Asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T^{+}-\frac{n\left(n+1\right)}{4}}{\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{24}}}\overset{d}{\rightarrow}\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estimador Puntual e Intervaos por H-L
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\theta}=\text{med}_{i\leq j}\left\{ \frac{X_{i}+X_{j}}{2}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $\left\{ V^{\left(i\right)}\right\} $
+\end_inset
+
+ son los promedios de walsh ordenados y 
+\begin_inset Formula $P\left(T^{+}\leq a\right)=P\left(T^{+}>N-a\right)=\frac{\alpha}{2}$
+\end_inset
+
+ donde 
+\begin_inset Formula $N$
+\end_inset
+
+ es el total de promedios, 
+\begin_inset Formula $\frac{n\left(n+1\right)}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda:\left[V^{\left(a+1\right)};V^{\left(N-a\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aproximacion normal a 
+\begin_inset Formula $a$
+\end_inset
+
+, con corrección por continuidad
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\approx\frac{n\left(n+1\right)}{4}-z_{\nicefrac{\alpha}{2}}\sqrt{\frac{n\left(n+1\right)\left(2n+1\right)}{24}}-\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Prueba para tendencia
+\end_layout
+
+\begin_layout Subsubsection
+Prueba para correlación
+\end_layout
+
+\begin_layout Standard
+*****Es una sola, ¿no?
+\end_layout
+
+\begin_layout Standard
+Se ordena los pares 
+\begin_inset Formula $\left(M_{i};X_{i}\right)$
+\end_inset
+
+ segú 
+\begin_inset Formula $M$
+\end_inset
+
+ y se aplica la prueba de rangos de wilcoxon a
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{i}=\frac{X_{N+i}-X_{i}}{M_{N+i}-M_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -274,7 +274,7 @@ p_{1}=\int_{-\infty}^{+\infty}g\left(x\right)\left[1-H\left(x\right)\right]dx
 \end_layout
 
 \begin_layout Theorem
-Para la otra identidad, parametrizamos la regió con 
+Para la otra identidad, parametrizamos la región con 
 \begin_inset Formula $x\left(y\right)$
 \end_inset
 
@@ -527,7 +527,7 @@ V\left(\sqrt{N}\overline{W}\right)=\left[\left(p_{1}-p_{1}^{2}\right)\frac{1}{\f
 
 \begin_layout Standard
 El teorema de proyección nos garantiza la convergencia siempre cuando la
- razó sea proporcional.
+ razón sea proporcional.
 \end_layout
 
 \begin_layout Standard

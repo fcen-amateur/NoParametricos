@@ -527,7 +527,7 @@ V\left(\sqrt{N}\overline{W}\right)=\left[\left(p_{1}-p_{1}^{2}\right)\frac{1}{\f
 
 \begin_layout Standard
 El teorema de proyección nos garantiza la convergencia siempre cuando la
- razó sea proporcional.
+ razón sea proporcional.
 \end_layout
 
 \begin_layout Standard
@@ -863,7 +863,7 @@ k_{2}=14\rightarrow0,0207
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\left[X^{\left(5+1\right)};X^{\left(14+1\right)}\right]
+\left[X^{\left(5+1\right)};X^{\left(14+1\right)}\right]f
 \]
 
 \end_inset

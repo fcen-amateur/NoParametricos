@@ -2080,7 +2080,7 @@ Al valor
 \end_inset
 
 .
- En pruebas razonables esto nos va a levar a la moda de la misma.
+ En pruebas razonables esto nos va a llevar a la moda de la misma.
 \end_layout
 
 \begin_layout Subsection
@@ -2096,7 +2096,11 @@ El valor que asignamos a
 \begin_inset Formula $H_{0}$
 \end_inset
 
-, como hicimos 
+, como hicimos en la prueba 
+\begin_inset Formula $T$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -2134,8 +2138,8 @@ Estos van apareados a su probabilidad en la distribución de
 \begin_inset Formula $S\left(\theta\right)$
 \end_inset
 
- son los elementos mayores que cada estadístico de orden y por tanto es
- máxima para 
+ son las cantidades de elementos mayores que cada estadístico de orden y
+ por tanto es máxima para 
 \begin_inset Formula $X^{\left(1\right)}$
 \end_inset
 
@@ -2182,7 +2186,7 @@ n-\left(n-k\right)<S\left(\theta\right)\leq n-\left(k+1\right)
 \begin_layout Standard
 \begin_inset Formula 
 \[
-k+1\leq S\left(\theta\right)\leq n-k-1
+k+1\leq S\left(\theta\right)<n-k
 \]
 
 \end_inset
@@ -2195,12 +2199,12 @@ Elijamos los valores de
 \begin_inset Formula $k$
 \end_inset
 
- que garantizan que una distribución binomial peretenzca al intervalo deseado,
- y estos valen para el estimador:
+ que garantizan que una distribución binomial peretenzca al intervalo deseado.
+ Estos valen para el estimador:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $k/S\left(\theta\right)\sim Bi\left(n;\frac{1}{2}\right):P\left(S\left(\theta\right)\leq n-k-1\right)\leq\frac{\alpha}{2}$
+\begin_inset Formula $k/S\left(\theta\right)\sim Bi\left(n;\frac{1}{2}\right):P\left(S\left(\theta\right)<n-k\right)\leq\frac{\alpha}{2}$
 \end_inset
 
 
@@ -2304,7 +2308,7 @@ Se considera sobre
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\theta^{*}=\text{sup}\left\{ V\left(\theta\right)/V\left(\theta\right)>\mu_{0}\right\} 
+\theta^{*}=\text{sup}\left\{ \theta/V\left(\theta\right)>\mu_{0}\right\} 
 \]
 
 \end_inset
@@ -2315,7 +2319,7 @@ Se considera sobre
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\theta^{**}=\text{inf}\left\{ V\left(\theta\right)/V\left(\theta\right)<\mu_{0}\right\} 
+\theta^{**}=\text{inf}\left\{ \theta/V\left(\theta\right)<\mu_{0}\right\} 
 \]
 
 \end_inset
@@ -2336,7 +2340,11 @@ primero pasamos por el punto
 \begin_inset Formula $\theta^{*}$
 \end_inset
 
- que es el último valor mayor que 
+ que es el último valor cuyo 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ es mayor que 
 \begin_inset Formula $\mu_{0}$
 \end_inset
 
@@ -2344,7 +2352,11 @@ primero pasamos por el punto
 \begin_inset Formula $\theta^{**}$
 \end_inset
 
- que es el primer valor menor que 
+ que es el primer valor cuyo 
+\begin_inset Formula $V\left(\theta\right)$
+\end_inset
+
+ es menor que 
 \begin_inset Formula $\mu_{0}$
 \end_inset
 
@@ -2521,7 +2533,7 @@ Sea
 \begin_layout Theorem
 \begin_inset Formula 
 \[
-\sqrt{n}\left(\hat{\theta}_{n}-\theta\right)\leq a\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;\frac{1}{c^{2}}\right)
+\sqrt{n}\left(\hat{\theta}_{n}-\theta\right)\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;\frac{1}{c^{2}}\right)
 \]
 
 \end_inset
@@ -3434,7 +3446,7 @@ Empates
 \end_layout
 
 \begin_layout Itemize
-Se asigna rango normalmente, despuès se reemplaza los de observacines iguales
+Se asigna rango normalmente, despuès se reemplaza los de observaciones iguales
  por su promedio.
 \end_layout
 
@@ -3456,7 +3468,7 @@ Observaciones iguales al valor a probar, 0
 \end_layout
 
 \begin_layout Itemize
-Eliminar los 0 y trabajar con el tamaño d emuestra reducido.
+Eliminar los 0 y trabajar con el tamaño de muestra reducido.
 \end_layout
 
 \begin_layout Itemize
@@ -3480,6 +3492,26 @@ Asintótica
 
 \begin_layout Subsection
 Estimador Puntual e Intervaos por H-L
+\end_layout
+
+\begin_layout Standard
+Nuestro estimador es 
+\begin_inset Formula $T^{+}\left(\theta\right)=\#\left\{ \frac{X_{i}+X_{j}}{2}>\theta\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como se ve es no creciente para 
+\begin_inset Formula $\theta$
+\end_inset
+
+ y bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ tiene distribución simétrica.
 \end_layout
 
 \begin_layout Standard
@@ -3549,10 +3581,6 @@ Prueba para tendencia
 
 \begin_layout Subsubsection
 Prueba para correlación
-\end_layout
-
-\begin_layout Standard
-*****Es una sola, ¿no?
 \end_layout
 
 \begin_layout Standard
@@ -4896,6 +4924,13 @@ Convergencia en Probabilidad de
 \begin_inset Formula $\overline{W}$
 \end_inset
 
+, distribución asintótica.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{n}{m+n}\rightarrow\lambda/\lambda\in\left(0;1\right)$
+\end_inset
+
 
 \end_layout
 
@@ -5244,6 +5279,142 @@ Buscarlos.
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Estimación Puntual e Intervalo de Confianza para la prueba bilateral
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{1}:\Delta\neq\Delta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Trabajamos con 
+\begin_inset Formula $Y_{j}-\Delta_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W\left(\Delta_{0}\right)=\sum_{i,j}s\left(Y_{j}-X_{i}-\Delta_{0}\right)=\#\left\{ \left(i;j\right)/Y_{j}-X_{i}>\Delta_{0}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos definir un estadístico de Hodges-Lehman dado que este estimador
+ es no decreciente en el parámetro y su distribución nula tiene un punto
+ de simetría, que como ya vimos bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ es 
+\begin_inset Formula $\overline{W}=\frac{nm}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\Delta}=\text{med}_{i;j}\left(Y_{i}-X_{j}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para construir intervalos, aprovechamos que bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ la distribución de 
+\begin_inset Formula $W$
+\end_inset
+
+ es simétrica alrededor de 
+\begin_inset Formula $\mathbb{E}\left(W\right)=\frac{nm}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\left[D^{\left(k+1\right)};D^{\left(nm-k\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde los 
+\begin_inset Formula $D^{\left(h\right)}$
+\end_inset
+
+ son los rangos de las diferencias 
+\begin_inset Formula $D_{ij}=Y_{i}-X_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Uso de la tabla de Connover
+\end_layout
+
+\begin_layout Standard
+Aprovechamos la identidad 
+\begin_inset Formula $U=W+\frac{m\left(m+1\right)}{2}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=w_{\nicefrac{\alpha}{2}}^{nm}-\frac{m\left(m+1\right)}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La versión asintótica es (con corrección por continuidad):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k\approx\frac{nm}{2}-\frac{1}{2}-z_{\nicefrac{\alpha}{2}}\sqrt{\hat{V}\left(U\right)}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body

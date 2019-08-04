@@ -366,13 +366,7 @@ Vamos a probar que:
 \end_layout
 
 \begin_layout Itemize
-Es necesario usar una versión adecuada del Teorema del Límite Central porque
- los términos no son iid (no tienen distribución única, varía la varianza),
- la 
-\begin_inset Formula $j$
-\end_inset
-
- les cambia la varianza.
+Es necesario usar una versión adec 
 \end_layout
 
 \begin_layout Section
@@ -380,7 +374,8 @@ Demostración
 \end_layout
 
 \begin_layout Lemma
-FGM de 
+F.G.M.
+ de 
 \begin_inset Formula $T^{+}$
 \end_inset
 
@@ -451,6 +446,14 @@ indep
 \end_layout
 
 \begin_layout Proof
+Como estamos bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
 \begin_inset Formula $w_{j}\begin{cases}
 p\left(0\right)=\frac{1}{2}\\
 p\left(1\right)=\frac{1}{2}
@@ -495,7 +498,7 @@ Bajo
 \end_layout
 
 \begin_layout Proof
-Considerando el momento
+Considerando la definición de la fgm como esperanza
 \end_layout
 
 \begin_layout Proof
@@ -518,6 +521,14 @@ Considerando el momento
 \end_inset
 
 
+\end_layout
+
+\begin_layout Proof
+Como se ve, estamos intentando obtener los 
+\begin_inset Formula $P\left(T^{+}=k\right)=a_{k}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Proof
@@ -544,8 +555,8 @@ Esta es una igualdad polinómica de variable
 \end_layout
 
 \begin_layout Itemize
-Esbozamos la prueba inductiva mostrando cómo ssuman los coeficientes, que
- son del tipo 
+Esbozamos la prueba inductiva mostrando cómo se suman los coeficientes,
+ que son del tipo 
 \end_layout
 
 \begin_layout Itemize
@@ -840,17 +851,6 @@ P\left(T^{+}=k\right)=P\left(T^{+}=\frac{n\left(1+n\right)}{2}-k\right)
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left(T^{+}=k\right)=P\left(T^{+}=\frac{n\left(1+n\right)}{2}-k\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Forma asintótica
 \end_layout
@@ -878,7 +878,7 @@ T^{+}=\sum_{j=1}^{n}j\cdot w_{j}
 \end_layout
 
 \begin_layout Theorem
-Teorema de Linderber
+Teorema de Lindenberg
 \end_layout
 
 \begin_layout Theorem
@@ -1177,7 +1177,7 @@ Armar pares ordenados y tratar de garantizar algo con la idea de que si
 \end_layout
 
 \begin_layout Subsection
-Seguimos
+Seguimos9
 \end_layout
 
 \begin_layout Section

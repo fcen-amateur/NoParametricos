@@ -3476,7 +3476,491 @@ El otro método requiere tablas especiales o aproximación normal.
 \end_layout
 
 \begin_layout Subsection
-Asintótica
+Distribución Exacta
+\end_layout
+
+\begin_layout Lemma
+FGM de 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Formula 
+\[
+M_{T^{+}}\left(t\right)=\mathbb{E}\left[e^{t\cdot T^{+}}\right]=\frac{1}{2}\prod_{i=1}^{n}\left(1+e^{tj}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M_{T^{+}}\left(t\right)=\mathbb{E}\left[e^{t\cdot\sum_{j=1}^{n}j\cdot w_{j}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M_{T^{+}}\left(t\right)=\mathbb{E}\left[e^{\sum_{j=1}^{n}t\cdot j\cdot w_{j}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M_{T^{+}}\left(t\right)=\mathbb{E}\left[\prod e^{t\cdot j\cdot w_{j}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+indep
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M_{T^{+}}\left(t\right)=\prod\mathbb{E}\left[e^{t\cdot j\cdot w_{j}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Como estamos bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $w_{j}\begin{cases}
+p\left(0\right)=\frac{1}{2}\\
+p\left(1\right)=\frac{1}{2}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M_{T^{+}}\left(t\right)=\prod\left[e^{t\cdot j\cdot0}\frac{1}{2}+e^{t\cdot j\cdot1}\frac{1}{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M_{T^{+}}\left(t\right)=\left(\frac{1}{2}\right)^{n}\prod\left(1+e^{tj}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+Distribución de 
+\begin_inset Formula $T^{+}$
+\end_inset
+
+ bajo 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Considerando la definición de la fgm como esperanza
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left(e^{tT^{+}}\right)=\sum_{i=0}^{\frac{n\left(n+1\right)}{2}}e^{tk}P\left(T^{+}=k\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left(e^{tT^{+}}\right)=\sum_{i=0}^{\frac{n\left(n+1\right)}{2}}e^{tk}a_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Como se ve, estamos intentando obtener los 
+\begin_inset Formula $P\left(T^{+}=k\right)=a_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Igualamos con la fgm.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i=0}^{\frac{n\left(n+1\right)}{2}}e^{tk}a_{k}=\left(\frac{1}{2}\right)^{n}\prod\left(1+e^{tj}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Esta es una igualdad polinómica de variable 
+\begin_inset Formula $e^{tk}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Esbozamos la prueba inductiva mostrando cómo se suman los coeficientes,
+ que son del tipo 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Forma recursiva
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{3}\left(t\right)=\frac{1}{2}M_{2}\left(t\right)\left(1+e^{3t}\right)=\frac{1}{2}\left[M_{2}\left(t\right)+M_{2}\left(t\right)e^{3t}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $P\left(T^{+}=k\right)=P\left(T^{+}=\frac{n\left(1+n\right)}{2}-k\right)$
+\end_inset
+
+, simetría de las probabilidades.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(T^{+}=k\right)=P\left(T^{-}=k\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(T^{+}=k\right)=P\left(T^{+}=\frac{n\left(1+n\right)}{2}-k\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Distribución Asintótica
 \end_layout
 
 \begin_layout Standard
@@ -3490,8 +3974,135 @@ Asintótica
 
 \end_layout
 
+\begin_layout Theorem
+Teorema de Lindenberg
+\end_layout
+
+\begin_layout Theorem
+sean 
+\begin_inset Formula $\left\{ V_{i}\right\} $
+\end_inset
+
+ iid con 
+\begin_inset Formula $\mathbb{E}\left(V_{i}\right)=0$
+\end_inset
+
+ y 
+\begin_inset Formula $\text{Var}\left(V_{i}\right)=\sigma^{2}/0<\sigma^{2}<\infty$
+\end_inset
+
+, definamos 
+\begin_inset Formula $\frac{\max\left|a_{i}\right|}{\sqrt{\sum a_{i}^{2}}}\rightarrow0$
+\end_inset
+
+ entonces 
+\begin_inset Formula $V\left(S\right)=\sum a_{i}^{2}r^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $S=\sum a_{i}V_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\frac{S}{\sqrt{\text{Var}\left(S\right)}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Aplicamos a la forma asintótica
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\sum_{j=1}^{n}j\left(\underbrace{w_{j}-\frac{1}{2}}_{V_{j}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\sum_{j=1}^{n}jw_{j}-\sum_{j=1}^{n}j\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=T^{+}-\frac{1}{2}\frac{n\left(n+1\right)}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=T^{+}-\frac{n\left(n+1\right)}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{E}\left(S\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{Var}\left(S\right)=\sum_{j=1}^{n}j^{2}\frac{1}{4}=\frac{1}{4}\frac{n\left(n+1\right)\left(2n+1\right)}{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La condición del máximo se reduce a un mínimo de polinomios
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\max a_{i}\leq j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n}\frac{j}{\sqrt{\sum j^{2}}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-Estimador Puntual e Intervaos por H-L
+Estimador Puntual e Intervalos por H-L
 \end_layout
 
 \begin_layout Standard

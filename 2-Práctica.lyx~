@@ -656,7 +656,7 @@ Pistas de la Guía
 
 \begin_layout Enumerate
 Por la LGN: 
-\begin_inset Formula $\frac{\overline{S}}{n}\overset{\mathcal{P}}{\rightarrow}\mathbb{E}\left[s\left(X_{i}\right)\right]=P\left(X_{i}>0\right)=\mu\left(F;\theta\right)$
+\begin_inset Formula $\frac{S}{n}=\overline{S}\overset{\mathcal{P}}{\rightarrow}\mathbb{E}\left[s\left(X_{i}\right)\right]=P\left(X_{i}>0\right)=\mu\left(F\right)$
 \end_inset
 
 .
@@ -726,7 +726,7 @@ Muestre que bajo
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\forall i:P\left(X_{i}<0\right)=G_{H_{0}}\left(0\right)
+\forall i:P\left(X_{i}<0\right)=G_{H_{0}}\left(0\right)=F\left(0\right)
 \]
 
 \end_inset
@@ -771,7 +771,7 @@ Considere el caso de
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\forall i:P\left(X_{i}<0\right)=G_{H_{1}}\left(0\right)
+\forall i:P\left(X_{i}<0\right)=G_{H_{1}}\left(0\right)=F\left(0-\theta\right)=F\left(-\theta\right)
 \]
 
 \end_inset
@@ -786,7 +786,7 @@ Por hipótesis.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\forall i:P\left(X_{i}<0\right)=p/p<\frac{1}{2}
+\forall i:P\left(X_{i}<0\right)=p=F\left(-\theta\right)/F\left(-\theta\right)<\frac{1}{2}
 \]
 
 \end_inset
@@ -837,7 +837,7 @@ S^{*}\rightarrow\begin{cases}
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Proof
 Podemos aplicar la LGN a 
 \begin_inset Formula $S^{*}$
 \end_inset
@@ -849,7 +849,7 @@ Podemos aplicar la LGN a
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Proof
 \begin_inset Formula 
 \[
 \mathbb{E}\left(S^{*}\right)=\frac{1}{n}\mathbb{E}\left(S\right)=\frac{np}{n}=p
@@ -860,7 +860,7 @@ Podemos aplicar la LGN a
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Proof
 \begin_inset Formula 
 \[
 V\left(S^{*}\right)=\frac{1}{n^{2}}V\left(S\right)=\frac{np\left(1-p\right)}{n^{2}}=\frac{p\left(1-p\right)}{n}<\frac{1}{n}
@@ -871,11 +871,11 @@ V\left(S^{*}\right)=\frac{1}{n^{2}}V\left(S\right)=\frac{np\left(1-p\right)}{n^{
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Proof
 Se cumplen las hipótesis de la ley fuerte.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Proof
 \begin_inset Formula $\left\{ X_{i}\right\} $
 \end_inset
 
@@ -890,7 +890,7 @@ Se cumplen las hipótesis de la ley fuerte.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Proof
 Débil 
 \begin_inset Formula $\left\{ X_{n}\right\} $
 \end_inset
@@ -906,7 +906,7 @@ Débil
 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Proof
 \begin_inset Formula 
 \[
 S^{*}\overset{\text{ctp}}{\rightarrow}p
@@ -917,7 +917,7 @@ S^{*}\overset{\text{ctp}}{\rightarrow}p
 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Proof
 La conclusión es que para en el caso B para 
 \begin_inset Formula $H_{0}:p=\frac{1}{2}$
 \end_inset
@@ -929,7 +929,7 @@ La conclusión es que para en el caso B para
  con lo cual se cumple lo observado.
 \end_layout
 
-\begin_layout Quote
+\begin_layout Proof
 Además, ahora tenemos un estadístico con una forma funcional constante (no
  una sucesión de ellos) 
 \end_layout
@@ -1129,7 +1129,7 @@ El estadístico es
 \begin_layout Standard
 \begin_inset Formula 
 \[
-c=\frac{\frac{\partial}{\partial\theta}\mu\left(0\right)}{\sigma\left(0\right)}=\frac{1}{\sqrt{\int x^{2}\cdot f\left(x-\theta\right)dx}\bigg|_{0}}=\frac{1}{\sqrt{\int x^{2}\cdot f\left(x\right)dx}}
+c=\frac{\frac{\partial}{\partial\theta}\mu\left(0\right)}{\sigma\left(0\right)}=\frac{1}{\sqrt{\int x^{2}\cdot f\left(x-\theta\right)dx}\bigg|_{0}}=\frac{1}{\sqrt{\int\left(x-\underbrace{\mathbb{E}_{H_{0}}\left(X\right)}_{0}\right)^{2}\cdot f\left(x\right)dx}}
 \]
 
 \end_inset
@@ -1146,6 +1146,23 @@ c=\frac{1}{\sigma_{f}}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Demostración completa (En la guía se daban por sentadas las primeras dos
+ condiciones)
+\end_layout
+
+\begin_layout Standard
+Apunte 
+\begin_inset Quotes fld
+\end_inset
+
+Consistencia y Eficiencia Signo
+\begin_inset Quotes frd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -2205,7 +2222,7 @@ En este caso, a diferencia de los investigadores, rechazamos
 \begin_inset Formula $H_{0}$
 \end_inset
 
-.-
+.
 \end_layout
 
 \end_body

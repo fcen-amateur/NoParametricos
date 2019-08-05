@@ -797,7 +797,7 @@ Estas condiciones permiten tomar
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\sigma_{n}\left(\theta\right)=\frac{\sigma\left(\theta\right)}{\sqrt{n}}
+\sigma_{n}\left(\theta\right)=\frac{\sigma^{2}\left(\theta\right)}{\sqrt{n}}
 \]
 
 \end_inset
@@ -882,18 +882,6 @@ Dadas
 \end_inset
 
 
-\end_layout
-
-\begin_layout Theorem
-Con 
-\begin_inset Formula $d$
-\end_inset
-
- una constante real que no depende de 
-\begin_inset Formula $n$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Section

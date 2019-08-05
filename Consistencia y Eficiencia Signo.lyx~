@@ -1,0 +1,992 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Consistencia y Eficiencia Asintótica de la Prueba del Signo
+\end_layout
+
+\begin_layout Section
+Teoremas necesarios
+\end_layout
+
+\begin_layout Subsection
+Condición Suficiente para la Consistencia de una Sucesión de Pruebas
+\end_layout
+
+\begin_layout Theorem
+Si 
+\begin_inset Formula $T_{n}$
+\end_inset
+
+ es el estadístico de una prueba para 
+\begin_inset Formula $H_{0}:G\in\Omega_{\text{nul}}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:G\in\Omega_{\text{alt}}$
+\end_inset
+
+ que rechaza 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ para valores grandes y satisface 
+\begin_inset Formula $T_{n}\overset{\mathcal{P}}{\rightarrow}\mu\left(G\right)=\begin{cases}
+\mu_{0} & \forall G\in\Omega_{\text{nul}}\\
+>\mu_{0} & \forall G\in\Omega_{\text{c}}\subseteq\Omega_{\text{alt}}
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Además, existe 
+\begin_inset Formula $\sigma_{0}>0$
+\end_inset
+
+ que cumple 
+\begin_inset Formula $\forall G\in\Omega_{\text{nul}}:\sqrt{n}\frac{T_{n}-\mu_{0}}{\sigma_{0}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Entonces, existe 
+\begin_inset Formula $\left\{ k_{n}\right\} $
+\end_inset
+
+, sucesión de valores críticos tal que 
+\begin_inset Formula $\Phi_{n}=\begin{cases}
+1 & T_{n}\geq k_{n}\\
+0 & T_{n}<k_{n}
+\end{cases}$
+\end_inset
+
+ es asintóticamente de nivel 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ y 
+\begin_inset Formula $\forall G\in\Omega_{\text{alt}}:\lim_{n}P_{G}\left(T_{n}\geq k_{n}\right)=1$
+\end_inset
+
+.
+ La sucesión de pruebas 
+\begin_inset Formula $\left\{ \Phi_{n}\right\} $
+\end_inset
+
+ basadas en 
+\begin_inset Formula $T_{n}\geq k_{n}$
+\end_inset
+
+ es consistente en 
+\begin_inset Formula $\Omega_{\text{c}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Condición Suficiente para Hallar la Eficiencia Asintótica de una Prueba
+\end_layout
+
+\begin_layout Subsubsection
+Condición Suficiente
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $T_{n}$
+\end_inset
+
+ provee una prueba consistente.
+\end_layout
+
+\begin_layout Enumerate
+Existen las sucesiones 
+\begin_inset Formula $\left\{ \mu_{n}\left(\theta\right)\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $\left\{ \sigma_{n}\left(\theta\right)\right\} $
+\end_inset
+
+ para las cuales el siguiente límite se cumple uniformente en un entorno
+ de 
+\begin_inset Formula $0$
+\end_inset
+
+: 
+\begin_inset Formula $\sqrt{n}\frac{T_{n}-\mu_{n}\left(\theta\right)}{\sigma_{n}\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Existe 
+\begin_inset Formula $\frac{\partial\mu_{n}}{\partial\theta}\left(\theta\right)\bigg|_{\theta=0}=\mu_{n}'\left(0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Dada de una sucesión de alternativas contiguas que tienden a 0 
+\begin_inset Formula $\left\{ \theta_{n}\right\} /\theta_{n}\rightarrow0$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\sigma_{n}\left(\theta_{n}\right)}{\sigma_{n}\left(0\right)}\rightarrow1$
+\end_inset
+
+ y 
+\begin_inset Formula $\frac{\mu_{n}'\left(\theta_{n}\right)}{\mu_{n}\left(0\right)}\rightarrow1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\lim_{n\rightarrow\infty}\frac{\mu_{n}\left(0\right)}{\sqrt{n}\sigma_{n}\left(0\right)}=c>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En este caso, la cantidad 
+\begin_inset Formula $c$
+\end_inset
+
+ es la eficacia de la prueba basada en 
+\begin_inset Formula $T_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Es deseable una eficacia relativamene alta.
+\end_layout
+
+\begin_layout Subsubsection
+Simplificación.
+\end_layout
+
+\begin_layout Standard
+Se puede lograr hacer más sencillas estas condiciones si se construye la
+ prueba de tal forma que se cumple: 
+\begin_inset Formula $T_{n}\overset{\mathcal{P}}{\rightarrow}\mu\left(\theta\right)$
+\end_inset
+
+ o 
+\begin_inset Formula $\mathbb{E}\left(T_{n}\right)\rightarrow\mu\left(\theta\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $n\cdot\text{Var}\left(T_{n}\right)\rightarrow\sigma^{2}\left(\theta\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Estas condiciones permiten tomar
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{n}\left(\theta\right)=\mu\left(\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{n}\left(\theta\right)=\frac{\sigma^{2}\left(\theta\right)}{\sqrt{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\mu'\left(0\right)}{\sigma\left(0\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Teorema de Berry Esseen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Chung, 1968.
+\end_layout
+
+\end_inset
+
+, cota para la diferencia entre la distribución de una variable cualquiera
+ y la normal estándar.
+\end_layout
+
+\begin_layout Theorem
+Dadas 
+\begin_inset Formula $\boldsymbol{X}=\left(X_{i}\right)_{i=1}^{n}$
+\end_inset
+
+ iid tales que 
+\begin_inset Formula $\mathbb{E}\left(X_{i}\right)=\mu$
+\end_inset
+
+ y 
+\begin_inset Formula $\text{Var}\left(X_{i}\right)=\sigma^{2}/\sigma^{2}\in\left(0;\infty\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{E}\left(\left|X_{i}-\mu\right|^{3}\right)=\rho^{3}/\rho^{3}\in\left(0;\infty\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\exists d\in\mathbb{R}$
+\end_inset
+
+ tal que para todo 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\left|P\left(\frac{\overline{X}-\mu}{\sigma}\leq t\right)-\Phi\left(t\right)\right|\leq\frac{d\rho^{3}}{\sqrt{n}\cdot\sigma^{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Demostración de la Consistencia
+\end_layout
+
+\begin_layout Standard
+En este caso, 
+\begin_inset Formula $\Omega_{\text{nul}}=\Omega_{0}$
+\end_inset
+
+ y 
+\begin_inset Formula $\Omega_{\text{alt}}=\left\{ G/G\left(x\right)=F\left(x-\theta\right)\wedge F\in\Omega_{0}\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta condición significa que en el primer caso son distribuciones con su
+ única mediana en 0, donde además son estrictamente crecientes y continuas
+ y en el segundo son corrimientos de estas funciones, es decir con la mediana
+ en este caso en un punto precedente a 0.
+\end_layout
+
+\begin_layout Subsection
+Distribución de los estadísticos 
+\begin_inset Formula $S$
+\end_inset
+
+ y 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+ y consistencia.
+\end_layout
+
+\begin_layout Standard
+Para poder lograr 
+\begin_inset Formula $T_{n}\overset{\mathcal{P}}{\rightarrow}\mu\left(G\right)=\begin{cases}
+\mu_{0} & \forall G\in\Omega_{\text{nul}}\\
+>\mu_{0} & \forall G\in\Omega_{\text{c}}\subseteq\Omega_{\text{alt}}
+\end{cases}$
+\end_inset
+
+ tenemos que trabajar con 
+\begin_inset Formula $\overline{S}=\frac{S}{n}$
+\end_inset
+
+ dado que 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+ no depende de 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Sin embargo 
+\begin_inset Formula $S$
+\end_inset
+
+ tiene una distribución conocida y es más sencillo tomarlo como punto de
+ partida.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall i:P\left(X_{i}>0\right)=1-F\left(0-\theta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{n}=S\sim Bi\left(n;1-F\left(-\theta\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $F$
+\end_inset
+
+ es una distribución, 
+\begin_inset Formula $F\left(0\right)\geq F\left(-\theta\right)\Rightarrow1-F\left(-\theta\right)\geq1-F\left(0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{H_{0}}\left(G\right)=\mathbb{E}\left(\frac{S}{n}\right)=\frac{1}{n}n\left[1-F\left(0\right)\right]=1-F\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{H_{1}}\left(G\right)=\mathbb{E}\left(\frac{S}{n}\right)=\frac{1}{n}n\left[1-F\left(-\theta\right)\right]=1-F\left(-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{V}\left(\overline{S}_{n}\right)=\frac{1}{n^{2}}\mathbb{V}\left(S_{n}\right)=\frac{F\left(-\theta\right)\left[1-F\left(-\theta\right)\right]n}{n^{2}}=\frac{F\left(-\theta\right)\left[1-F\left(-\theta\right)\right]}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por la LGN, dado que tenemos esperanza y varianza finita del estadístico
+ conocido 
+\begin_inset Formula $\overline{S}_{n}\sim Bi\left(n;F\left(-\theta\right)\right)$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{S}_{n}\overset{\mathcal{P}}{\rightarrow}\mu\left(G\right)=\begin{cases}
+1-F\left(0\right) & \forall G\in\Omega_{\text{nul}}\\
+1-F\left(-\theta\right)>1-F\left(0\right) & \forall G\in\Omega_{\text{c}}\subseteq\Omega_{\text{alt}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Además, existe 
+\begin_inset Formula $\sigma_{0}>0$
+\end_inset
+
+ que cumple 
+\begin_inset Formula $\forall G\in\Omega_{\text{nul}}:\sqrt{n}\frac{T_{n}-\mu_{0}}{\sigma_{0}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para cumplir esta condición, acudimos directamente al TCL.
+ Ya probamos las hipótesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall G\in\Omega_{\text{nul}}:\frac{\overline{S}-\left(1-F\left(0\right)\right)}{\sqrt{\nicefrac{F\left(-\theta\right)\left[1-F\left(-\theta\right)\right]}{n}}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{n}\cdot\frac{\overline{S}-\left(1-F\left(0\right)\right)}{\sqrt{F\left(-\theta\right)\left[1-F\left(-\theta\right)\right]}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mu_{0}=1-F\left(0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma_{0}=\sqrt{F\left(-\theta\right)\left[1-F\left(-\theta\right)\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La sucesión 
+\begin_inset Formula $\left\{ k_{n}\right\} $
+\end_inset
+
+ va a ser 
+\begin_inset Formula $\forall n:k_{n}=\sup_{j}\left\{ j/P\left(S_{n}>j\right)\leq\alpha\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+***¿Esto lo hizo en detalle?*** Una buena táctica es acotar la diferencia
+ para la distribución respecto a la de la normal.
+ La diferencia entre dos pasos sucesivos no puede ser mayor a la que hay
+ entre estos valores y la que hay entre los mismos para 
+\begin_inset Formula $\Phi+2\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La clase de consistencia 
+\begin_inset Formula $\Omega_{\text{c}}$
+\end_inset
+
+ es la clase donde podemos aplicar esta prueba, 
+\begin_inset Formula $G/G\left(x\right)=F\left(x-\theta\right)\wedge F\in\Omega_{0}$
+\end_inset
+
+, es decir corrimientos de la mediana los valores mayores a 0.
+\end_layout
+
+\begin_layout Section
+Demostración de la Eficiencia Asintótica
+\end_layout
+
+\begin_layout Subsection
+Existen las sucesiones 
+\begin_inset Formula $\left\{ \mu_{n}\left(\theta\right)\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $\left\{ \sigma_{n}\left(\theta\right)\right\} $
+\end_inset
+
+ para las cuales el siguiente límite se cumple uniformente en un entorno
+ de 
+\begin_inset Formula $0$
+\end_inset
+
+: 
+\begin_inset Formula $\sqrt{n}\frac{T_{n}-\mu_{n}\left(\theta\right)}{\sigma_{n}\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para lograr el entorno de convergencia uniforme, recurrimos al teorema de
+ Berry-Essen.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $\rho^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Investigamos la condición 
+\begin_inset Formula $\mathbb{E}\left(\left|X_{i}-\mu\right|^{3}\right)=\rho^{3}/\rho^{3}\in\left(0;\infty\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho^{3}=\mathbb{E}\left(\left|X_{i}-\mu\right|^{3}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho^{3}=p\cdot\left|-\mu\right|^{3}+\left(1-p\right)\cdot\left|1-\mu\right|^{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p=1-F\left(-\theta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mu=\mathbb{E}\left(X_{i}\right)=1-F\left(-\theta\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma^{2}=\mathbb{V}\left(X_{i}\right)=F\left(-\theta\right)\left[1-F\left(-\theta\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $1-\mu=1-1+F\left(-\theta\right)\geq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho^{3}=F\left(-\theta\right)\cdot\mu^{3}+\left(1-F\left(-\theta\right)\right)\cdot\left[1-\left(1-F\left(-\theta\right)\right)\right]^{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho^{3}=F\left(-\theta\right)\cdot\left(1-F\left(-\theta\right)\right)^{3}+\left(1-F\left(-\theta\right)\right)\cdot F^{3}\left(-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho^{3}=\left(1-F\left(-\theta\right)\right)\cdot F\left(-\theta\right)\left[\left(1-F\left(-\theta\right)\right)^{2}+F^{2}\left(-\theta\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho^{3}=\sigma^{2}\cdot\left[\left(1-F\left(-\theta\right)\right)^{2}+F^{2}\left(-\theta\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Desigualdad en este caso
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|P\left(\frac{\overline{X}-\mu}{\sigma}\leq t\right)-\Phi\left(t\right)\right|\leq\frac{d\rho^{3}}{\sqrt{n}\cdot\sigma^{3}}=\frac{d\cancel{\sigma^{2}}\cdot\left[\left(1-F\left(-\theta\right)\right)^{2}+F^{2}\left(-\theta\right)\right]}{\sqrt{n}\cdot\sigma^{\cancel{3}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|P\left(\frac{\overline{X}-\mu}{\sigma}\leq t\right)-\Phi\left(t\right)\right|\leq\frac{d\left[\left(1-F\left(-\theta\right)\right)^{2}+F^{2}\left(-\theta\right)\right]}{\sqrt{n}\cdot\sigma}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|P\left(\frac{\overline{X}-\mu}{\sigma}\leq t\right)-\Phi\left(t\right)\right|\leq\frac{d}{\sqrt{n}}\cdot\frac{\left(1-F\left(-\theta\right)\right)^{2}+F^{2}\left(-\theta\right)}{\sqrt{F\left(-\theta\right)\left[1-F\left(-\theta\right)\right]}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El factor 
+\begin_inset Formula $\frac{\left(1-F\left(-\theta\right)\right)^{2}+F^{2}\left(-\theta\right)}{\sqrt{F\left(-\theta\right)\left[1-F\left(-\theta\right)\right]}}$
+\end_inset
+
+ es una función de la variable 
+\begin_inset Formula $F\left(-\theta\right)$
+\end_inset
+
+, la cual está acotada ya que su imagen está entre 0 y 1 y es continua en
+ un entorno de 
+\begin_inset Formula $0$
+\end_inset
+
+ porque 
+\begin_inset Formula $F\in\Omega_{0}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $F$
+\end_inset
+
+ tiene entornos que garantizan valores tan cercanos a 0 como se quiera.
+ 
+\begin_inset Formula $\forall\varepsilon>0;\exists\delta>0:F\left[\left(-\delta;\delta\right)\right]=\left(F\left(0\right)-\varepsilon;F\left(0\right)+\varepsilon\right)$
+\end_inset
+
+.
+ Sea este 
+\begin_inset Formula $E\left(0;\delta_{0}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Esta función 
+\begin_inset Formula $g\left(x\right)=\frac{\left(1-x\right)^{2}+x^{2}}{\sqrt{x\left[1-x\right]}}$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $\left(0;1\right)$
+\end_inset
+
+ y por tanto lo es en 
+\begin_inset Formula $E\left(F\left(0\right);\delta_{1}\right)=E\left(\frac{1}{2};\varepsilon\right)$
+\end_inset
+
+ siempre y cuando 
+\begin_inset Formula $\left(-\delta_{1};\delta_{1}\right)\in\left(0;1\right)$
+\end_inset
+
+, que es la condición que le ponemos a 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, este cumple 
+\begin_inset Formula $\varepsilon/\left(F\left(0\right)-\varepsilon;F\left(0\right)+\varepsilon\right)\subset\left(0;1\right)$
+\end_inset
+
+.
+ Por ejemplo 
+\begin_inset Formula $\varepsilon<\frac{1}{4}$
+\end_inset
+
+ y 
+\begin_inset Formula $\delta_{2}/F\left[\left(-\delta_{2};\delta_{2}\right)\right]\subset\left(F\left(0\right)-\frac{1}{4};F\left(0\right)+\frac{1}{4}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $g\circ F\left(-\theta\right)$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $E\left(0;\delta_{2}\right)$
+\end_inset
+
+ y por lo tanto es uniformemente continua en este intervalo
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Toda función continua sobre un intervalo cerrado y acotado es uniformemente
+ continua.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Coeficiente
+\end_layout
+
+\begin_layout Subsubsection
+Coeficiente de la prueba del signo, 
+\begin_inset Formula $c_{S}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El estadístico elegido nos lleva a trabajar con la media de una muestra
+ de tipo 
+\begin_inset Formula $Bi\left(1;p\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{T_{n}-\mu\left(\theta\right)}{\sigma\left(\theta\right)}=\frac{\frac{S}{n}-\left[1-F\left(-\theta\right)\right]}{\sqrt{\frac{p\left(1-p\right)}{n}}}=\sqrt{n}\frac{\overline{S}-\mathbb{E}_{p}\left(S\right)}{\sqrt{p\left(1-p\right)}}\rightarrow\mathcal{N}\left(0;1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\theta\right)=1-F\left(-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\theta}\mu\left(\theta\right)=-g\left(0\right)=f\left(-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}\left(\theta\right)=n\cdot\text{Var}\left(\frac{S}{n}\right)=\frac{1}{n}\text{Var}\left(S\right)=p\left(1-p\right)=\left(1-F\left(-\theta\right)\right)\left[1-\left(1-F\left(-\theta\right)\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}\left(\theta\right)=\left(1-F\left(-\theta\right)\right)F\left(-\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma\left(\theta\right)=\sqrt{p\left(1-p\right)}\underset{H_{0}}{=}\sqrt{\frac{1}{4}}=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{\frac{\partial}{\partial\theta}\mu\left(0\right)}{\sigma\left(0\right)}=\frac{f\left(0\right)}{\frac{1}{2}}=2f\left(0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

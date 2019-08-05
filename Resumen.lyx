@@ -94,6 +94,451 @@ Bases Teóricas
 \end_layout
 
 \begin_layout Subsection
+Consistencia
+\end_layout
+
+\begin_layout Definition
+Consistencia.
+\end_layout
+
+\begin_layout Definition
+La sucesión de pruebas 
+\begin_inset Formula $\left\{ \Phi_{n}\right\} $
+\end_inset
+
+ es consistente en 
+\begin_inset Formula $\theta_{1}\in\Theta_{1}\subset\Theta$
+\end_inset
+
+ para las hipótesis 
+\begin_inset Formula $H_{0}:\theta\in\Theta_{0}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:\theta\in\Theta_{1}$
+\end_inset
+
+ si:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lim_{n}\mathbb{E}_{\Theta_{1}}\left[\Phi_{n}\left(\boldsymbol{X}\right)\right]=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall n;\forall\theta\in\Theta:0<\gamma\leq\mathbb{E}_{\Theta}\left[\Phi_{n}\left(\boldsymbol{X}\right)\right]<\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El conjunto de los puntos de consistencia posibles forma la clase de consistenci
+a 
+\begin_inset Formula $\Theta_{1*}$
+\end_inset
+
+ de la sucesión.
+\end_layout
+
+\begin_layout Subsubsection
+Condición Suficiente para la Consistencia de una Sucesión de Pruebas
+\end_layout
+
+\begin_layout Theorem
+Si 
+\begin_inset Formula $T_{n}$
+\end_inset
+
+ es el estadístico de una prueba para 
+\begin_inset Formula $H_{0}:G\in\Omega_{\text{nul}}$
+\end_inset
+
+ contra 
+\begin_inset Formula $H_{1}:G\in\Omega_{\text{alt}}$
+\end_inset
+
+ que rechaza 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ para valores grandes y satisface 
+\begin_inset Formula $T_{n}\overset{\mathcal{P}}{\rightarrow}\mu\left(G\right)=\begin{cases}
+\mu_{0} & \forall G\in\Omega_{\text{nul}}\\
+>\mu_{0} & \forall G\in\Omega_{\text{c}}\subseteq\Omega_{\text{alt}}
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Además, existe 
+\begin_inset Formula $\sigma_{0}>0$
+\end_inset
+
+ que cumple 
+\begin_inset Formula $\forall G\in\Omega_{\text{nul}}:\sqrt{n}\frac{T_{n}-\mu_{0}}{\sigma_{0}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Entonces, existe 
+\begin_inset Formula $\left\{ k_{n}\right\} $
+\end_inset
+
+, sucesión de valores críticos tal que 
+\begin_inset Formula $\Phi_{n}=\begin{cases}
+1 & T_{n}\geq k_{n}\\
+0 & T_{n}<k_{n}
+\end{cases}$
+\end_inset
+
+ es asintóticamente de nivel 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ y 
+\begin_inset Formula $\forall G\in\Omega_{\text{alt}}:\lim_{n}P_{G}\left(T_{n}\geq k_{n}\right)=1$
+\end_inset
+
+.
+ La sucesión de pruebas 
+\begin_inset Formula $\left\{ \Phi_{n}\right\} $
+\end_inset
+
+ basadas en 
+\begin_inset Formula $T_{n}\geq k_{n}$
+\end_inset
+
+ es consistente en 
+\begin_inset Formula $\Omega_{\text{c}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Sucesión de valores críticos y nivel asintótico.
+\end_layout
+
+\begin_layout Proof
+Partamos de la distribución que vamos a obtener dado que se cumplen también
+ las hipótesis del TCL, para encontrar la 
+\begin_inset Formula $\left\{ k_{n}\right\} $
+\end_inset
+
+ deseada:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+G\in\Omega_{\text{nul}}\Rightarrow\sqrt{n}\frac{T_{n}-\mu_{0}}{\sigma_{0}}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\lim_{n}\alpha_{n}=\lim_{n}P\left(\sqrt{n}\frac{T_{n}-\mu_{0}}{\sigma_{0}}\leq z_{\alpha}\right)\rightarrow\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Es decir que el nivel asintótico es alfa cuando
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sqrt{n}\frac{T_{n}-\mu_{0}}{\sigma_{0}}\leq z_{\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+T_{n}\leq z_{\alpha}\frac{\sigma_{0}}{\sqrt{n}}+\mu_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Esta es la sucesión de valores críticos deseada.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+k_{n}=z_{\alpha}\frac{\sigma_{0}}{\sqrt{n}}+\mu_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Consistencia.
+\end_layout
+
+\begin_layout Proof
+Definimos en las hipótesis que 
+\begin_inset Formula $T_{n}\overset{\mathcal{P}}{\rightarrow}\mu\left(G\right)=\begin{cases}
+\mu_{0} & \forall G\in\Omega_{\text{nul}}\\
+>\mu_{0} & \forall G\in\Omega_{\text{c}}\subseteq\Omega_{\text{alt}}
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Consideremos una alternativa fija 
+\begin_inset Formula $G\in\Omega_{\text{c}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+La probabilidad de detectar la alternativa es 
+\begin_inset Formula $P\left(T_{n}\geq k_{n}\right)$
+\end_inset
+
+.
+ Queremos probar que esta tiende a 1.
+\end_layout
+
+\begin_layout Proof
+La hipótesis nos da un límite para 
+\begin_inset Formula $\text{\left|T_{n}-\mu\left(G\right)\right|}$
+\end_inset
+
+ y por lo tanto hay que partir desde esta expresión.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\left|T_{n}-\mu\left(G\right)\right|<\varepsilon\Rightarrow T_{n}+\mu\left(G\right)>-\varepsilon\Rightarrow T_{n}>\mu\left(G\right)-\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Como definimos 
+\begin_inset Formula $k_{n}=z_{\alpha}\frac{\sigma_{0}}{\sqrt{n}}+\mu_{0}$
+\end_inset
+
+, sabemos que 
+\begin_inset Formula $k_{n}\rightarrow\mu_{0}$
+\end_inset
+
+ y por lo tanto 
+\begin_inset Formula $\exists n_{0}/n>n_{0}\Rightarrow k_{n}<\mu_{0}+\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Definamos el 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ que necesitamos,
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\varepsilon=\frac{\mu\left(G\right)-\mu_{0}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Por la forma de la hipótesis, este es siempre positivo.
+\end_layout
+
+\begin_layout Proof
+En particular, 
+\begin_inset Formula $\mu_{0}=\mu\left(G\right)-2\varepsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+k_{n}<\mu_{0}+\varepsilon\Rightarrow k_{n}<\mu\left(G\right)-2\varepsilon+\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+k_{n}<\mu\left(G\right)-\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+k_{n}+\varepsilon<\mu\left(G\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Volviendo al límite conocido
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+T_{n}>\mu\left(G\right)-\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+T_{n}>k_{n}+\varepsilon-\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+T_{n}\geq k_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+De esta desigualdad: dado que 
+\begin_inset Formula $\forall n/\left|T_{n}-\mu\left(G\right)\right|<\varepsilon:\left|T_{n}-k_{n}\right|<\varepsilon$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Es decir, el conjunto de los 
+\begin_inset Formula $n$
+\end_inset
+
+ que cumplen la primera condición está incluido en el de los que cumplen
+ la primera.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\exists n_{1}/n>n_{1}:P\left(T_{n}\geq k_{n}\right)\geq P\left(\left|T_{n}-\mu\left(G\right)\right|<\varepsilon\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\lim_{n}P\left(T_{n}\geq k_{n}\right)\geq\lim_{n}P\left(\left|T_{n}-\mu\left(G\right)\right|<\varepsilon\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+La hipótesis nos da el valor del límite derecho.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\lim_{n}P\left(T_{n}\geq k_{n}\right)\geq1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Que es lo que se quería probar.
+\end_layout
+
+\begin_layout Subsection
 Eficacia Asintótica de Pitman
 \end_layout
 
@@ -233,7 +678,7 @@ En los casos en que
 \end_layout
 
 \begin_layout Subsubsection
-Condición Necesaria
+Condición Suficiente
 \end_layout
 
 \begin_layout Enumerate
@@ -258,7 +703,7 @@ Existen las sucesiones
 \end_inset
 
 : 
-\begin_inset Formula $\frac{T_{n}-\mu_{n}\left(\theta\right)}{\sigma_{n}\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)$
+\begin_inset Formula $\sqrt{n}\frac{T_{n}-\mu_{n}\left(\theta\right)}{\sigma_{n}\left(\theta\right)}\overset{\mathcal{D}}{\rightarrow}\mathcal{N}\left(0;1\right)$
 \end_inset
 
 .
@@ -266,7 +711,7 @@ Existen las sucesiones
 
 \begin_layout Enumerate
 Existe 
-\begin_inset Formula $\frac{\partial\mu_{n}}{\partial\theta}\left(\theta\right)\bigg|_{\theta=0}=\mu_{n}\left(\theta\right)$
+\begin_inset Formula $\frac{\partial\mu_{n}}{\partial\theta}\left(\theta\right)\bigg|_{\theta=0}=\mu_{n}'\left(0\right)$
 \end_inset
 
 .
@@ -278,7 +723,7 @@ Disponemos de una sucesión de alternativas contiguas que tienden a 0
 \end_inset
 
 , 
-\begin_inset Formula $\frac{\sigma_{n}\left(\theta_{n}\right)}{\sigma_{n}\left(0\right)}\rightarrow0$
+\begin_inset Formula $\frac{\sigma_{n}\left(\theta_{n}\right)}{\sigma_{n}\left(0\right)}\rightarrow1$
 \end_inset
 
  y 
@@ -352,7 +797,7 @@ Estas condiciones permiten tomar
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\sigma_{n}\left(\theta\right)=\frac{\sigma^{2}\left(\theta\right)}{\sqrt{n}}
+\sigma_{n}\left(\theta\right)=\frac{\sigma\left(\theta\right)}{\sqrt{n}}
 \]
 
 \end_inset
